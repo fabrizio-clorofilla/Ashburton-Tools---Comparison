@@ -1,0 +1,39 @@
+'use strict';
+
+module.exports = function(grunt) {
+
+    require('load-grunt-tasks')(grunt);
+
+    // Define the configuration for all the tasks
+    grunt.initConfig({
+
+        ngtemplates: {
+            app: {
+                src: ['*.aspx'],
+                dest: 'sdchart.app.templates.js',
+                options: {
+                    prefix: 'https://mandgtools.kurtosysweb.com/', // PROD
+                    // prefix: 'http://preview.devel-01.sol.kurtosys.com/', // DEV
+                    module: 'SDCHART',
+                    // url: function(url) {
+                    //   return url.replace('./app/', ''); // fix for absolute path urls
+                    // },
+                    htmlmin: {
+                        collapseBooleanAttributes: true,
+                        collapseWhitespace: true,
+                        removeAttributeQuotes: true,
+                        removeComments: true,
+                        removeEmptyAttributes: false,
+                        removeRedundantAttributes: false,
+                        removeScriptTypeAttributes: true,
+                        removeStyleLinkTypeAttributes: false
+                    }
+                }
+            }
+        }
+    });
+
+    grunt.registerTask('default', [
+        'ngtemplates'
+    ]);
+};

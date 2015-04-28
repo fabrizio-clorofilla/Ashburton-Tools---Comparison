@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>M&G Charts widgets</title>
+
+<!-- styles -->
+<link rel="stylesheet" type="text/css" href="//cloud.webtype.com/css/a48c2f3e-f82c-4747-9c4a-630b03dcbcb8.css"media="all" />
+<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" media="all">
+
+<link rel="stylesheet" type="text/css" href="_styles/mgt-common.css" media="all">
+<link rel="stylesheet" type="text/css" href="_styles/mgt-1.css" media="all">
+<link rel="stylesheet" type="text/css" href="_styles/mgt-2v2.css" media="all">
+<style type="text/css">
+	/* these styles are used only in this demo page, do not copy in production */
+	body {background-color: #f2f2f2}
+	.intro {
+		background-color: #fff;
+		padding: 1em;
+		padding: 1rem;
+		border-bottom: 1px dotted #2e515c;
+	}
+	.demo-container-1,
+	.demo-container-2 {
+		background-color: #fff;
+		width: 920px;
+		margin: 50px auto;
+		-webkit-transition: .5s;
+		   -moz-transition: .5s;
+				transition: .5s;
+		box-shadow: 0 0 15px #ccc;
+	}
+	.demo-container-1.half {width: 460px}
+	.demo-container-2 {margin-top: 20px}
+	.btn {
+		background-color: #9ea900;
+		color: #fff !important;
+		padding: .45em .75em;
+		padding: .5rem .8rem;
+		margin-top: -1em;
+		margin-top: -1rem;
+	}
+	#toggleColumn,
+	#toggleRow {
+		margin-top: -34px;
+	}
+</style>
+
+
+<!-- scripts -->
+<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<script src="//code.highcharts.com/highcharts.js"></script>
+<script src="https://rawgithub.com/highslide-software/pattern-fill/master/pattern-fill.js"></script>
+<script src="_scripts/mgt.js"></script>
+<script src="_scripts/mgt-hcv2.js"></script>
+
+
+</head>
+<body class="mgt">
+<div class="intro">
+<h1><strong>M&amp;G Tools Dynamic Chart Widget</strong></h1>
+<!--
+<p>To view the difference between full and half size, on the first widget only, simply click the button on the right.<a href="#" id="toggleColumn1" class="btn pull-right">Toggle View</a></p>
+-->
+</div>
+<!-- 1st WIDGET, RESIZABLE SMALL CHART+TABLE -->
+
+<div class="demo-container-1" style="display: none">
+<p><a href="#" id="toggleColumn" class="btn pull-right">Toggle View</a></p>
+<div class="mgt mgt-1">
+		<ul>
+			<li>
+				<div id="mgtchart01" class="mgt-1__chart"></div>
+			</li>
+			<li>
+				<div id="mgttable01" class="mgt-1__data">
+					<div id="mgt-1__tabs" class="mgt-1__tabs">
+					<ul class="clearfix">
+						<li><a href="#mgt-1__tabs-1">Year-on-Year Performance</a></li>
+						<li><a href="#mgt-1__tabs-2">Calendar Year Performance</a></li>
+					</ul>
+						<div id="mgt-1__tabs-1">
+						<table>
+							<colgroup>
+								<col><col><col><col><col><col>
+							</colgroup>
+						<thead>
+							<tr>
+								<th colspan="6">Single year performance (5 years ending December)</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="mgt-1__data--dateFrom">
+								<td>From</td>
+								<td>31.12.08</td>
+								<td>31.12.09</td>
+								<td>31.12.10</td>
+								<td>30.12.11</td>
+								<td>31.12.12</td>
+							</tr>
+							<tr class="mgt-1__data--dateTo divider">
+								<td>To</td>
+								<td>31.12.09</td>
+								<td>31.12.10</td>
+								<td>30.12.11</td>
+								<td>31.12.12</td>
+								<td>31.12.13</td>
+							</tr>
+							<tr class="mgt-1__data--fund">
+								<td><strong>European Inflation Linked Corporate Bond Fund</strong></td>
+								<td>N/A</td>
+								<td>N/A</td>
+								<td>34.3%</td>
+								<td>22.4%</td>
+								<td>3.1%</td>
+							</tr>
+							<tr>
+								<td><strong><i class="fa fa-circle" style="color: #88232b"></i> IMA UK All Companies Sector</strong></td>
+								<td>N/A</td>
+								<td>N/A</td>
+								<td>24.7%</td>
+								<td>18.9%</td>
+								<td>-4.8%</td>
+							</tr>
+							<tr>
+								<td><strong><i class="fa fa-circle" style="color: #9ea900"></i> FTSE All-Share Index</strong></td>
+								<td>N/A</td>
+								<td>N/A</td>
+								<td>24.7%</td>
+								<td>18.9%</td>
+								<td>-4.8%</td>
+							</tr>
+						</tbody>
+						</table>
+						</div>
+						<div id="mgt-1__tabs-2">
+						<table>
+							<colgroup>
+								<col><col><col><col><col><col><col>
+							</colgroup>
+						<thead>
+							<tr>
+								<th colspan="8">Performances as at 30.09.13</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="mgt-1__data--dateYTD">
+								<td>&nbsp;</td>
+								<td>YTD 2013</td>
+								<td>2012</td>
+								<td>2011</td>
+								<td>2010</td>
+								<td>2009</td>
+								<td>2008</td>
+							</tr>
+							<tr class="mgt-1__data--fund">
+								<td><strong>European Inflation Linked Corporate Bond Fund</strong></td>
+								<td>11.4%</td>
+								<td>16.0%</td>
+								<td>-8.5%</td>
+								<td>17.7%</td>
+								<td>43.9%</td>
+								<td>24.8%</td>
+							</tr>
+							<tr>
+								<td><strong><i class="fa fa-circle" style="color: #88232b"></i> IMA UK All Companies Sector</strong></td>
+								<td>10.8%</td>
+								<td>26.1%</td>
+								<td>-18.6%</td>
+								<td>27.8%</td>
+								<td>23.9%</td>
+								<td>33.4%</td>
+							</tr>
+							<tr>
+								<td><strong><i class="fa fa-circle" style="color: #9ea900"></i> FTSE All-Share Index</strong></td>
+								<td>11.3%</td>
+								<td>16.1%</td>
+								<td>-8.6%</td>
+								<td>17.8%</td>
+								<td>33.9%</td>
+								<td>34.8%</td>
+							</tr>
+						</tbody>
+						</table>
+						</div>
+					</div>
+					<p class="mgt-1--footnote" style="display: none">Past performance is not a guide to future performance.<br>Performance record rebased to 100 at 30 Nov 2010.<br>
+					Source: Morningstar. To be managed by <strong>Sitecore</strong></p>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>
+<br />
+
+<!-- 2nd WIDGET, PERFORMANCE CHART + OPTIONS -->
+<div class="demo-container-2">
+	<div class="mgt mgt-2">
+		<div class="mgt-2__tools mgt--creamtile">
+			<div class="mgt-2__tools--compare">
+			<label>Compare</label>
+			<input id="search-bar" type="text" placeholder="Search for Fund, Index, Category, ISIN" />
+			<a href="#" class="btn mgt-2__tools--add"><i class="fa fa-plus"></i></a>
+			</div>
+			<div class="mgt-2__tools--benchmark">
+				<label>Select</label>
+				<div class="mgt-2__tools--select">
+				<span class="mgt-2__tools--select--value" id="default-cat">Morningstar Category</span>
+				<select id="select-cat">
+					<option value="Morningstar Category">Morningstar Category</option>
+					<option value="Indices">Indices</option>
+					<option value="ABI Sector">ABI Sector</option>
+					<option value="IMA Sector">IMA Sector</option>
+				</select>
+				</div>
+				<div class="mgt-2__tools--select">
+				<span class="mgt-2__tools--select--value" id="default-item">value based on previous selection 01</span>
+				<select id="select-item">
+					<option value="value based on previous selection 01">value based on previous selection 01</option>
+					<option value="value based on previous selection 02">value based on previous selection 02</option>
+					<option value="value based on previous selection 03">value based on previous selection 03</option>
+					<option value="value based on previous selection 04">value based on previous selection 04</option>
+				</select>
+				</div>
+				<a href="#" class="btn mgt-2__tools--add"><i class="fa fa-plus"></i></a>
+			</div>
+		</div>
+		<div class="mgt-2__chart">
+			<div class="mgt-2__chart--tools clearfix">
+				<div class="pull-right mgt-2__chart--buttons clearfix">
+					<ul>
+					<li class="mgt-2__daterange"><label>Select a date range</label>&nbsp;&nbsp;&nbsp;<input type="text" id="mgt-2__range" placeholder="select a date range" value="26/02/2004 - 26/02/2014" /><i class="fa fa-calendar"></i></li>
+					<li class="mgt-2__bgroup">
+						<ul class="clearfix">
+							<li><a href="#">YTD</a></li><li><a href="#">1Y</a></li><li><a href="#">3Y</a></li><li><a href="#">5Y</a></li><li class="active"><a href="#">10Y</a></li><li><a href="#">ALL</a></li>
+						</ul>
+					</li>
+					</ul>
+				</div>
+			</div>
+			<div id="mgtchart02" class="mgt-2__chart"></div>
+		</div>
+		<div id="mgt-2__tabs" class="mgt-2__tabs mgt-2__table clearfix">
+		<ul class="clearfix">
+			<li><a href="#mgt-2__tabs-1">Year-on-Year Performance</a></li>
+			<li><a href="#mgt-2__tabs-2">Calendar Year Performance</a></li>
+			<li><a href="#mgt-2__tabs-3">Cumulative Performance</a></li>
+			<li><a href="#mgt-2__tabs-4">Risk Measure for the fund</a></li>
+		</ul>
+			<div id="mgt-2__tabs-1">
+			<table class="mgt-2__annualised">
+				<colgroup>
+					<col><col><col><col><col><col><col><col>
+				</colgroup>
+				<thead>
+					<tr>
+						<th>&nbsp;</th>
+						<th>&nbsp;</th>
+						<th>From<br>To</th>
+						<th class="mgt-2__table--value">31.12.12<br>30.12.13</th>
+						<th class="mgt-2__table--value">30.12.11<br>31.12.12</th>
+						<th class="mgt-2__table--value">30.12.10<br>30.12.11</th>
+						<th class="mgt-2__table--value">31.12.09<br>30.12.10</th>
+						<th class="mgt-2__table--value">31.12.08<br>30.12.09</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="mgt-2__table--fund mgt--bluetile">
+						<td class="mgt-2__table--legend">
+							<a href="#" class="mgt-2__table--toggle"><i class="fa fa-dot-circle-o"></i></a>
+						</td>
+						<td>M&amp;G European Inflation Linked Corporate Bond Fund</td>
+						<td>&nbsp;</td>
+						<td class="mgt-2__table--value">45,6%</td>
+						<td class="mgt-2__table--value">31,4%</td>
+						<td class="mgt-2__table--value">-9.9%</td>
+						<td class="mgt-2__table--value">3.4%</td>
+						<td class="mgt-2__table--value">0.7%</td>
+					</tr>
+					<tr class="mgt-2__table--benchmark">
+						<td class="mgt-2__table--legend" style="background-color: #52682F">
+							<a href="#" class="mgt-2__table--remove"><i class="fa fa-times"></i></a>
+							<a href="#" class="mgt-2__table--toggle"><i class="fa fa-dot-circle-o"></i></a>
+						</td>
+						<td>M&amp;G American C EUR</td>
+						<td>&nbsp;</td>
+						<td class="mgt-2__table--value">26.88%</td>
+						<td class="mgt-2__table--value">19.54%</td>
+						<td class="mgt-2__table--value">-5.54%</td>
+						<td class="mgt-2__table--value">17.12%</td>
+						<td class="mgt-2__table--value">24.85%</td>
+					</tr>
+					<tr class="mgt-2__table--benchmark">
+						<td class="mgt-2__table--legend" style="background-color: #892429">
+							<a href="#" class="mgt-2__table--remove"><i class="fa fa-times"></i></a>
+							<a href="#" class="mgt-2__table--toggle"><i class="fa fa-dot-circle-o"></i></a>
+						</td>
+						<td>IMA OE Absolute Return</td>
+						<td>&nbsp;</td>
+						<td class="mgt-2__table--value">-</td>
+						<td class="mgt-2__table--value">-</td>
+						<td class="mgt-2__table--value">-</td>
+						<td class="mgt-2__table--value">-</td>
+						<td class="mgt-2__table--value">-</td>
+					</tr>
+					<tr class="mgt-2__table--benchmark">
+						<td class="mgt-2__table--legend" style="background-color: #cc9933">
+							<a href="#" class="mgt-2__table--remove"><i class="fa fa-times"></i></a>
+							<a href="#" class="mgt-2__table--toggle"><i class="fa fa-dot-circle-o"></i></a>
+						</td>
+						<td>IMA OE Asia Pacific Excluding Japan</td>
+						<td>&nbsp;</td>
+						<td class="mgt-2__table--value">66.75%</td>
+						<td class="mgt-2__table--value">23.07%</td>
+						<td class="mgt-2__table--value">-12.72%</td>
+						<td class="mgt-2__table--value">15.42%</td>
+						<td class="mgt-2__table--value">5.63%</td>
+					</tr>
+				</tbody>
+			</table>
+			</div>
+			<div id="mgt-2__tabs-2">
+				<div class="mgt-2__asatdate">as at 31.01.2013</div>
+			<table class="mgt-2__cumulative">
+				<colgroup>
+					<col><col><col><col><col><col><col>
+				</colgroup>
+				<thead>
+					<tr>
+						<th>&nbsp;</th>
+						<th>&nbsp;<br>&nbsp;</th>
+						<th class="mgt-2__table--value">2012</th>
+						<th class="mgt-2__table--value">2011</th>
+						<th class="mgt-2__table--value">2010</th>
+						<th class="mgt-2__table--value">2009</th>
+						<th class="mgt-2__table--value">2008</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="mgt-2__table--fund mgt--bluetile">
+						<td class="mgt-2__table--legend">
+							<a href="#" class="mgt-2__table--toggle"><i class="fa fa-dot-circle-o"></i></a>
+						</td>
+						<td>M&amp;G European Inflation Linked Corporate Bond Fund</td>
+						<td class="mgt-2__table--value">9.34</td>
+						<td class="mgt-2__table--value">-16.9</td>
+						<td class="mgt-2__table--value">6.34</td>
+						<td class="mgt-2__table--value">14.32</td>
+						<td class="mgt-2__table--value">6.34</td>
+					</tr>
+					<tr class="mgt-2__table--benchmark">
+						<td class="mgt-2__table--legend" style="background-color: #52682F">
+							<a href="#" class="mgt-2__table--remove"><i class="fa fa-times"></i></a>
+							<a href="#" class="mgt-2__table--toggle"><i class="fa fa-dot-circle-o"></i></a>
+						</td>
+						<td>M&amp;G American C EUR</td>
+						<td class="mgt-2__table--value">9.54</td>
+						<td class="mgt-2__table--value">4.46</td>
+						<td class="mgt-2__table--value">7.12</td>
+						<td class="mgt-2__table--value">34.85</td>
+						<td class="mgt-2__table--value">6.34</td>
+					</tr>
+					<tr class="mgt-2__table--benchmark">
+						<td class="mgt-2__table--legend" style="background-color: #892429">
+							<a href="#" class="mgt-2__table--remove"><i class="fa fa-times"></i></a>
+							<a href="#" class="mgt-2__table--toggle"><i class="fa fa-dot-circle-o"></i></a>
+						</td>
+						<td>IMA OE Absolute Return</td>
+						<td class="mgt-2__table--value">-</td>
+						<td class="mgt-2__table--value">-</td>
+						<td class="mgt-2__table--value">-</td>
+						<td class="mgt-2__table--value">-</td>
+						<td class="mgt-2__table--value">-</td>
+					</tr>
+					<tr class="mgt-2__table--benchmark">
+						<td class="mgt-2__table--legend" style="background-color: #cc9933">
+							<a href="#" class="mgt-2__table--remove"><i class="fa fa-times"></i></a>
+							<a href="#" class="mgt-2__table--toggle"><i class="fa fa-dot-circle-o"></i></a>
+						</td>
+						<td>IMA OE Asia Pacific Excluding Japan</td>
+						<td class="mgt-2__table--value">33.07</td>
+						<td class="mgt-2__table--value">-22.72</td>
+						<td class="mgt-2__table--value">25.42</td>
+						<td class="mgt-2__table--value">15.63</td>
+						<td class="mgt-2__table--value">6.34</td>
+					</tr>
+				</tbody>
+			</table>
+			</div>
+			<div id="mgt-2__tabs-3">
+				<div class="mgt-2__asatdate">as at 31.01.2013</div>
+			<table class="mgt-2__cumulative">
+				<colgroup>
+					<col><col><col><col><col><col><col><col><col><col>
+				</colgroup>
+				<thead>
+					<tr>
+						<th>&nbsp;</th>
+						<th>&nbsp;</th>
+						<th class="mgt-2__table--value">1M</th>
+						<th class="mgt-2__table--value">3M</th>
+						<th class="mgt-2__table--value">6M</th>
+						<th class="mgt-2__table--value">1Y</th>
+						<th class="mgt-2__table--value">3Y</th>
+						<th class="mgt-2__table--value">5Y</th>
+						<th class="mgt-2__table--value">Annualised<br>(5 years)</th>
+						<th class="mgt-2__table--value">YTD</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="mgt-2__table--fund mgt--bluetile">
+						<td class="mgt-2__table--legend">
+							<a href="#" class="mgt-2__table--toggle"><i class="fa fa-dot-circle-o"></i></a>
+						</td>
+						<td>M&amp;G European Inflation Linked Corporate Bond Fund</td>
+						<td class="mgt-2__table--value">9.34</td>
+						<td class="mgt-2__table--value">-16.9</td>
+						<td class="mgt-2__table--value">6.34</td>
+						<td class="mgt-2__table--value">14.32</td>
+						<td class="mgt-2__table--value">6.34</td>
+						<td class="mgt-2__table--value">-16.9</td>
+						<td class="mgt-2__table--value">6.34</td>
+						<td class="mgt-2__table--value">14.32</td>
+					</tr>
+					<tr class="mgt-2__table--benchmark">
+						<td class="mgt-2__table--legend" style="background-color: #52682F">
+							<a href="#" class="mgt-2__table--remove"><i class="fa fa-times"></i></a>
+							<a href="#" class="mgt-2__table--toggle"><i class="fa fa-dot-circle-o"></i></a>
+						</td>
+						<td>M&amp;G American C EUR</td>
+						<td class="mgt-2__table--value">9.54</td>
+						<td class="mgt-2__table--value">4.46</td>
+						<td class="mgt-2__table--value">7.12</td>
+						<td class="mgt-2__table--value">34.85</td>
+						<td class="mgt-2__table--value">6.34</td>
+						<td class="mgt-2__table--value">-16.9</td>
+						<td class="mgt-2__table--value">6.34</td>
+						<td class="mgt-2__table--value">14.32</td>
+					</tr>
+					<tr class="mgt-2__table--benchmark">
+						<td class="mgt-2__table--legend" style="background-color: #892429">
+							<a href="#" class="mgt-2__table--remove"><i class="fa fa-times"></i></a>
+							<a href="#" class="mgt-2__table--toggle"><i class="fa fa-dot-circle-o"></i></a>
+						</td>
+						<td>IMA OE Absolute Return</td>
+						<td class="mgt-2__table--value">6.34</td>
+						<td class="mgt-2__table--value">-16.9</td>
+						<td class="mgt-2__table--value">6.34</td>
+						<td class="mgt-2__table--value">14.32</td>
+						<td class="mgt-2__table--value">-</td>
+						<td class="mgt-2__table--value">-</td>
+						<td class="mgt-2__table--value">-</td>
+						<td class="mgt-2__table--value">-</td>
+					</tr>
+					<tr class="mgt-2__table--benchmark">
+						<td class="mgt-2__table--legend" style="background-color: #cc9933">
+							<a href="#" class="mgt-2__table--remove"><i class="fa fa-times"></i></a>
+							<a href="#" class="mgt-2__table--toggle"><i class="fa fa-dot-circle-o"></i></a>
+						</td>
+						<td>IMA OE Asia Pacific Excluding Japan</td>
+						<td class="mgt-2__table--value">33.07</td>
+						<td class="mgt-2__table--value">-22.72</td>
+						<td class="mgt-2__table--value">25.42</td>
+						<td class="mgt-2__table--value">15.63</td>
+						<td class="mgt-2__table--value">6.34</td>
+						<td class="mgt-2__table--value">-16.9</td>
+						<td class="mgt-2__table--value">6.34</td>
+						<td class="mgt-2__table--value">14.32</td>
+					</tr>
+				</tbody>
+			</table>
+			</div>
+			<div id="mgt-2__tabs-4">
+			<table class="mgt-2__cumulative">
+				<colgroup>
+					<col><col><col><col><col><col>
+				</colgroup>
+				<thead>
+					<tr>
+						<th>&nbsp;</th>
+						<th>&nbsp;</th>
+						<th class="mgt-2__table--value"><abbr>Volatility <i class="fa fa-info-circle"></i><span><strong>Volatility:</strong> The degree to which a given security, fund, or index rapidly changes. It is calculated as the degree of deviation from the norm for that type of investment over a given time period. The higher the volatility, the riskier the security tends to be.</span></abbr></th>
+						<th class="mgt-2__table--value"><abbr>Sharpe Ratio <i class="fa fa-info-circle"></i><span><strong>Sharpe Ratio:</strong> A measure of risk-adjusted return. It is calculated by dividing the difference between the return of a given portfolio and the risk-free rate by the standard deviation of the portfolio returns. The risk-free rate is a hypothetical return of an investment with zero risk. The Sharpe ratio is useful to investors as it shows return (excess over the risk-free rate) per unit of risk or the adjustment of investment performance for the risk taken by the fund manager.</span></abbr></th>
+						<th class="mgt-2__table--value"><abbr>Beta <i class="fa fa-info-circle"></i><span><strong>Beta:</strong> A measure of the sensitivity of a portfolio’s or asset’s return relative to the return of the relevant index (usually the stockmarket’s main share index). A beta of less (more) than 1.0 would suggest lower (higher) volatility than the index. Investors look to higher beta investments for higher levels of risk relative to the index. Conversely, a lower beta investment suggests a lower level of risk and thus lower expected returns than the index.</span></abbr></th>
+						<th class="mgt-2__table--value"><abbr>Duration <i class="fa fa-info-circle"></i><span><strong>Duration:</strong> A measure of the sensitivity of a fixed income security, also called a bond, or bond fund to changes in interest rates. The longer a bond or bond fund’s duration, the more sensitive it is to interest rate movements.</span></abbr></th>
+					</tr>
+					<tr>
+						<th>&nbsp;</th>
+						<th>&nbsp;</th>
+						<th class="mgt-2__table--value">3Y</th>
+						<th class="mgt-2__table--value">3Y</th>
+						<th class="mgt-2__table--value">3Y</th>
+						<th class="mgt-2__table--value">3Y</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="mgt-2__table--fund mgt--bluetile">
+						<td class="mgt-2__table--legend">
+							<a href="#" class="mgt-2__table--toggle"><i class="fa fa-dot-circle-o"></i></a>
+						</td>
+						<td>M&amp;G European Inflation Linked Corporate Bond Fund</td>
+						<td class="mgt-2__table--value">xx%</td>
+						<td class="mgt-2__table--value">xx</td>
+						<td class="mgt-2__table--value">xx</td>
+						<td class="mgt-2__table--value">xx</td>
+					</tr>
+					<tr class="mgt-2__table--benchmark">
+						<td class="mgt-2__table--legend" style="background-color: #52682F">
+							<a href="#" class="mgt-2__table--remove"><i class="fa fa-times"></i></a>
+							<a href="#" class="mgt-2__table--toggle"><i class="fa fa-dot-circle-o"></i></a>
+						</td>
+						<td>M&amp;G American C EUR</td>
+						<td class="mgt-2__table--value">xx%</td>
+						<td class="mgt-2__table--value">xx</td>
+						<td class="mgt-2__table--value">xx</td>
+						<td class="mgt-2__table--value">xx</td>
+					</tr>
+					<tr class="mgt-2__table--benchmark">
+						<td class="mgt-2__table--legend" style="background-color: #892429">
+							<a href="#" class="mgt-2__table--remove"><i class="fa fa-times"></i></a>
+							<a href="#" class="mgt-2__table--toggle"><i class="fa fa-dot-circle-o"></i></a>
+						</td>
+						<td>IMA OE Absolute Return</td>
+						<td class="mgt-2__table--value">xx%</td>
+						<td class="mgt-2__table--value">xx</td>
+						<td class="mgt-2__table--value">xx</td>
+						<td class="mgt-2__table--value">xx</td>
+					</tr>
+					<tr class="mgt-2__table--benchmark">
+						<td class="mgt-2__table--legend" style="background-color: #cc9933">
+							<a href="#" class="mgt-2__table--remove"><i class="fa fa-times"></i></a>
+							<a href="#" class="mgt-2__table--toggle"><i class="fa fa-dot-circle-o"></i></a>
+						</td>
+						<td>IMA OE Asia Pacific Excluding Japan</td>
+						<td class="mgt-2__table--value">xx%</td>
+						<td class="mgt-2__table--value">xx</td>
+						<td class="mgt-2__table--value">xx</td>
+						<td class="mgt-2__table--value">xx</td>
+					</tr>
+				</tbody>
+			</table>
+			</div>
+		</div>
+
+
+
+		<div class="mgt-2--copyright clearfix"><a href="http://www.kurtosys.com" target="_blank" title="Kurtosys Systems | Beautiful Software"/><img src="_images/Kurtosys_logo_tinyalpha.png" target="_blank" class="pull-right" /></a></div>
+	</div>
+</div>
+</body>
+</html>

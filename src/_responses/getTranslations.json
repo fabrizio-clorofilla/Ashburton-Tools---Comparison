@@ -1,0 +1,375 @@
+{
+  "Tables": [
+    {
+      "Name": "Table1",
+      "RowCount": 91,
+      "FieldsCount": 2,
+      "Rows": [
+        {
+          "Key": "10Y",
+          "Value": "10Y"
+        },
+        {
+          "Key": "10yrs",
+          "Value": "10 years"
+        },
+        {
+          "Key": "1M",
+          "Value": "1M"
+        },
+        {
+          "Key": "1Y",
+          "Value": "1Y"
+        },
+        {
+          "Key": "3M",
+          "Value": "3M"
+        },
+        {
+          "Key": "3Y",
+          "Value": "3Y"
+        },
+        {
+          "Key": "3yrs",
+          "Value": "3 years"
+        },
+        {
+          "Key": "5Y",
+          "Value": "5Y"
+        },
+        {
+          "Key": "5yrs",
+          "Value": "5 years"
+        },
+        {
+          "Key": "6M",
+          "Value": "6M"
+        },
+        {
+          "Key": "ABISector",
+          "Value": "ABI Sector"
+        },
+        {
+          "Key": "ALL",
+          "Value": "ALL"
+        },
+        {
+          "Key": "annualised",
+          "Value": "Annualised"
+        },
+        {
+          "Key": "apr",
+          "Value": "Apr"
+        },
+        {
+          "Key": "april",
+          "Value": "April"
+        },
+        {
+          "Key": "asAt",
+          "Value": "as at"
+        },
+        {
+          "Key": "aug",
+          "Value": "Aug"
+        },
+        {
+          "Key": "august",
+          "Value": "August"
+        },
+        {
+          "Key": "benchmark",
+          "Value": "Benchmark"
+        },
+        {
+          "Key": "beta",
+          "Value": "Beta"
+        },
+        {
+          "Key": "betaTooltip",
+          "Value": "A measure of the sensitivity of a portfolio’s or asset’s return relative to the return of the relevant index (usually the stockmarket’s main share index). A beta of less (more) than 1.0 would suggest lower (higher) volatility than the index. Investors look to higher beta investments for higher levels of risk relative to the index. Conversely, a lower beta investment suggests a lower level of risk and thus lower expected returns than the index."
+        },
+        {
+          "Key": "calYr_Perf",
+          "Value": "Calendar Year Performance"
+        },
+        {
+          "Key": "category",
+          "Value": "Category"
+        },
+        {
+          "Key": "chartFootnote",
+          "Value": "Fund performance in the table is based on discrete years.<br>Where a market index or a peer group average is displayed in the performance chart or the table, this is expressed in the same currency as per the selected share class."
+        },
+        {
+          "Key": "compare",
+          "Value": "Compare"
+        },
+        {
+          "Key": "cum_perf",
+          "Value": "Annualised Performance"
+        },
+        {
+          "Key": "dec",
+          "Value": "Dec"
+        },
+        {
+          "Key": "decembre",
+          "Value": "December"
+        },
+        {
+          "Key": "duration",
+          "Value": "Duration"
+        },
+        {
+          "Key": "durationTooltip",
+          "Value": "A measure of the sensitivity of a fixed income security, also called a bond, or bond fund to changes in interest rates. The longer a bond or bond fund’s duration, the more sensitive it is to interest rate movements."
+        },
+        {
+          "Key": "ending",
+          "Value": "ending"
+        },
+        {
+          "Key": "error",
+          "Value": "Error"
+        },
+        {
+          "Key": "feb",
+          "Value": "Feb"
+        },
+        {
+          "Key": "february",
+          "Value": "February"
+        },
+        {
+          "Key": "for",
+          "Value": "for"
+        },
+        {
+          "Key": "from",
+          "Value": "From"
+        },
+        {
+          "Key": "fund",
+          "Value": "Fund"
+        },
+        {
+          "Key": "IMASector",
+          "Value": "Peer group average (IMA)"
+        },
+        {
+          "Key": "inceptionDateBelowMinimumPeriod",
+          "Value": "Not all items have performance history within selected date range. The chart is showing performance history since inception."
+        },
+        {
+          "Key": "index",
+          "Value": "Index"
+        },
+        {
+          "Key": "indexed100",
+          "Value": "Indexed to 100"
+        },
+        {
+          "Key": "indices",
+          "Value": "Market indices"
+        },
+        {
+          "Key": "ISIN",
+          "Value": "ISIN"
+        },
+        {
+          "Key": "jan",
+          "Value": "Jan"
+        },
+        {
+          "Key": "january",
+          "Value": "January"
+        },
+        {
+          "Key": "jul",
+          "Value": "Jul"
+        },
+        {
+          "Key": "july",
+          "Value": "July"
+        },
+        {
+          "Key": "jun",
+          "Value": "Jun"
+        },
+        {
+          "Key": "june",
+          "Value": "June"
+        },
+        {
+          "Key": "loading",
+          "Value": "Loading"
+        },
+        {
+          "Key": "mar",
+          "Value": "Mar"
+        },
+        {
+          "Key": "march",
+          "Value": "March"
+        },
+        {
+          "Key": "may",
+          "Value": "May"
+        },
+        {
+          "Key": "morningstarCategory",
+          "Value": "Peer group average (Morningstar)"
+        },
+        {
+          "Key": "msgBenchmarkSelected",
+          "Value": "This benchmark has already been selected."
+        },
+        {
+          "Key": "msgCategorySelected",
+          "Value": "This category has already been selected."
+        },
+        {
+          "Key": "msgItemsDroppedOff",
+          "Value": "Following items are dropped off from comparison list due to insufficient performance history."
+        },
+        {
+          "Key": "msgItemSelected",
+          "Value": "This item has already been selected."
+        },
+        {
+          "Key": "msgMaxItems",
+          "Value": "You can compare maximum 5 items. Please remove one of the items from the list before adding a new one."
+        },
+        {
+          "Key": "msgSectorSelected",
+          "Value": "This comparative sector has already been selected."
+        },
+        {
+          "Key": "msgShareClassSelected",
+          "Value": "This share class has already been selected."
+        },
+        {
+          "Key": "msgSinceInception",
+          "Value": "Not all items have performance history within selected date range. The chart is showing performance history since inception."
+        },
+        {
+          "Key": "next",
+          "Value": "Next"
+        },
+        {
+          "Key": "nov",
+          "Value": "Nov"
+        },
+        {
+          "Key": "november",
+          "Value": "November"
+        },
+        {
+          "Key": "oct",
+          "Value": "Oct"
+        },
+        {
+          "Key": "october",
+          "Value": "October"
+        },
+        {
+          "Key": "over",
+          "Value": "over"
+        },
+        {
+          "Key": "performance",
+          "Value": "Performance"
+        },
+        {
+          "Key": "performances",
+          "Value": "Performances"
+        },
+        {
+          "Key": "prev",
+          "Value": "Prev"
+        },
+        {
+          "Key": "riskMeasure",
+          "Value": "Risk Measure for the fund"
+        },
+        {
+          "Key": "search",
+          "Value": "Search"
+        },
+        {
+          "Key": "searchFund",
+          "Value": "Search for Fund, Index, Category, ISIN"
+        },
+        {
+          "Key": "sector",
+          "Value": "Sector"
+        },
+        {
+          "Key": "select",
+          "Value": "Select"
+        },
+        {
+          "Key": "selectDate",
+          "Value": "Select a date"
+        },
+        {
+          "Key": "selectDateRange",
+          "Value": "Select a date range"
+        },
+        {
+          "Key": "selectItem",
+          "Value": "Select an item"
+        },
+        {
+          "Key": "sep",
+          "Value": "Sep"
+        },
+        {
+          "Key": "september",
+          "Value": "September"
+        },
+        {
+          "Key": "sharpRatio",
+          "Value": "Sharp Ratio"
+        },
+        {
+          "Key": "sharpRatioTooltip",
+          "Value": "A measure of risk-adjusted return. It is calculated by dividing the difference between the return of a given portfolio and the risk-free rate by the standard deviation of the portfolio returns. The risk-free rate is a hypothetical return of an investment with zero risk. The Sharpe ratio is useful to investors as it shows return (excess over the risk-free rate) per unit of risk or the adjustment of investment performance for the risk taken by the fund manager."
+        },
+        {
+          "Key": "sinceInception",
+          "Value": "since inception"
+        },
+        {
+          "Key": "singleYr_Perf",
+          "Value": "Single year performance"
+        },
+        {
+          "Key": "to",
+          "Value": "To"
+        },
+        {
+          "Key": "totalReturn",
+          "Value": "Total Return"
+        },
+        {
+          "Key": "volatility",
+          "Value": "Volatility"
+        },
+        {
+          "Key": "volatilityTooltip",
+          "Value": "The degree to which a given security, fund, or index rapidly changes. It is calculated as the degree of deviation from the norm for that type of investment over a given time period. The higher the volatility, the riskier the security tends to be"
+        },
+        {
+          "Key": "YTD",
+          "Value": "YTD"
+        },
+        {
+          "Key": "YtoY_Perf",
+          "Value": "Year-to-Year Performance"
+        }
+      ]
+    }
+  ]
+}

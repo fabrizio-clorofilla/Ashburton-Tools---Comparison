@@ -1,0 +1,86 @@
+{
+  "Tables": [
+    {
+      "Name": "Table1",
+      "RowCount": 15,
+      "FieldsCount": 3,
+      "Rows": [
+        {
+          "Type": "C",
+          "Code": "Adviser",
+          "Title": "Adviser"
+        },
+        {
+          "Type": "C",
+          "Code": "BNP Paribas",
+          "Title": "BNP Paribas"
+        },
+        {
+          "Type": "C",
+          "Code": "Capital Rewards",
+          "Title": "Capital Rewards"
+        },
+        {
+          "Type": "C",
+          "Code": "Charities",
+          "Title": "Charities"
+        },
+        {
+          "Type": "C",
+          "Code": "Discretionary Wealth",
+          "Title": "Discretionary Wealth"
+        },
+        {
+          "Type": "C",
+          "Code": "End Investor",
+          "Title": "End Investor"
+        },
+        {
+          "Type": "C",
+          "Code": "France End Investor",
+          "Title": "France End Investor"
+        },
+        {
+          "Type": "C",
+          "Code": "France Institutional",
+          "Title": "France Institutional"
+        },
+        {
+          "Type": "C",
+          "Code": "France QI",
+          "Title": "France QI"
+        },
+        {
+          "Type": "C",
+          "Code": "Hong Kong investor",
+          "Title": "Hong Kong investor"
+        },
+        {
+          "Type": "C",
+          "Code": "Institutional",
+          "Title": "Institutional"
+        },
+        {
+          "Type": "C",
+          "Code": "Institutional Investors International",
+          "Title": "Institutional Investors International"
+        },
+        {
+          "Type": "C",
+          "Code": "International Investors",
+          "Title": "International Investors"
+        },
+        {
+          "Type": "C",
+          "Code": "Intesa Sanpaolo",
+          "Title": "Intesa Sanpaolo"
+        },
+        {
+          "Type": "C",
+          "Code": "Mediolanum",
+          "Title": "Mediolanum"
+        }
+      ]
+    }
+  ]
+}

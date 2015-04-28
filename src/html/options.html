@@ -1,0 +1,65 @@
+<script src="//mandgtools.kurtosysweb.com/_scripts/sdchart.widget.js"></script>
+
+<div class="mgt--intro">
+<h1><strong>M&amp;G Tools Creator</strong></h1>
+</div>
+
+<div class="ks-widget-sd ks-widget-sd-options" app="{}">
+	<div class="mgt--options__container" ng-controller="ConfigGeneratorController">
+		<div class="mgt--options__config">
+		<h2>Select a Fund</h2>
+			<div class="mgt--options__selectFund">
+			<select ui-select2 ng-model="selections.fund" data-placeholder="Select a fund">
+				<option value=""></option>
+				<option ng-repeat="elm in funds.dropdown" value="{{elm.v}}">{{elm.l}}<option>
+			</select>
+			</div>
+
+		<h2>Options</h2>
+			<div>
+			<h3 class="clearfix">Static Chart<a class="btn-generate pull-right" ng-click="stage('static')">Generate</a></h3>
+				<div class="clearfix">
+				<h4>Performance Type</h4>
+				<ul>
+				<li><input type="radio" name="perfType1" value="net" checked="" ng-model="selections.static.perftype">Net</li>
+				<li><input type="radio" name="perfType1" value="gross" ng-model="selections.static.perftype">Gross</li>	
+				</ul>
+				</div>
+			</div>
+			<div>
+			<h3 class="clearfix">Dynamic Chart<a class="btn-generate pull-right">Generate</a></h3>
+				<div class="divider clearfix">
+				<h4>Performance Type</h4>
+				<ul>
+					<li><input type="radio" name="perfType2" value="net" checked="">Net</li>
+					<li><input type="radio" name="perfType2" value="gross">Gross</li>
+				</ul>
+				</div>
+				<div class="divider clearfix">
+				<h4>Performance Tabs</h4>
+				<ul>
+					<li><input type="checkbox">Year To Year</li>
+					<li><input type="checkbox">Calendar Year</li>
+					<li><input type="checkbox">Cumulative</li>
+					<li><input type="checkbox">Risk Measure</li>
+				</ul>
+				</div>
+				<div class="clearfix">
+				<h4>Comparison Items</h4>
+				<ul>
+					<li><input type="checkbox">Morningstar Categories</li>
+					<li><input type="checkbox">Indices</li>
+					<li><input type="checkbox">ABI Sectors</li>
+					<li><input type="checkbox">IMA Sectors</li>
+				</ul>
+				</div>
+			</div>
+		</div>
+		<div class="mgt--options__code">
+			<pre data-item="static chart widget code">{{div.static}}</pre>
+			<div data-item="dynamic chart widget code">{{div.dynamic}}</div>
+		</div>
+	</div>
+
+	<div class="mgt-2--copyright clearfix" style="padding-right: 20px"><a href="http://www.kurtosys.com" target="_blank" title="Kurtosys Systems | Beautiful Software"/><img src="_images/Kurtosys_logo_tinyalpha.png" target="_blank" class="pull-right" /></a></div>
+</div>

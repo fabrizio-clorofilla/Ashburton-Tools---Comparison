@@ -1,0 +1,29 @@
+<script src="//mandgtools.kurtosysweb.com/_scripts/mandg.x1.widget.js"></script>
+<div class="intro">
+	<div class="logo" style="margin-left: auto;margin-right: auto;margin-top: 0px;width: 250px;">
+			<img style="-webkit-user-select: none;width: 250px;margin-left: auto;margin-right: auto;position: relative;" src="https://www.kurtosys.com/_images/kurtosys_logo.png">
+	</div>
+	<div style="margin-left: auto;margin-right: auto;margin-top: 20px; font: normal 36px/38px 'Interstate MG', Arial, Helvetica, sans-serif; font-weight: bold; color: #004f5c; text-align: center;">M&amp;G Tools Widgets</div>
+	<div style="margin-left: auto;margin-right: auto;margin-top: 0px; font: normal 18px/24px 'Interstate MG', Arial, Helvetica, sans-serif; font-weight: bold; color: #888888; text-align: center;">option page</div>
+
+	<!--
+	<p>To view the difference between full and half size, on the first widget only, simply click the button on the right.<a href="#" id="toggleColumn1" class="btn pull-right">Toggle View</a></p>
+-->
+</div>
+<div class="mandg-x1-container mandg-x1-options" app="{}">
+	<div ng-controller="ConfigGeneratorController" class="x1__config">
+		<div class="mgt-2__tools mgt--creamtile">
+			<div class="mgt-2__tools--benchmark">
+				<label>Select</label>
+				<div class="mgt-2__tools--select x1--selectDiv">
+				<span class="mgt-2__tools--select--value">Fund</span>
+				<select ng-options="elm.v as elm.l for elm in funds.dropdown" ng-model="selections.fund">
+					<option value="" class="">Fund</option>
+				</select>
+				</div>
+			</div>
+		</div>
+		<textarea ng-click="select()">{{div}}</textarea>
+		<button type="button" class="x1__search--submit" ng-click="stage()">Open Static Chart Widget</button>
+	</div>
+</div>

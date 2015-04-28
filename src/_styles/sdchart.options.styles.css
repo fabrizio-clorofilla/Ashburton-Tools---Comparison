@@ -1,0 +1,209 @@
+@charset "UTF-8";
+
+
+	body {
+		background-color: #f2f2f2;
+	}
+	.mgt--intro {
+		background-color: #fff;
+		font-family: sans-serif;
+		padding: 1em;
+		border-bottom: 1px dotted #2e515c;
+	}
+
+
+
+.mgt--options__container {
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 20px;
+	overflow: hidden;
+}
+	.mgt--options__container * {
+		font-family: sans-serif;
+		font-size: 14px;
+		font-style: normal;
+		line-height: 21px;
+		font-weight: normal;
+		padding: 0;
+		margin: 0;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	.mgt--options__container .mgt--options__config {
+		float: left;
+		width: 60%;
+	}
+	.mgt--options__container .mgt--options__code {
+		float: left;
+		width: 40%;
+	}
+	.mgt--options__container ul {
+		list-style-type: none;
+	}
+.mgt--options__config {
+	border-right: 1px solid #ccc;
+	overflow: hidden;
+}
+	.mgt--options__config h2 {
+		background-color: #004f5c;
+		color: #fff;
+		font-size: 1.5em;
+		font-weight: bold;
+		padding: 15px 20px;
+	}
+	.mgt--options__config h3 {
+		background-color: #9ea900;
+		color: #fff;
+		font-size: 1.35em;
+		font-weight: bold;
+		padding: 10px 20px;
+	}
+	.mgt--options__config h3 a {
+		font-size: .8em
+	}
+	.mgt--options__config h4 {
+		float: left;
+		width: 35%;
+		font-weight: bold;
+		padding: 10px 0;
+	}
+	.mgt--options__config > div {
+		margin-bottom: 1em
+	}
+	.mgt--options__selectParameters {
+		margin: 0 !important;
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-flex-flow: row nowrap;
+		-ms-flex-flow: row nowrap;
+		flex-flow: row nowrap;
+	}
+		.mgt--options__selectParameters > div {
+			width: 33%;
+			margin: 0 !important;
+			padding: 0 !important;
+			-webkit-box-flex: 1;
+			-webkit-flex: 1;
+			-ms-flex: 1;
+			flex: 1;
+		}
+	.mgt--options__config > div > div {
+		padding: 5px 20px 0 20px;
+	}
+	.mgt--options__config ul {
+		float: left;
+		width: 65%;
+		padding: 10px 0;
+		margin-bottom: 1em
+	}
+	.mgt--options__config ul li {
+		line-height: 1.5em;
+	}
+	.mgt--options__config input[type="radio"],
+	.mgt--options__config input[type="checkbox"] {
+		margin-right: .35em;
+	}
+	.mgt--options__config .divider {
+		border-bottom: 1px dashed #ccc;
+	}
+	.mgt--options__config .btn-generate,
+	.mgt--options__config .btn-generate:hover {
+		background-color: #004f5c;
+		color: #fff;
+		padding: .25em .75em;
+		border-radius: 5px;
+		cursor: pointer;
+	}
+.mgt--options__code {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-pack: start;
+	-webkit-justify-content: flex-start;
+	-ms-flex-pack: start;
+	justify-content: flex-start;
+	-webkit-box-align: stretch;
+	-webkit-align-items: stretch;
+	-ms-flex-align: stretch;
+	align-items: stretch;
+	-webkit-align-content: stretch;
+	-ms-flex-line-pack: stretch;
+	align-content: stretch;
+}
+	.mgt--options__code > pre {
+		position: relative;
+		min-height: 200px;
+		font-family: monospace;
+		padding: 2.5em 1.75em;
+		-webkit-box-flex: 1;
+		-webkit-flex-grow: 1;
+		-ms-flex: 1;
+		flex-grow: 1;
+		white-space: pre-line;
+		border-top: 1px dashed #ccc;
+}
+		.mgt--options__code > pre:first-child {
+			border-bottom: none;
+		}
+		.mgt--options__code > pre:after {
+			content: attr(data-item);
+			position: absolute;
+			top: 8px;
+			right: 8px;
+			background-color: #dcdcdc;
+			color: #999;
+			padding: .2em .5em;
+			border-radius: 5px;
+		}
+
+
+/* ----- Select2 ----- */
+.mgt--options__config div.mgt--options__selectFund {
+	padding: 0;
+	margin: 0;
+}
+.mgt--options__selectFund .select2-container {
+	width: 100%;
+	padding: 0;
+}
+.mgt--options__selectFund .select2-container .select2-choice {
+	height: 40px;
+	line-height: 40px;
+	padding: 8px 0 0 20px !important;
+	border-radius: 0;
+}
+.select2-container .select2-chosen {}
+.select2-search {font-family: sans-serif;}
+.select2-results .select2-result-label {
+	font-family: sans-serif;
+	border-bottom: 1px solid #ccc;
+	font-size: .863em;
+}
+.select2-arrow {width: 32px !important;}
+	.select2-arrow b {position: relative; background-image: none;}
+		.select2-arrow b:after {
+			content: "\f107";
+			position: absolute;
+			top: 8px;
+			right: 6px;
+			font-family: 'FontAwesome';
+			font-size: 2em;
+			display: inline-block;
+		}
+		.select2-results .select2-highlighted {background-color: #9ea900 !important;}
+.select2-container-active .select2-choice, 
+.select2-container-active .select2-choices {border: none;}
+#select2-drop > ul > li:last-child {
+    
+}
+
+.germany-only { display: none; }

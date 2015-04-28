@@ -1,0 +1,176 @@
+@charset "UTF-8";
+
+
+
+/* ----------------- TYPOGRAPHY -----------------
+Interstate MG font, served by Webtype
+ */
+
+
+
+/* ----------------- COLOR REFERENCE ----------------- */
+/* note: all colors can be used at 20,40,60,80% transparency */
+/* --------------------------------------------------- */
+/*
+-----PRIMARY
+._blue 					{ color: #004f5c }
+._green 				{ color: #9ea900 }
+-----EXTENDED
+._blueshadedark 		{ color: #004752 }
+._blueshademid 		{ color: #1c626c }
+._blueshadelight 		{ color: #669999 }
+._greenshadelight 		{ color: #cccc00 }
+._darkgrey 			{ color: #363636 }
+._lightgrey 			{ color: #cccccc }
+._almostwhite 			{ color: #f2f2f2 }
+-----SECONDARY
+._yellow 				{ color: #ffcc33 }
+._red 					{ color: #88232b }
+._cyan 					{ color: #42739b }
+._orange 				{ color: #cc9933 }
+._purple 				{ color: #4b4870 }
+._green2 				{ color: #52682f }
+*/
+
+/* striped backgrounds */
+.mgt--creamtile		{background: transparent url(../_images/vanilla_lightblue_tile.png) top left;}
+.mgt--bluetile			{background: #004f5c url(../_images/vanilla_dark_blue_tile.png) top left; color: #f2f2f2;}
+
+
+
+/* ----------------- RESET, HTML5 AND CLEARFIX ----------------- */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+.clearfix:before,
+.clearfix:after {content: " ";display: table}
+.clearfix:after {clear: both}
+/* For IE 6/7 only */
+.clearfix {*zoom: 1}
+button::-moz-focus-inner {
+	padding: 0;
+	border: 0
+}
+
+
+
+/* ----------------- IE7 ALERT ----------------- */
+.ie7alertbox {
+	background-color: #f90;
+	width: 100%;
+	padding: .25em;
+}
+
+
+
+/*--------------------------------------------*\
+sorry that the classes will end up being verbose
+but we need to be almost 100% sure they won't be
+overwritten by any other CSS on M&G sites or on
+their clients' ones.
+\*--------------------------------------------*/
+.mgt * {
+	/* Firefox 27.0.1 broke its own property, hence the comment
+	all: initial;
+	*/
+	font: normal 12px/18px 'Interstate MG', 'Interstate MG Light', Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+			box-sizing: border-box;
+	outline: none;
+	text-rendering:  geometricPrecision;
+}
+.mgt strong, .mgt b {
+	font-family: 'Interstate MG', 'Interstate MG Light', Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+.mgt .hide {
+	display: none;
+}
+
+
+
+/* ----------------- COMMON ----------------- */
+.mgt a,
+	.mgt a:hover {color: #2e515c; text-decoration: none; }
+	.mgt a img {border: none}
+.mgt .pull-left {float: left}
+.mgt .pull-right {float: right}
+.mgt .loading, .mgt.loading 
+{
+	-moz-opacity: 0.50 !important;
+	opacity:.5 !important;
+	filter: alpha(opacity=50) !important;
+	cursor: progress; 
+}
+.mgt .loading * {pointer-events: none;}
+.mgt .inactive {opacity: 0.5 !important; pointer-events: none; }
+.mgt [ng-click] {cursor: pointer;}
+
+
+
+/* ----------------- HEADINGS ----------------- */
+.mgt h1,.mgt h2,.mgt h3,.mgt h4,.mgt h5 {
+	font-weight: normal;
+	text-transform: inherit;
+	-webkit-font-feature-settings: "liga", "dlig";
+	-moz-font-feature-settings: "liga=1, dlig=1";
+	/* new syntax for Firefox 15+ */
+	-moz-font-feature-settings: "liga", "dlig";
+	-ms-font-feature-settings: "liga", "dlig";
+	-o-font-feature-settings: "liga", "dlig";
+	font-feature-settings: "liga", "dlig";
+}
+	.mgt h1,.mgt h1 strong,.mgt h1 b {
+		font: normal 36px/41px 'Interstate MG Light', Arial, Helvetica, sans-serif;
+		font-weight: normal;
+		color: #2e515c;
+	}
+	.mgt h2,.mgt h2 strong,.mgt h2 b {
+		font: normal 20px/25px 'Interstate MG Light', Arial, Helvetica, sans-serif;
+		font-weight: normal;
+		color: #2e515c;
+	}
+	.mgt h3,.mgt h3 strong,.mgt h3 b {
+		font: normal 13px/18px 'Interstate MG', 'Interstate MG Light', Arial, Helvetica, sans-serif;
+		font-weight: normal;
+		color: #2e515c;
+	}
+		.mgt h1 strong,.mgt h1 b,
+		.mgt h2 strong,.mgt h2 b,
+		.mgt h3 strong,.mgt h3 b {font-family: ; font-weight: bold}
+
+.mgt .intro {
+	font: normal 15px/20px 'Interstate MG Light', Arial, Helvetica, sans-serif;
+	font-weight: normal;
+}
+
+.mgt i[class^="fa "] {
+	font-family: 'FontAwesome' !important;
+	font-size: inherit;
+	/* if this affects performance, specify each .fa- in use instead of the generic class */
+}
+
+.mgt img {
+	display: inline;
+}
+
+/* ----------------- MAIN STRUCTURE ----------------- */
+.mgt > ul {
+	list-style-type: none;
+	position: relative;
+	width: 100%;
+	display: block;
+}
+	.mgt > ul > li {
+		position: relative;
+		width: 456px;
+		padding: 20px;
+		display: inline-block;
+		vertical-align: top
+	}
+
+

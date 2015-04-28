@@ -1,0 +1,163 @@
+/* ----------------- CHARTS ----------------- */
+.mgt-1__chart {}
+.mgt-1__chart--tooltip {
+	/* this style applies to Highcharts */
+	font-family: 'Interstate MG Light', Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	color: #fff;
+	padding: .5em 1em; /* IE8 */
+	padding: .375rem .75rem;;
+	/*box-shadow: 0 2px 4px #363636;*/
+	border: 1px solid #fff;
+}
+
+.mgt-1__chart--tooltip b {font-family: 'Interstate MG', 'Interstate MG Light', Arial, Helvetica, sans-serif; font-weight: bold}
+
+/* ----------------- TABLES ----------------- */
+.mgt-1__data {}
+.mgt-1__data table {
+	border-collapse: collapse;
+	width: 100%;
+	background-color: #f2f2f2;
+	border: 1px solid #2e515c;
+	border-top: none;
+}
+.mgt-1__data thead,
+.mgt-1__data tr.divider {
+	border-bottom: 1px solid #2e515c;
+}
+.mgt-1__data th,
+.mgt-1__data td strong,
+.mgt-1__data td b {font-family: 'Interstate MG', 'Interstate MG Light', Arial, Helvetica, sans-serif; font-weight: bold;}
+.mgt-1__data th,
+.mgt-1__data td {
+	text-align: right;
+	color: #2e515c;
+	line-height: 15px;
+	padding: .5em; /* IE8 */
+	padding: .375rem;
+}
+.mgt-1__data .hidden td {
+	text-align: right;
+	color: #ccc;
+	line-height: 15px;
+	padding: .5em; /* IE8 */
+	padding: .375rem;
+}
+.mgt-1__data tr th:first-child,
+.mgt-1__data tr td:first-child {
+	width: 110px;
+	text-align: left;
+	padding: .45em 0 .45em .45em; /* IE8 */
+	padding: .34rem 0 0.34rem 0.34rem;
+}
+.mgt-1__data tbody tr {
+	border-top: 1px solid #ccc;
+}
+	.mgt-1__data .mgt-1__data--dateFrom,
+	.mgt-1__data .mgt-1__data--dateTo,
+	.mgt-1__data .mgt-1__data--fund {
+		border-top: none;
+	}
+.mgt-1__data .mgt-1__data--dateFrom td {
+	padding: .5em .5em .25em .5em; /* IE8 */
+	padding: .375rem .375rem .19rem .375rem
+}
+.mgt-1__data .mgt-1__data--dateTo td {
+	padding: .25em .5em .5em .5em; /* IE8 */
+	padding: .19rem .375rem .375rem .375rem
+}
+
+.mgt-1__data .mgt-1__data--fund {
+	background-color: #2e515c
+}
+
+.mgt-1__data .hidden {
+	color: #ccc;
+}
+
+.mgt-1__data .mgt-1__data--fund td {color: #fff}
+.mgt-1__data tfoot {background-color: #2e515c}
+	.mgt-1__data tfoot td {color: #fff}
+
+.mgt-1__data .fa {
+	font-family: 'FontAwesome' !important;
+}
+
+/* ----------------- CONTENT ----------------- */
+
+.mgt-1--footnote {
+	padding: .5em 0; /* IE8 */
+	padding: .375rem 0;
+	margin: 0 !important;
+	font-size: 12px !important;
+	line-height: 14px !important;
+}
+.mgt-1--up {color: #52682f;}
+.mgt-1--down {color: #88232b;}
+
+
+
+/* JQUERYUI TABS */
+.mgt-1__tabs {
+
+}
+.mgt-1__tabs > ul {
+	list-style-type: none;
+	display: inline-block;
+	margin-top: 8px;
+}
+.mgt-1__tabs > ul > li {
+	float: left;
+	display: inline-block
+}
+.mgt-1__tabs > ul > li > a,
+.mgt-1__tabs > ul > li > a:hover {
+	background-color: #eeefd1;
+	color: #004f5c;
+	padding: 0.6em .75em;
+	border-style: solid solid none solid;
+	border-width: 2px;
+	border-color: #fff;
+}
+.mgt-1__tabs > ul > li.tab-active > a {
+	background-color: #9ea900;
+	color: #fff;
+	border-color: #9ea900;
+}
+.mgt-1 div[id^="mgt-1__tabs-"] {
+	border-top: 5px solid #9ea900;
+}
+.mgt-1 .error {
+	margin-left: 20px;
+	margin-top: 20px;
+	color: red;
+}
+.mgt-1 .error > p {
+	padding-bottom: 10px;
+}
+
+.mgt-1 .loading {
+	background-color: #fff;
+	text-align: center;
+	z-index: 9999;
+}
+
+ /* ----------------- FLASHING MESSAGES ----------------- */
+
+ .mgt-1__chart--messages {
+ 	position: absolute;
+ 	top: 30%;
+ 	left: 50%;
+ 	background-color: #fcf8e3;
+ 	padding: 1.5em 2em !important;
+ 	border: 1px solid #ccc;
+ 	box-shadow: 0 0 10px #ccc;
+ 	width: 380px;
+ 	margin-left: -190px !important;
+ 	text-align: center;
+ }
+
+ .ks-widget-sd-entrycharge {
+ padding: 0px 20px 20px 20px;
+ }
