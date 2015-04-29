@@ -32,6 +32,11 @@
 	background-color: #F1F1F2;
 	/*border-bottom: 1px solid #DBDBDC;*/
 }
+@media print {
+	.mgt-2__tools {
+		display: none;
+	}
+}
 .mgt-2__tools--compare,
 .mgt-2__tools--benchmark {padding: 18px;}
 .mgt-2__tools--compare {}
