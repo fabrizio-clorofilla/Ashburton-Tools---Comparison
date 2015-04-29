@@ -18,7 +18,7 @@ function SDCHART_STATIC_CONFIG() {
     fundsDetails: '43a4b941-75ac-4370-afd1-dfbbd47d1e60',
     performanceChart: 'fec3d399-16cd-47cc-8744-d3079cbabd0d',//'558a02e4-43a3-47f2-a2ff-9927070058d3',
     // performanceChart: '558a02e4-43a3-47f2-a2ff-9927070058d3',
-    performanceTabs: 'b2aa1285-1e09-423e-9aef-9fe9eaf6b289', 
+    performanceTabs: 'b2aa1285-1e09-423e-9aef-9fe9eaf6b289',
     fundsList: 'bcdd341b-16f3-45d4-9c6d-56d24160e226',
     translations: '2bde98b3-d9bb-4a24-8de2-9cb1e2aee34c',
     // OPTIONS PAGE DATASOURCES
@@ -271,11 +271,11 @@ function SDCHART_STATIC_CONFIG() {
       formatter: function () {
         if(this.series.data.indexOf(this.point)==0) {
           return '<div style="background-color:' + this.series.color + '" class="mgt-1__chart--tooltip"><b>' + this.series.options.ext_name + '</b><br>' + moment(this.x).add(1,'day').format('DD-MMM-YYYY') + ', ' + numeral(this.y).format('0.00') + '</div>';
-        } 
+        }
         else{
           return '<div style="background-color:' + this.series.color + '" class="mgt-1__chart--tooltip"><b>' + this.series.options.ext_name + '</b><br>' + moment(this.x).format('DD-MMM-YYYY') + ', ' + numeral(this.y).format('0.00') + '</div>';
         }
-       
+
       }
     },
     legend: {
@@ -326,7 +326,7 @@ function SDCHART_DYNAMIC_CONFIG() {
     fundsDetails: '43a4b941-75ac-4370-afd1-dfbbd47d1e60',
     performanceChart: 'fec3d399-16cd-47cc-8744-d3079cbabd0d',//'558a02e4-43a3-47f2-a2ff-9927070058d3',
     // performanceChart: '558a02e4-43a3-47f2-a2ff-9927070058d3',
-    performanceTabs: 'b2aa1285-1e09-423e-9aef-9fe9eaf6b289', 
+    performanceTabs: 'b2aa1285-1e09-423e-9aef-9fe9eaf6b289',
     fundsList: 'bcdd341b-16f3-45d4-9c6d-56d24160e226',
     translations: '2bde98b3-d9bb-4a24-8de2-9cb1e2aee34c',
     // OPTIONS PAGE DATASOURCES
@@ -531,9 +531,9 @@ function SDCHART_DYNAMIC_CONFIG() {
   };
 
   this.minimumInceptionDate = 365; // In days
-  
+
   this.chartDataFrequency = 'monthly'; // options: monthly/weekly/daily
-  
+
   this.Chart = {
     chart: {
       renderTo: '',
@@ -632,7 +632,7 @@ function SDCHART_DYNAMIC_CONFIG() {
       formatter: function () {
         if(this.series.data.indexOf(this.point)==0) {
           return '<div style="background-color:' + this.series.color + '" class="mgt-1__chart--tooltip"><b>' + this.series.options.ext_name + '</b><br>' + moment(this.x).add(1,'day').format('DD-MMM-YYYY') + ', ' + numeral(this.y).format('0.00') + '</div>';
-        } 
+        }
         else{
           return '<div style="background-color:' + this.series.color + '" class="mgt-1__chart--tooltip"><b>' + this.series.options.ext_name + '</b><br>' + moment(this.x).format('DD-MMM-YYYY') + ', ' + numeral(this.y).format('0.00') + '</div>';
         }

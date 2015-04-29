@@ -2,9 +2,36 @@
 
 
 
-/* ----------------- TYPOGRAPHY -----------------
-Interstate MG font, served by Webtype
- */
+/* ----------------- TYPOGRAPHY ----------------- */
+@font-face {
+	font-family: 'Helvetica Neue Ultra Light';
+	src: url('../_files/HelveticaNeueLTPro-UltLt.eot');
+	src: local('☺'),
+		url('../_files/HelveticaNeueLTPro-UltLt.eot?#iefix') format('embedded-opentype'),
+		url('../_files/HelveticaNeueLTPro-UltLt.woff') format('woff'),
+		url('../_files/HelveticaNeueLTPro-UltLt.ttf')  format('truetype'),
+		url('../_files/HelveticaNeueLTPro-UltLt.svg#svgHelveticaNeueLTPro-UltLt') format('svg');
+}
+@font-face {
+	font-family: 'Nexa Light';
+	src: url('../_files/nexa_light-webfont.eot');
+	src: local('☺'),
+		url('../_files/nexa_light-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../_files/nexa_light-webfont.woff2') format('woff2'),
+		url('../_files/nexa_light-webfont.woff') format('woff'),
+		url('../_files/nexa_light-webfont.ttf')  format('truetype'),
+		url('../_files/nexa_light-webfont.svg#svgnexa_light-webfont') format('svg');
+}
+@font-face {
+	font-family: 'Nexa Bold';
+	src: url('../_files/nexa_bold-webfont.eot');
+	src: local('☺'),
+		url('../_files/nexa_bold-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../_files/nexa_bold-webfont.woff2') format('woff2'),
+		url('../_files/nexa_bold-webfont.woff') format('woff'),
+		url('../_files/nexa_bold-webfont.ttf')  format('truetype'),
+		url('../_files/nexa_bold-webfont.svg#svgnexa_bold-webfont') format('svg');
+}
 
 
 
@@ -72,15 +99,12 @@ their clients' ones.
 	/* Firefox 27.0.1 broke its own property, hence the comment
 	all: initial;
 	*/
-	font: normal 12px/18px Arial, Helvetica, sans-serif;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
 	font-weight: normal;
-	margin: 0;
-	padding: 0;
-	-webkit-box-sizing: border-box;
-	   -moz-box-sizing: border-box;
-			box-sizing: border-box;
+	line-height: 18px;
 	outline: none;
-	text-rendering:  geometricPrecision;
+	/*text-rendering:  geometricPrecision;*/
 }
 .mgt strong, .mgt b {
 	font-family: Arial, Helvetica, sans-serif;
