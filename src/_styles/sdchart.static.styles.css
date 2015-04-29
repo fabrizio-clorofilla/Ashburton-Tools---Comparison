@@ -2,7 +2,7 @@
 .mgt-1__chart {}
 .mgt-1__chart--tooltip {
 	/* this style applies to Highcharts */
-	font-family: 'Interstate MG Light', Arial, Helvetica, sans-serif;
+	font-family: Arial, Helvetica, sans-serif;
 	font-weight: normal;
 	color: #fff;
 	padding: .5em 1em; /* IE8 */
@@ -11,7 +11,7 @@
 	border: 1px solid #fff;
 }
 
-.mgt-1__chart--tooltip b {font-family: 'Interstate MG', 'Interstate MG Light', Arial, Helvetica, sans-serif; font-weight: bold}
+.mgt-1__chart--tooltip b {font-family: Arial, Helvetica, sans-serif; font-weight: bold}
 
 /* ----------------- TABLES ----------------- */
 .mgt-1__data {}
@@ -28,7 +28,7 @@
 }
 .mgt-1__data th,
 .mgt-1__data td strong,
-.mgt-1__data td b {font-family: 'Interstate MG', 'Interstate MG Light', Arial, Helvetica, sans-serif; font-weight: bold;}
+.mgt-1__data td b {font-family: Arial, Helvetica, sans-serif; font-weight: bold;}
 .mgt-1__data th,
 .mgt-1__data td {
 	text-align: right;

@@ -1,7 +1,7 @@
 <div class="mgt mgt-2" ng-controller="MainController" height-calc="test">
 <div class="error" ng-show="isError()"><p ng-repeat="error in getError()">ERROR: {{error}}</p></div>
 <div class="loading" ng-show="isLoading() && DataService.status.fundAdded"><div><img ng-src="__DEPLOYMENTURL__/_images/ajax-loader.gif"><br />{{'loading' | translate | uppercase}}</div></div>
-	<div class="mgt-2__tools mgt--creamtile" ng-controller="SearchController" ng-show="!isLoading('init') || !DataService.status.fundAdded">
+	<div class="mgt-2__tools" ng-controller="SearchController" ng-show="!isLoading('init') || !DataService.status.fundAdded">
 		<div class="mgt-2__tools--compare" ng-show="!isLoading('init') && DataService.status.fundAdded">
 		<label ng-bind="'compare' | translate | capitalize"></label>
 		<input id="search-bar" autocomplete="off" type="text" ng-model="selections.item.typeahead" typeahead="item as item.Typeahead for item in results.searchList | filter:$viewValue | filter:filterInitList()" class="form-control" placeholder="{{searchBarPlaceholder}}" ng-click="selections.item.typeahead=''" ng-enter>
@@ -32,9 +32,24 @@
 	<div class="mgt-2__noFundMsg" ng-show="!DataService.status.fundAdded"><p><i class="fa fa-arrow-up"></i>Please select a fund from the Compare list to start the tool.</p></div>
 	<div class="mgt-2__chart" ng-controller="ChartController" ng-show="!isLoading('init') && DataService.status.fundAdded">
 		<div class="mgt-2__chart--tools clearfix" chart-tools>
+		<ul class="mgt-2__chart--buttons">
+		    <li class="mgt-2__daterange"><label ng-bind="'selectDateRange' | translate | capitalize"></label>&nbsp;&nbsp;&nbsp;<div class="mgt-2__daterange" ng-class="{active: PeriodSelector.Data.plot.period.label == 'DatePicker'}" ks-datepicker-model="DatePicker" min-date="{{PeriodSelector.Data.list.DatePicker.from | momentToString: 'YYYY-MM-DD'}}" max-date="" start-date="{{PeriodSelector.Data.plot.period.from | momentToString: 'DD/MM/YYYY'}}" end-date="{{PeriodSelector.Data.plot.period.to | momentToString: 'DD/MM/YYYY'}}" min-daterange="90" lang="{{DataService.lang}}" ks-datepicker ng-if="!isLoading('init')"></div></li>
+		    <li class="mgt-2__bgroup">
+		    	<ul class="clearfix">
+		    		<li ng-class="{unavailable: !PeriodSelector.Data.list['1Y'].available, active: PeriodSelector.Data.plot.period.label == '1Y'}" ng-click="setPeriodToPlot('1Y')" ng-init="addPeriod('1Y')" ng-bind="'1Y' | translate | uppercase"></li>
+		    		<li ng-class="{unavailable: !PeriodSelector.Data.list['3Y'].available, active: PeriodSelector.Data.plot.period.label == '3Y'}" ng-click="setPeriodToPlot('3Y')" ng-init="addPeriod('3Y')" ng-bind="'3Y' | translate | uppercase"></li>
+		    		<li ng-class="{unavailable: !PeriodSelector.Data.list['5Y'].available, active: PeriodSelector.Data.plot.period.label == '5Y'}" ng-click="setPeriodToPlot('5Y')" ng-init="addPeriod('5Y')" ng-bind="'5Y' | translate | uppercase"></li>
+		    		<li ng-class="{unavailable: !PeriodSelector.Data.list['ALL'].available, active: PeriodSelector.Data.plot.period.label == 'ALL'}" ng-click="setPeriodToPlot('ALL')" ng-init="addPeriod('ALL')" ng-bind="'ALL' | translate | uppercase"></li>
+		    	</ul>
+		    </li>
+		    <li ng-click="exportToExcel()"><a>Export to Excel <i class="fe2--icon-file-excel"></i></a></li>
+		    <li ng-click="printScreen()"><a>Print data sheet <i class="fe2--icon-print"></i></a></li>
+		</ul>
+
+		<!--
 			<div class="pull-right mgt-2__chart--buttons clearfix">
 				<ul>
-				<!--<li class="mgt-2__daterange"><label ng-bind="'selectDateRange' | translate | capitalize"></label>&nbsp;&nbsp;&nbsp;<div class="mgt-2__daterange" ng-class="{active: PeriodSelector.Data.plot.period.label == 'DatePicker'}" ks-datepicker-model="DatePicker" min-date="{{PeriodSelector.Data.list.DatePicker.from | momentToString: 'YYYY-MM-DD'}}" max-date="" start-date="{{PeriodSelector.Data.plot.period.from | momentToString: 'DD/MM/YYYY'}}" end-date="{{PeriodSelector.Data.plot.period.to | momentToString: 'DD/MM/YYYY'}}" min-daterange="90" lang="{{DataService.lang}}" ks-datepicker ng-if="!isLoading('init')"></div></li>-->
+				<li class="mgt-2__daterange"><label ng-bind="'selectDateRange' | translate | capitalize"></label>&nbsp;&nbsp;&nbsp;<div class="mgt-2__daterange" ng-class="{active: PeriodSelector.Data.plot.period.label == 'DatePicker'}" ks-datepicker-model="DatePicker" min-date="{{PeriodSelector.Data.list.DatePicker.from | momentToString: 'YYYY-MM-DD'}}" max-date="" start-date="{{PeriodSelector.Data.plot.period.from | momentToString: 'DD/MM/YYYY'}}" end-date="{{PeriodSelector.Data.plot.period.to | momentToString: 'DD/MM/YYYY'}}" min-daterange="90" lang="{{DataService.lang}}" ks-datepicker ng-if="!isLoading('init')"></div></li>
 				<li class="mgt-2__bgroup">
 					<ul class="clearfix">
 						<li ng-class="{unavailable: !PeriodSelector.Data.list['YTD'].available, active: PeriodSelector.Data.plot.period.label == 'YTD'}" ng-click="setPeriodToPlot('YTD')" ng-init="addPeriod('YTD')" ng-bind="'YTD'"></li>
@@ -47,6 +62,8 @@
 				</li>
 				</ul>
 			</div>
+		-->
+
 		</div>
 		<div class="mgt-2__chart" linechart></div>
 		<div class="mgt-2__chart--messages" ks-flashing-message status="{{MessageHandler.status}}"></div>
@@ -59,5 +76,8 @@
 			<div perf-tab ng-repeat="tab in tabs" type="{{tab.type}}" index="{{tab.id}}" ng-show="tab.visibility"></div>
 	</div>
 
+	<!--
 	<div class="mgt-2--copyright clearfix" ng-show="!isLoading('init') || !DataService.status.fundAdded"><p class="mgt-2--footnote" ng-show="DataService.status.fundAdded" ng-bind-html="'chartFootnote' | translate"></p><a href="http://www.kurtosys.com" target="_blank" title="Kurtosys Systems | Beautiful Software"/><img src="__DEPLOYMENTURL__/_images/Kurtosys_logo_tinyalpha.png" target="_blank" class="pull-right" /></a></div>
+	-->
+
 </div>

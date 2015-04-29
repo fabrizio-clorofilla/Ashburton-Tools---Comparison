@@ -2,14 +2,11 @@
 .ks-widget-sd-dynamic {
 		background-color: #fff;
 		width: 912px;
-		/*margin: 50px auto;*/
 		-webkit-transition: .5s;
 		   -moz-transition: .5s;
 				transition: .5s;
-		/*box-shadow: 0 0 15px #ccc;*/
 }
 .mgt-2 {
-	border: 1px solid #ccc;
 	position: relative;
 	min-height: 250px;
 }
@@ -241,7 +238,7 @@
 		-webkit-transition: .4s;
 		transition: .4s;
 		}
-		
+
 		.mgt-2__bgroup ul li:hover {
 			background-color: #f2f2f2;
 			-webkit-box-shadow: none;
@@ -394,7 +391,7 @@
 					display: inline-block;
 				}
 
-/* JQUERY UI STYLE 
+/* JQUERY UI STYLE
 	.mgt-2 .mgt-2__table .ui-tabs-nav {
 		list-style-type: none;
 		background-color: #fff;
@@ -653,7 +650,7 @@ text-align: center;
 	border: 1px solid #aaa;
 	border-top: 0;
 	background: #fff;
-	box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);  
+	box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
 	overflow-x: hidden;
 	overflow-y: auto;
 	margin: 0 4px 4px 0;
@@ -720,7 +717,7 @@ text-align: center;
 			display: inline-block;
 		}
 		.select2-results .select2-highlighted {background-color: #26abe2 !important;}
-.select2-container-active .select2-choice, 
+.select2-container-active .select2-choice,
 .select2-container-active .select2-choices {border: none;}
 
 
@@ -973,7 +970,7 @@ text-align: center;
  	border-radius: 2px;
  	text-decoration: none !important;
  }
-  .ui-datepicker-calendar th, 
+  .ui-datepicker-calendar th,
   .ui-datepicker-calendar td {
  	font-size: .9rem;
  	font-size: .9em;

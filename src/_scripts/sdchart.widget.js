@@ -21,7 +21,7 @@ var WL_HOST = '//localhost:9002';
 
 // devcode: production
 var WL_CSSFILES = [
-	'//cloud.webtype.com/css/a48c2f3e-f82c-4747-9c4a-630b03dcbcb8.css',
+//	'//cloud.webtype.com/css/a48c2f3e-f82c-4747-9c4a-630b03dcbcb8.css',
 	WL_HOST+"/_styles/ks.sdchart.styles.css"
 ];
 var WL_JSFILES = [
@@ -31,7 +31,7 @@ var WL_JSFILES = [
 
 // devcode: development
 var WL_CSSFILES = [
-	'//cloud.webtype.com/css/a48c2f3e-f82c-4747-9c4a-630b03dcbcb8.css',
+//	'//cloud.webtype.com/css/a48c2f3e-f82c-4747-9c4a-630b03dcbcb8.css',
 	WL_HOST+'/_styles/lib/font-awesome.min.css',
 	WL_HOST+'/_styles/lib/select2.css',
 	WL_HOST+'/_styles/sdchart.common.styles.css',
@@ -93,7 +93,7 @@ window.LoadJQueryUI = function(){
 		    document.body.appendChild(jQueryUITag);
 		}
 	}, 0);
-}	
+}
 
 window.LoadTranslations = function() {
 	setTimeout(function() {
@@ -109,7 +109,7 @@ window.LoadTranslations = function() {
 
 		$.getJSON(url + "&callback=?", null, function(response) {
 			if(typeof response == "string" && response.toLowerCase().indexOf('error')!=-1){
-			  
+
 			}
 			else{
 		    var aRawTranslations = response.Tables[0].Rows;
@@ -128,7 +128,7 @@ window.LoadAngular = function() {
 		//console.log('ang')
 		var angularTag = document.createElement('SCRIPT');
 		angularTag.type = 'text/javascript';
-		
+
 		// angularTag.src = '//ajax.googleapis.com/ajax/libs/angularjs/'+NG_VERSION+'/angular.js';
 		// angular 1.2.1 cannot handle XD ajax requests on IE8/9. Created a new fork from that version and updated with XDR request
 		// https://github.com/angular/angular.js/pull/1047#issuecomment-25023290
@@ -147,7 +147,7 @@ window.LoadAngular = function() {
 			angularTag.addEventListener("load",function() {
 					LoadWidget();
 				},false);
-			} 
+			}
 		else if(angularTag.readyState) {
 			angularTag.onreadystatechange = function() {
 				if (this.readyState == 'complete' || this.readyState == 'loaded') {
@@ -173,7 +173,7 @@ if(typeof jQuery=='undefined') {
 				window.LoadJQueryUI();
 				window.LoadTranslations();
 			},false);
-		} 
+		}
 		else if(jqTag.readyState) {
 			//console.log('readyState')
 			jqTag.onreadystatechange = function() {
@@ -187,7 +187,7 @@ if(typeof jQuery=='undefined') {
 		document.body.appendChild(jqTag);
 	}, 0);
 
-} 
+}
 else {
   window.LoadJQueryUI();
   window.LoadTranslations();
@@ -196,7 +196,7 @@ else {
 LoadWidget = function() {
 
 	//console.log('widget')
-	
+
 	var loadJS = {
 		idx: -1,
 		success: function() {
@@ -214,7 +214,7 @@ LoadWidget = function() {
 				angular.bootstrap(document, [WL_APPNAME]);
 			}
 
-			
+
 		},
 		load: function(jsfiles){
 
@@ -222,7 +222,7 @@ LoadWidget = function() {
 
 			//console.log('loading', jsfiles);
 			if(typeof jsfiles == 'string') {
-				
+
 
 				if(loadJS.idx <= loadJS.jsfiles.length) {
 
@@ -239,7 +239,7 @@ LoadWidget = function() {
 								loadJS.load(loadJS.jsfiles[loadJS.idx]);
 							}
 						},false);
-					} 
+					}
 					else if(jqTag.readyState) {
 						jqTag.onreadystatechange = function() {
 							if (this.readyState == 'complete' || this.readyState == 'loaded') {
@@ -262,7 +262,7 @@ LoadWidget = function() {
 
 				}
 
-				
+
 			} else {
 				////console.log('arr')
 				loadJS.jsfiles = jsfiles;

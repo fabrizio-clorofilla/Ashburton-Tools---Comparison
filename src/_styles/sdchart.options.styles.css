@@ -200,10 +200,10 @@
 			display: inline-block;
 		}
 		.select2-results .select2-highlighted {background-color: #9ea900 !important;}
-.select2-container-active .select2-choice, 
+.select2-container-active .select2-choice,
 .select2-container-active .select2-choices {border: none;}
 #select2-drop > ul > li:last-child {
-    
+
 }
 
 .germany-only { display: none; }

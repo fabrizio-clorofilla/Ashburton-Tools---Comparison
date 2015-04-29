@@ -1,0 +1,140 @@
+// JPM BRAND
+//---------------------------------------------------------------------------------
+// TABLE OF CONTENTS
+//
+// 1. Colours
+// 2. Typography
+// 3. Fun
+//
+//--------------------------------------------------------------------------------
+
+//---------------------------------------------
+// COLOURS
+//----- Primary -----
+@c-claret:			#B10F3A;
+@c-slate:			#707273;
+@c-black:			#000000;
+//----- Secondary -----
+@c-yellow:		#F79C31;
+@c-orange:		#F0652F;		// Portfolio Management Services
+@c-coral:			#ED5070;
+@c-purple:		#665AA4;		// Multi Manager
+@c-blue:			#199FDA;		// Single Manager
+@c-teal:			#1BABBC;
+@c-green:			#65B94D;		// Alternatives
+//----- Greys -----
+@c-text: 			@c-black;
+@c-text-lighter: 	@c-slate;
+@c-grey1:			#DBDBDC; 	// borders
+@c-grey2:			#C0C2C2; 	// panels background, zebra table
+@c-grey3:			#F1F1F2; 		// zebra table
+@c-bg: 			#FFF;			// as variable for quick change
+//----- Utilities -----
+@c-red: 			#F00;			// errors
+
+// RGBA Mixin
+.rgbaColorIn(@color, @opacity: 1) {
+	@result: rgba(red(@color), green(@color), blue(@color), @opacity);
+}
+// alternate method: use the fade function
+// example:
+// background-color: fade(@c-grey_dark, 50%);
+
+
+
+
+//---------------------------------------------
+// TYPOGRAPHY
+// .eot			IE9 Compact Modes
+// .eot?#iefix	IE6-IE8
+// .woff2		Super Modern Browsers
+// .woff			Modern Browsers
+// .ttf			Safari, Android, iOS
+// .svg			Legacy iOS, Print service
+
+@font-path: ~"../_files/";
+
+@font-face {
+	font-family: 'Helvetica Neue Ultra Light';
+	src: ~"url('@{font-path}HelveticaNeueLTPro-UltLt.eot')";
+	src: local('☺'),
+		~"url('@{font-path}HelveticaNeueLTPro-UltLt.eot?#iefix') format('embedded-opentype'),
+		url('@{font-path}HelveticaNeueLTPro-UltLt.woff') format('woff'),
+		url('@{font-path}HelveticaNeueLTPro-UltLt.ttf')  format('truetype'),
+		url('@{font-path}HelveticaNeueLTPro-UltLt.svg#svgHelveticaNeueLTPro-UltLt') format('svg')";
+}
+@font-face {
+	font-family: 'Nexa Light';
+	src: ~"url('@{font-path}nexa_light-webfont.eot')";
+	src: local('☺'),
+		~"url('@{font-path}nexa_light-webfont.eot?#iefix') format('embedded-opentype'),
+		url('@{font-path}nexa_light-webfont.woff2') format('woff2'),
+		url('@{font-path}nexa_light-webfont.woff') format('woff'),
+		url('@{font-path}nexa_light-webfont.ttf')  format('truetype'),
+		url('@{font-path}nexa_light-webfont.svg#svgnexa_light-webfont') format('svg')";
+}
+@font-face {
+	font-family: 'Nexa Bold';
+	src: ~"url('@{font-path}nexa_bold-webfont.eot')";
+	src: local('☺'),
+		~"url('@{font-path}nexa_bold-webfont.eot?#iefix') format('embedded-opentype'),
+		url('@{font-path}nexa_bold-webfont.woff2') format('woff2'),
+		url('@{font-path}nexa_bold-webfont.woff') format('woff'),
+		url('@{font-path}nexa_bold-webfont.ttf')  format('truetype'),
+		url('@{font-path}nexa_bold-webfont.svg#svgnexa_bold-webfont') format('svg')";
+}
+
+@f-arial: 		~"Arial, Helvetica, sans-serif";
+@f-h-ul:		~"'Helvetica Neue Ultra Light'";
+@f-h-l: 		~"'Helvetica Neue Light'"; 			// file not available
+@f-h-r: 		~"'Helvetica Neue Roman'";		// file not available
+@f-h-b: 		~"'Helvetica Neue Bold'";			// file not available
+@f-n-l: 		~"'Nexa Light'";
+@f-n-b: 		~"'Nexa Bold'";
+@f-fa: 			~"'FontAwesome'" @i;
+@f-im: 			~"'IcoMoon'" @i;
+@f-default: 	@f-h-ul;
+@f-fallback: 	@f-arial;
+
+.font(@f-family: @f-fallback, @f-weight: 400, @f-style: ~"normal") {
+	font-family: 	@f-family;
+	font-weight: 	@f-weight;
+	font-style: 		@f-style;
+}
+@basefont: 	14px;
+
+//-- Headings
+.fe2__container {
+	h1 {
+		.font(@f-h-ul);
+		text-align: center;
+		padding: 15px;
+		margin-bottom: 40px;
+		border-bottom: 1px solid @c-grey1;
+	}
+}
+
+
+
+//-- Icon font
+/* specifying classes one by one is faster than the generic selector */
+.fe2--icon-star-2,
+.fe2--icon-plus-3,
+.fe2--icon-minus-2,
+.fe2--icon-info-3,
+.fe2--icon-file-pdf,
+.fe2--icon-bars,
+.fe2--icon-info,
+.fe2--icon-lock,
+.fe2--icon-menu {
+	font-family: 'fundexplorer' !important;
+}
+
+
+
+//---------------------------------------------
+// HELPERS
+@tea:  				#7EA;
+@coffee:  			#C0FFEE;
+// self-awareness
+@whoami: 		#BADA55;

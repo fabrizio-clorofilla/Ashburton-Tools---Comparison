@@ -9,7 +9,7 @@
 		/*box-shadow: 0 0 15px #ccc;*/
 }
 .mgt-2 {
-	border: 1px solid #ccc;
+	/*border: 1px solid #ccc;*/
 	position: relative;
 	min-height: 250px;
 }
@@ -40,7 +40,7 @@
 
 .mgt-2__tools label {
 	width: 120px;
-	font: normal 20px/25px 'Interstate MG', 'Interstate MG Light', Arial, Helvetica, sans-serif;
+	font: normal 20px/25px Arial, Helvetica, sans-serif;
 	font-weight: normal;
 	color: #004f5c;
 	display: inline-block;
@@ -54,7 +54,7 @@
 }
 	.mgt-2__tools--compare input[type="text"] {
 		width: 683px;
-		font: normal 16px/22px 'Interstate MG Light', Arial, Helvetica, sans-serif;
+		font: normal 16px/22px Arial, Helvetica, sans-serif;
 		font-weight: normal;
 		color: #004f5c;
 	}
@@ -115,7 +115,7 @@
 		}
 		.mgt-2__tools--select .mgt-2__tools--select--value {
 			background-color: #fff;
-			font: normal 15px/20px 'Interstate MG Light', Arial, Helvetica, sans-serif;
+			font: normal 15px/20px Arial, Helvetica, sans-serif;
 			font-weight: normal;
 			color: #004f5c;
 			padding: .5em 1em;
@@ -130,7 +130,7 @@
 		background-color: #9ea900;
 		width: 120px;
 		height: 37px;
-		font: normal 18px/20px 'Interstate MG Light', Arial, Helvetica, sans-serif;
+		font: normal 18px/20px Arial, Helvetica, sans-serif;
 		font-weight: normal;
 		color: #fff !important;
 		padding: .45em .75em;
@@ -163,7 +163,7 @@
 	display: block;
 }
 .mgt-2 .ui-autocomplete li a {
-	font-family: 'Interstate MG Light', Arial, Helvetica, sans-serif;
+	font-family: Arial, Helvetica, sans-serif;
 	font-size: 18px;
 	font-weight: normal;
 	padding: .35em .5em;
@@ -238,7 +238,7 @@
 		-webkit-transition: .4s;
 		transition: .4s;
 		}
-		
+
 		.mgt-2__bgroup ul li:hover {
 			background-color: #f2f2f2;
 			-webkit-box-shadow: none;
@@ -391,7 +391,7 @@
 					display: inline-block;
 				}
 
-/* JQUERY UI STYLE 
+/* JQUERY UI STYLE
 	.mgt-2 .mgt-2__table .ui-tabs-nav {
 		list-style-type: none;
 		background-color: #fff;
@@ -643,7 +643,7 @@
 	-moz-opacity: 0.45 !important;
 	opacity:.45 !important;
 	filter: alpha(opacity=45) !important;
-	cursor: progress; 
+	cursor: progress;
 }
 
 .loading > div {
@@ -677,7 +677,7 @@
 	border: 1px solid #aaa;
 	border-top: 0;
 	background: #fff;
-	box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);  
+	box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
 	overflow-x: hidden;
 	overflow-y: auto;
 	margin: 0 4px 4px 0;
@@ -690,7 +690,7 @@
 	display: block;
 }
 .mgt-2 .dropdown-menu li a {
-	font-family: 'Interstate MG Light', Arial, Helvetica, sans-serif;
+	font-family: Arial, Helvetica, sans-serif;
 	font-size: 16px;
 	font-weight: normal;
 	padding: .35em .5em;
@@ -700,7 +700,7 @@
 	text-align: left;
 }
 .mgt-2 .dropdown-menu li a strong {
-	font-family: 'Interstate MG Light', Arial, Helvetica, sans-serif;
+	font-family: Arial, Helvetica, sans-serif;
 	font-size: 16px;
 	color: #9ea900;
 }
@@ -759,7 +759,7 @@ display: block;
 			display: inline-block;
 		}
 		.select2-results .select2-highlighted {background-color: #9ea900 !important;}
-.select2-container-active .select2-choice, 
+.select2-container-active .select2-choice,
 .select2-container-active .select2-choices {border: none;}
 
 
@@ -787,7 +787,7 @@ display: block;
  background-image: none !important;
 }
 .select2-container .select2-choice > .select2-chosen {
- font: normal normal normal 16px/22px 'Interstate MG Light', Arial, Helvetica, sans-serif !important;
+ font: normal normal normal 16px/22px Arial, Helvetica, sans-serif !important;
  color: #004f5c !important;
  text-align: left;
 }
@@ -806,7 +806,7 @@ display: block;
 .select2-results .select2-result-label {
  font-family: sans-serif !important;
  font-size: 0 !important;
- font: normal normal normal 16px/22px 'Interstate MG Light', Arial, Helvetica, sans-serif !important;
+ font: normal normal normal 16px/22px Arial, Helvetica, sans-serif !important;
  color: #004f5c !important;
 }
 .select2-results .select2-highlighted {
@@ -866,13 +866,13 @@ display: block;
  .select2-results .select2-no-results, .select2-results .select2-searching, .select2-results .select2-selection-limit {
 	 background: #fff !important;
 	 display: list-item !important;
-	 font: normal normal normal 18px/22px 'Interstate MG Light', Arial, Helvetica, sans-serif !important;
+	 font: normal normal normal 18px/22px Arial, Helvetica, sans-serif !important;
 	 color: #999 !important;
 	 padding: 4px 4px 6px 10px !important;
  }
  .select2-result-selectable .select2-match, .select2-result-unselectable .select2-match {
 	 text-decoration: none !important;
-	 font-family: 'Interstate MG', 'Interstate MG Light', Arial, Helvetica, sans-serif !important;
+	 font-family: Arial, Helvetica, sans-serif !important;
 	 color: #9ea900 !important;
  }
 	 .select2-results {
@@ -882,7 +882,7 @@ display: block;
  /* ----------------- DATE PICKER ----------------- */
   #ui-datepicker-div {
  	 background-color: #fff;
- 	 font-family: 'Interstate MG Light', Arial, Helvetica, sans-serif;
+ 	 font-family: Arial, Helvetica, sans-serif;
  	 padding: .5em;
  	 border: 1px solid #ccc;
  	 display: none;
@@ -899,7 +899,7 @@ display: block;
  top: -1px;
  left: 10px;
  color: #ccc;
- font-family: 'Interstate MG Light', Arial, Helvetica, sans-serif !important;
+ font-family: Arial, Helvetica, sans-serif !important;
  }
  .ks__datepicker--daterange input {
  width: 120px !important;
@@ -1081,7 +1081,7 @@ display: block;
  	border-radius: 2px;
  	text-decoration: none !important;
  }
-  .ui-datepicker-calendar th, 
+  .ui-datepicker-calendar th,
   .ui-datepicker-calendar td {
  	font-size: .9rem;
  	font-size: .9em;

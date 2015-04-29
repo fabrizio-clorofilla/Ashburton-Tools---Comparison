@@ -1,0 +1,218 @@
+// GLOBAL JPM
+
+// MEDIA QUERIES (more than needed, but better be safe than sorry)
+// -- DESKTOP
+@largescreen:   ~"only screen and (min-width : 1824px)";
+@bigdesktop:   ~"only screen and (min-width : 1224px)";
+@desktop:   ~"only screen and (min-width: 960px)"; 				// 996px
+@belowdesktop: ~"only screen and (max-width : 959px)"; 		// 995px
+@smalldesktoplaptop: ~"only screen and (max-width : 849px)";
+@tinydesktoplaptop: ~"only screen and (max-width : 639px)";
+@ridiculousdesktoplaptop: ~"only screen and (max-width : 429px)";
+// -- TABLET
+@ipad: ~"only screen and (min-device-width : 768px) and (max-device-width : 1024px)";
+@ipadlandscape: ~"only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape)";
+@ipadportrait: ~"only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait)";
+// -- SMARTPHONE
+@smartphone: ~"only screen and (min-device-width : 320px) and (max-device-width : 480px)";
+@smartphonelandscape: ~"only screen and (min-width : 321px) and (max-width : 480px)";
+@smartphoneportrait: ~"only screen and (max-width : 320px)";
+@iphone4: ~"only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5)";
+@iphone4landscape: ~"only screen and (-webkit-min-device-pixel-ratio : 1.5) and (orientation: landscape) and (min-device-width : 320px) and (max-device-width : 480px), only screen and (min-device-pixel-ratio : 1.5) and (orientation: landscape) and (min-device-width : 320px) and (max-device-width : 480px)";
+@iphone4portrait: ~"only screen and (-webkit-min-device-pixel-ratio : 1.5) and (orientation: landscape) and (max-device-width : 320px), only screen and (min-device-pixel-ratio : 1.5) and (orientation: landscape) and (max-device-width : 320px)";
+// @tablet:    ~"only screen and (min-width: 720px) and (max-width: 959px)";
+// -- RETINA DISPLAY
+@retina: ~"only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi)";
+@retinamacbook: ~"only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 1300px), only screen and (min--moz-device-pixel-ratio: 2) and (min-width: 1300px), only screen and (-o-min-device-pixel-ratio: 2/1) and (min-width: 1300px), only screen and (min-device-pixel-ratio: 2) and (min-width: 1300px), only screen and (min-resolution: 192dpi) and (min-width: 1300px), only screen and (min-resolution: 2dppx) and (min-width: 1300px)";
+
+
+
+//---------------------------------------------
+// GRID
+@fullwidth: 		100%;
+@baseline: 		18px;
+
+
+// Optional hyphenation
+.hyphens(@mode: auto) {
+	word-wrap: break-word;
+	-webkit-hyphens: 	@mode;
+	-moz-hyphens: 	@mode;
+	-ms-hyphens: 		@mode;
+	-o-hyphens: 		@mode;
+	hyphens: 			@mode;
+}
+
+
+// Display
+.hide 		{display: none;}
+.show-ib 	{display: inline-block;}
+.show-i 	{display: inline;}
+.show-b 	{display: block;}
+
+@i: ~"!important";
+
+.boxsizing (@boxmodel: ~"border-box") {
+	-webkit-box-sizing: 	@boxmodel; 		// Safari <= 5
+	-moz-box-sizing: 		@boxmodel; 		// Firefox <= 19
+	box-sizing: 			@boxmodel;
+	*, *:before, *:after {
+		-webkit-box-sizing: 	inherit; 			// Safari <= 5
+		-moz-box-sizing: 		inherit; 			// Firefox <= 19
+		box-sizing: 			inherit;
+	}
+}
+
+
+// Opacity
+.opacity(@opacity: 0.5) {
+	-moz-opacity: @opacity;
+	-khtml-opacity: @opacity;
+	-webkit-opacity: @opacity;
+	opacity: @opacity;
+	@opperc: @opacity * 100;
+	-ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(opacity=@{opperc})";
+	filter: ~"alpha(opacity=@{opperc})";
+}
+
+
+// CSS3 Content Columns
+.content-columns(@width, @count, @gap) {
+	-webkit-column-width: 	@width;
+	-moz-column-width: 		@width;
+	column-width: 				@width;
+	-webkit-column-count: 	@count;
+	-moz-column-count: 		@count;
+	column-count: 			@count;
+	-webkit-column-gap: 		@gap;
+	-moz-column-gap: 		@gap;
+	column-gap: 				@gap;
+}
+
+
+// Transitions
+.transition(@transition) {
+	-webkit-transition: 	@transition;
+	-moz-transition: 	@transition;
+	-o-transition: 		@transition;
+	transition: 			@transition;
+}
+.transition-delay(@transition-delay) {
+	-webkit-transition-delay: 	@transition-delay;
+	-moz-transition-delay: 	@transition-delay;
+	-o-transition-delay: 		@transition-delay;
+	transition-delay: 			@transition-delay;
+}
+.transition-duration(@transition-duration) {
+	-webkit-transition-duration: 	@transition-duration;
+	-moz-transition-duration: 		@transition-duration;
+	-o-transition-duration: 			@transition-duration;
+	transition-duration: 			@transition-duration;
+}
+
+
+// Animations
+.animation-delay(@animation-delay) {
+	-webkit-animation-delay: 		@animation-delay;
+	-moz-animation-delay: 		@animation-delay;
+	-o-animation-delay: 			@animation-delay;
+	animation-delay: 				@animation-delay;
+}
+
+
+// Translate
+.translate3d(@x, @y, @z) {
+	-webkit-transform: 	translate3d(@x, @y, @z);
+	-moz-transform: 		translate3d(@x, @y, @z);
+	-o-transform: 			translate3d(@x, @y, @z);
+	transform: 				translate3d(@x, @y, @z);
+}
+
+
+// Performance improvement on animated items
+// (add this to any element with animations)
+.accelerate {
+	-webkit-transform: 			translateZ(0);
+	-moz-transform: 				translateZ(0);
+	-o-transform: 					translateZ(0);
+	transform: 						translateZ(0);
+	-webkit-backface-visibility: 	hidden;
+	-moz-backface-visibility: 		hidden;
+	backface-visibility: 			hidden;
+	-webkit-perspective: 			1000;
+	-moz-perspective: 			1000;
+	perspective: 					1000;
+}
+
+
+// Clearfix
+//
+// Source: http://nicolasgallagher.com/micro-clearfix-hack/
+//
+// For modern browsers
+// 1. The space content is one way to avoid an Opera bug when the
+//    contenteditable attribute is included anywhere else in the document.
+//    Otherwise it causes space to appear at the top and bottom of elements
+//    that are clearfixed.
+// 2. The use of 'table' rather than 'block' is only necessary if using
+//    ':before' to contain the top-margins of child elements.
+.clearfix() {
+	*zoom: 1;
+	&:before,
+	&:after {
+		content: " "; 		// 1
+		display: table; 		// 2
+		// Fixes Opera/contenteditable bug:
+		// http://nicolasgallagher.com/micro-clearfix-hack/#comment-36952
+		line-height: 0;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+.clearfix {
+	.clearfix;
+}
+
+
+// Base64 image converter, built-in in LESS
+// example:
+// background-image: data-uri('image/png;base64','../_images/pdf_icon.png');
+
+// Reset filters for IE
+// Useful for when you want to remove a gradient from an element.
+.reset-filter() {
+	filter: e(%("progid:DXImageTransform.Microsoft.gradient(enabled = false)"));
+}
+
+
+// complex placeholder mixin
+// now you just need to specify a color and either bold or italic
+// like input { .placeholder(false, bold) }
+.colormixin (@color: false) when not (@color=false) {color: @color;}
+.stylemixin (@style: false) when not (@style=false) {
+	.style (@style) when (@style=italic) {font-style: @style;}
+	.style (@style) when (@style=bold) {font-weight: @style;}
+	.style (@style);
+}
+.placeholder(@color: false, @style: false) {
+	&::-webkit-input-placeholder {
+		.colormixin(@color);
+		.stylemixin(@style);
+	}
+	&:-moz-placeholder {
+		.colormixin(@color);
+		.stylemixin(@style);
+	}
+	&::-moz-placeholder {
+		.colormixin(@color);
+		.stylemixin(@style);
+	}
+	&:-ms-input-placeholder {
+		.colormixin(@color);
+		.stylemixin(@style);
+	}
+}
+
+//---------------------------------------------
