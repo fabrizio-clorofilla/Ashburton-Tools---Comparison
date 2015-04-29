@@ -80,8 +80,12 @@ var KSCHART = (function() {
 	Cls.drawLineChart = function(target,chartConfig,title,subtitle,serieses) {
 	
 		var config = jQuery.extend(true, {}, chartConfig);
+		var maxDatapoint = 0;
 		for (var i=0; i<serieses.length; i++) {
-			if(serieses[i].identifier) config.xAxis.tickPositions = tickPointsCalculation(serieses[i]);
+			if(serieses[i].identifier && (serieses[i].data.length > maxDatapoint)) {
+				config.xAxis.tickPositions = tickPointsCalculation(serieses[i]);
+				maxDatapoint = serieses[i].data.length;
+			}
 		}
 		config.chart.renderTo = target;
 		config.title.text = title;

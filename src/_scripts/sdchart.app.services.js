@@ -686,13 +686,16 @@ angular.module('SDCHART').service('ChartDataService', ['$http', '$rootScope', '$
 						serieses.push(oSer[plottables[i].SecId]);
 						if(plottables[i].visible==false) seriesesToHide.push(i);
 					}
+					else {
+						serieses.push(new emptySeries());
+					}
 				}
 				else{
-					// serieses.push(new emptySeries());
+					serieses.push(new emptySeries());
 				}
 			}
 			else{
-				// serieses.push(new emptySeries());
+				serieses.push(new emptySeries());
 			}
 		}
 		// return {serieses: serieses, seriesesToHide: seriesesToHide, min: oSer.minValue, max: oSer.maxValue, dropped: oSer.dropped};

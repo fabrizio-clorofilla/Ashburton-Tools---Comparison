@@ -1,6 +1,8 @@
 <div class="mgt mgt-2" ng-controller="MainController" height-calc="test">
 <div class="error" ng-show="isError()"><p ng-repeat="error in getError()">ERROR: {{error}}</p></div>
-<div class="loading" ng-show="isLoading() && DataService.status.fundAdded"><div><img ng-src="__DEPLOYMENTURL__/_images/ajax-loader.gif"><br />{{'loading' | translate | uppercase}}</div></div>
+<div class="loading" ng-show="isLoading() && DataService.status.fundAdded"><div>
+<img ng-src="//ashburtontools.kurtosysweb.com/fundtools/_images/ajax-loader.gif">
+<br />{{'loading' | translate | uppercase}}</div></div>
 	<div class="mgt-2__tools" ng-controller="SearchController" ng-show="!isLoading('init') || !DataService.status.fundAdded">
 		<div class="mgt-2__tools--compare" ng-show="!isLoading('init') && DataService.status.fundAdded">
 		<label ng-bind="'compare' | translate | capitalize"></label>
