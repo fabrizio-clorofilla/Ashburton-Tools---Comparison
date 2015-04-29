@@ -26,19 +26,21 @@
 				<option ng-repeat="item in results.searchList | filter:{Type: selections.cat}" value="{{item}}">{{item.Name}}</option>
 			</select>
 			</div>
-
-			<!--
 			<a href="#" class="btn mgt-2__tools--add" ng-click="addItem('select')" type="select" add-button><i class="fa fa-plus"></i></a>
-			-->
-
 		</div>
 	</div>
 	<div class="mgt-2__noFundMsg" ng-show="!DataService.status.fundAdded"><p><i class="fa fa-arrow-up"></i>Please select a fund from the Compare list to start the tool.</p></div>
 	<div class="mgt-2__chart" ng-controller="ChartController" ng-show="!isLoading('init') && DataService.status.fundAdded">
 		<div class="mgt-2__chart--tools clearfix" chart-tools>
-		<ul class="mgt-2__chart--buttons">
-		    <li class="mgt-2__daterange"><label ng-bind="'selectDateRange' | translate | capitalize"></label>&nbsp;&nbsp;&nbsp;<div class="mgt-2__daterange" ng-class="{active: PeriodSelector.Data.plot.period.label == 'DatePicker'}" ks-datepicker-model="DatePicker" min-date="{{PeriodSelector.Data.list.DatePicker.from | momentToString: 'YYYY-MM-DD'}}" max-date="" start-date="{{PeriodSelector.Data.plot.period.from | momentToString: 'DD/MM/YYYY'}}" end-date="{{PeriodSelector.Data.plot.period.to | momentToString: 'DD/MM/YYYY'}}" min-daterange="90" lang="{{DataService.lang}}" ks-datepicker ng-if="!isLoading('init')"></div></li>
-		    <li class="mgt-2__bgroup">
+		<ul class="mgt-2__chart--buttons clearfix">
+		    <li class="mgt-2__daterange pull-left"><label ng-bind="'selectDateRange' | translate | capitalize"></label>&nbsp;&nbsp;&nbsp;<div class="mgt-2__daterange" ng-class="{active: PeriodSelector.Data.plot.period.label == 'DatePicker'}" ks-datepicker-model="DatePicker" min-date="{{PeriodSelector.Data.list.DatePicker.from | momentToString: 'YYYY-MM-DD'}}" max-date="" start-date="{{PeriodSelector.Data.plot.period.from | momentToString: 'DD/MM/YYYY'}}" end-date="{{PeriodSelector.Data.plot.period.to | momentToString: 'DD/MM/YYYY'}}" min-daterange="90" lang="{{DataService.lang}}" ks-datepicker ng-if="!isLoading('init')"></div></li>
+		    <li class="mgt-2__bgroup mgt-2__bgroup--actions pull-right">
+		    	<ul class="clearfix">
+			    <li ng-click="printScreen()"><a>Print data sheet&nbsp;&nbsp;<i class="fa fa-print"></i></a></li>
+			    <li ng-click="exportToExcel()"><a>Export to Excel&nbsp;&nbsp;<i class="fa fa-file"></i></a></li>
+		    	</ul>
+		    </li>
+		    <li class="mgt-2__bgroup pull-right">
 		    	<ul class="clearfix">
 		    		<li ng-class="{unavailable: !PeriodSelector.Data.list['1Y'].available, active: PeriodSelector.Data.plot.period.label == '1Y'}" ng-click="setPeriodToPlot('1Y')" ng-init="addPeriod('1Y')" ng-bind="'1Y' | translate | uppercase"></li>
 		    		<li ng-class="{unavailable: !PeriodSelector.Data.list['3Y'].available, active: PeriodSelector.Data.plot.period.label == '3Y'}" ng-click="setPeriodToPlot('3Y')" ng-init="addPeriod('3Y')" ng-bind="'3Y' | translate | uppercase"></li>
@@ -46,8 +48,6 @@
 		    		<li ng-class="{unavailable: !PeriodSelector.Data.list['ALL'].available, active: PeriodSelector.Data.plot.period.label == 'ALL'}" ng-click="setPeriodToPlot('ALL')" ng-init="addPeriod('ALL')" ng-bind="'ALL' | translate | uppercase"></li>
 		    	</ul>
 		    </li>
-		    <li ng-click="exportToExcel()"><a>Export to Excel <i class="fe2--icon-file-excel"></i></a></li>
-		    <li ng-click="printScreen()"><a>Print data sheet <i class="fe2--icon-print"></i></a></li>
 		</ul>
 
 		<!--

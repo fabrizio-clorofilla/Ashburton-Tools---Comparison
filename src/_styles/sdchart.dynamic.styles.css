@@ -43,7 +43,7 @@
 	font-size: 20px;
 	line-height: 25px;
 	font-weight: normal;
-	color: #004f5c;
+	color: #707273;
 	display: inline-block;
 	text-align: left;
 }
@@ -59,7 +59,7 @@
 		font-size: 16px;
 		line-height: 22px;
 		font-weight: normal;
-		color: #004f5c;
+		color: #707273;
 	}
 	.mgt-2__tools--compare input[type="submit"] {
 		background-color: #B10F3A;
@@ -91,7 +91,7 @@
 			position: absolute;
 			top: 0;
 			right: 0;
-			background-color: #004f5c;
+			background-color: #707273;
 			width: 30px;
 			height: 28px;
 			font-family: 'FontAwesome';
@@ -122,13 +122,14 @@
 			font-size: 15px;
 			line-height: 20px;
 			font-weight: normal;
-			color: #004f5c;
+			color: #707273;
 			padding: .5em 1em;
 			border: 1px solid #DBDBDC;
 			display: block;
 			-webkit-transform: translate3d(0,0,0);
 		}
 	.mgt-2__tools--benchmark > .mgt-2__tools--select {
+		height: 37px;
 		margin-right: 20px;
 	}
 	.mgt-2__tools .btn {
@@ -233,7 +234,7 @@
 		padding: 0;
 	}
 		.mgt-2__daterange label {
-			font-size: 14px;
+			font-size: 12px;
 		}
 		.mgt-2__daterange input {
 			width: 190px;
@@ -249,48 +250,37 @@
 			font-size: 1.5em !important;
 			padding: 11px 15px;
 		}
+.mgt-2__bgroup {
+	padding: 0 18px;
+}
 	.mgt-2__bgroup ul {
 		font-size: 0;
 		margin-left: 1.1em;
 	}
 		.mgt-2__bgroup ul li {
-			padding: 1.1em 1.25em; /* padding: 1.1em 0; */
-			border-left: 1px solid #DBDBDC;
-			overflow: hidden;
-		}
-
-		/* FABRIZIO 28/03/2014 */
-		.mgt-2__bgroup ul li {
 			font-size: 12px;
-			-webkit-box-shadow: inset 1px 1px 8px #cfcfcf;
-			box-shadow: inset 1px 1px 8px #cfcfcf;
-			-webkit-transition: .4s;
-			transition: .4s
+			padding: 1.1em .5em;
+			overflow: hidden;
 		}
 		.mgt-2__bgroup ul li.unavailable {
 			cursor: default !important;
 			color: #DBDBDC;
 		}
-		.mgt-2__bgroup ul li.unavailable:hover {
-		-webkit-box-shadow: inset 1px 1px 8px #cfcfcf;
-		box-shadow: inset 1px 1px 8px #cfcfcf;
-		-webkit-transition: .4s;
-		transition: .4s;
-		}
-
-		.mgt-2__bgroup ul li:hover {
-			background-color: #f2f2f2;
-			-webkit-box-shadow: none;
-			box-shadow: none
-		}
 		.mgt-2__bgroup ul li.active,
 		.mgt-2__bgroup ul li.active:hover {
-			background-color: #B10F3A;
-			color: #fff;
-			-webkit-box-shadow: none;
-			box-shadow: none;
+			background-color: #707273;
+			color: #FFF;
 			cursor: default;
 		}
+		.mgt-2__bgroup--actions {
+			padding-right: 0;
+		}
+			.mgt-2__bgroup--actions a {
+				color: #B10F3A !important;
+			}
+				.mgt-2__bgroup--actions a:hover {
+					color: #707273 !important;
+				}
 		/*
 			.mgt-2__bgroup ul li a {
 				font-size: 12px;
@@ -344,7 +334,7 @@
 	.ui-datepicker-title {
 		text-align: center;
 		text-transform: uppercase;
-		border-bottom: 1px dotted #004f5c;
+		border-bottom: 1px dotted #707273;
 	}
 	.ui-datepicker-calendar {
 		border-collapse: collapse;
@@ -363,7 +353,7 @@
 		text-decoration: underline !important;
 	}
 	.ui-datepicker-calendar .ui-datepicker-today a {
-		background-color: #004f5c;
+		background-color: #707273;
 		color: #fff;
 		padding: 0.3em 0.25em;
 	}
@@ -496,7 +486,7 @@
 .mgt-2__table {
 	background-color: #f2f2f2;
 	width: 100%;
-	color: #004f5c;
+	color: #707273;
 	border: 18px solid #F1F1F2;
 	border-top: none;
 }
@@ -714,7 +704,7 @@
 	width: 682px;
 	border: 1px solid #aaa;
 	border-top: 0;
-	background: #fff;
+	background: #F9F9F9;
 	box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
 	overflow-x: hidden;
 	overflow-y: auto;
@@ -743,7 +733,7 @@
 	color: #B10F3A;
 }
 .mgt-2 .dropdown-menu li.active {
-	background-color: #f8f9e9;
+	background-color: #F1F1F2;
 }
 
 .mgt-2--footnote {
@@ -818,7 +808,7 @@ display: block;
  border: 1px solid #DBDBDC !important;
 }
 .select2-container .select2-choice {
- color: #004f5c !important;
+ color: #707273 !important;
  padding: 8px 0 0 10px !important;
  border: 1px solid #DBDBDC !important;
  background-color: #fff !important;
@@ -826,7 +816,7 @@ display: block;
 }
 .select2-container .select2-choice > .select2-chosen {
  font: normal normal normal 16px/22px Arial, Helvetica, sans-serif !important;
- color: #004f5c !important;
+ color: #707273 !important;
  text-align: left;
 }
 .select2-dropdown-open .select2-choice {
@@ -845,10 +835,10 @@ display: block;
  font-family: sans-serif !important;
  font-size: 0 !important;
  font: normal normal normal 16px/22px Arial, Helvetica, sans-serif !important;
- color: #004f5c !important;
+ color: #707273 !important;
 }
 .select2-results .select2-highlighted {
- background: #f8f9e9 !important;
+ background: #F1F1F2 !important;
 }
 .select2-results .select2-result-label {
  padding: 5px 10px !important;
@@ -869,10 +859,10 @@ display: block;
  position: absolute !important;
  right: 0 !important;
  top: 0 !important;
- border-left: 1px solid #004f5c !important;
+ border-left: 1px solid #DBDBDC !important;
  border-radius: 0 !important;
  background-clip: initial !important;
- background: #004f5c !important;
+ background: transparent !important;
  background-image: none !important;
 }
 .select2-container .select2-choice .select2-arrow b {
@@ -889,7 +879,7 @@ display: block;
   font-family: 'Fontawesome' !important;
   font-size: 30px !important;
   font-weight: normal !important;
-  color: #fff !important;
+  color: #DBDBDC !important;
  }
  .select2-container.select2-dropdown-open .select2-choice .select2-arrow b:after {
   content: "\f106" !important;
@@ -899,7 +889,7 @@ display: block;
   font-family: 'Fontawesome' !important;
   font-size: 30px !important;
   font-weight: normal !important;
-  color: #fff !important;
+  color: #DBDBDC !important;
  }
  .select2-results .select2-no-results, .select2-results .select2-searching, .select2-results .select2-selection-limit {
 	 background: #fff !important;
@@ -1130,7 +1120,7 @@ display: block;
  	text-decoration: none;
  }
   .ui-datepicker-calendar td a {
- 	color: #004f5c;
+ 	color: #707273;
  }
  	 .ui-datepicker-calendar td a.ui-state-hover {
  		color: #B10F3A;
