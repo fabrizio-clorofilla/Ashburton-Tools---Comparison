@@ -177,18 +177,21 @@ angular.module('sdchart.highcharts', [])
                                 subtitle = '';
                             }
                             if (scope.DataService.isDynamic()) {
-                                scope.chart.serieses[0].type = 'area';
-                                scope.chart.serieses[0].zIndex = 0;
-                                scope.chart.serieses[0].fillColor = {
-                                    pattern: '__DEPLOYMENTURL__/_images/mandg_dark_blue_tile.gif',
-                                    // pattern: '__DEPLOYMENTURL__/_images/vanilla_dark_blue_tile.png',
-                                    width: 5,
-                                    height: 5
-                                };
-                                $rootScope.config.Chart.chart.width = element.parent().parent().width();
+                                // scope.chart.serieses[0].type = 'area';
+                                // scope.chart.serieses[0].zIndex = 0;
+                                // scope.chart.serieses[0].fillColor = {
+                                //     pattern: '__DEPLOYMENTURL__/_images/mandg_dark_blue_tile.gif',
+                                //     // pattern: '__DEPLOYMENTURL__/_images/vanilla_dark_blue_tile.png',
+                                //     width: 5,
+                                //     height: 5
+                                // };
+                                $rootScope.config.Chart.chart.width = element.parent().parent().width()-36;
                             }
                             $rootScope.config.Chart.yAxis.min = scope.chart.min;
                             $rootScope.config.Chart.yAxis.max = scope.chart.max;
+                            for(var i=0; i<scope.chart.serieses.length; i++){
+
+                            }
                             scope.chart.highchart = KSCHART.drawLineChart('perfchart-' + r, $rootScope.config.Chart, title, subtitle, scope.chart.serieses, true);
                             for (var i = 0; i < scope.chart.seriesesToHide.length; i++) {
                                 scope.chart.highchart.series[scope.chart.seriesesToHide[i]].hide();

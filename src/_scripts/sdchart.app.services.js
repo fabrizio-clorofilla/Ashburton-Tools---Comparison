@@ -216,7 +216,8 @@ angular.module('SDCHART').service('DataService', ['$http', '$rootScope', '$q', '
 				case "B": sType = 'benchmark'; break;
 			}
 			tObj.type = sType;
-			if(sType=='fund') tObj.inceptionDate = moment(oElement.MinPerfDate,'MM/DD/YYYY').format('YYYY-MM-DD');
+			// if(sType=='fund') tObj.inceptionDate = moment(oElement.MinPerfDate,'MM/DD/YYYY').format('YYYY-MM-DD');
+			if(sType=='fund') tObj.inceptionDate = moment(oElement.InceptionDate,'MM/DD/YYYY').format('YYYY-MM-DD');
 
 			th.plottables.push(tObj);
 		}
@@ -279,7 +280,8 @@ angular.module('SDCHART').service('DataService', ['$http', '$rootScope', '$q', '
 			oFunds[aFunds[i].ISIN] = {};
 			oFunds[aFunds[i].ISIN].ISIN = aFunds[i].ISIN;
 			oFunds[aFunds[i].ISIN].SecId = aFunds[i].FundVendorId;
-			oFunds[aFunds[i].ISIN].inceptionDate = aFunds[i].MinPerfDate;
+			// oFunds[aFunds[i].ISIN].inceptionDate = aFunds[i].MinPerfDate;
+			oFunds[aFunds[i].ISIN].inceptionDate = aFunds[i].InceptionDate;
 			oFunds[aFunds[i].ISIN].name = aFunds[i].FundName;
 			oFunds[aFunds[i].ISIN].currency = aFunds[i].CurrencyCode;
 		};
@@ -675,23 +677,26 @@ angular.module('SDCHART').service('ChartDataService', ['$http', '$rootScope', '$
 		for(var i=0; i<plottables.length; i++){
 			if(plottables[i].active == true){
 				if(oSer.hasOwnProperty(plottables[i].SecId)){
-					oSer[plottables[i].SecId].color = plottables[i].color;
-					oSer[plottables[i].SecId].id = plottables[i].index;
-					oSer[plottables[i].SecId].ext_name = oSer[plottables[i].SecId].name;
-					oSer[plottables[i].SecId].name = $filter('translate')(plottables[i].type,$rootScope.config.Params.Language);
-					oSer[plottables[i].SecId].zIndex = 999-i;
-					serieses.push(oSer[plottables[i].SecId]);
-					if(plottables[i].visible==false) seriesesToHide.push(i);
+					if(oSer[plottables[i].SecId].data.length){
+						oSer[plottables[i].SecId].color = plottables[i].color;
+						oSer[plottables[i].SecId].id = plottables[i].index;
+						oSer[plottables[i].SecId].ext_name = oSer[plottables[i].SecId].name;
+						oSer[plottables[i].SecId].name = $filter('translate')(plottables[i].type,$rootScope.config.Params.Language);
+						oSer[plottables[i].SecId].zIndex = 999-i;
+						serieses.push(oSer[plottables[i].SecId]);
+						if(plottables[i].visible==false) seriesesToHide.push(i);
+					}
 				}
 				else{
-					serieses.push(new emptySeries());
+					// serieses.push(new emptySeries());
 				}
 			}
 			else{
-				serieses.push(new emptySeries());
+				// serieses.push(new emptySeries());
 			}
 		}
-		return {serieses: serieses, seriesesToHide: seriesesToHide, min: oSer.minValue, max: oSer.maxValue, dropped: oSer.dropped};
+		// return {serieses: serieses, seriesesToHide: seriesesToHide, min: oSer.minValue, max: oSer.maxValue, dropped: oSer.dropped};
+		return {serieses: serieses, seriesesToHide: seriesesToHide, min: oSer.minValue, max: oSer.maxValue, dropped: []};
 	}
 
 	this.createPeriodSelectorController = function(){
