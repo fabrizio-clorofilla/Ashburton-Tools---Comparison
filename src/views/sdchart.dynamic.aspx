@@ -36,8 +36,8 @@
 		    <li class="mgt-2__daterange pull-left"><label ng-bind="'selectDateRange' | translate | capitalize"></label>&nbsp;&nbsp;&nbsp;<div class="mgt-2__daterange" ng-class="{active: PeriodSelector.Data.plot.period.label == 'DatePicker'}" ks-datepicker-model="DatePicker" min-date="{{PeriodSelector.Data.list.DatePicker.from | momentToString: 'YYYY-MM-DD'}}" max-date="" start-date="{{PeriodSelector.Data.plot.period.from | momentToString: 'DD/MM/YYYY'}}" end-date="{{PeriodSelector.Data.plot.period.to | momentToString: 'DD/MM/YYYY'}}" min-daterange="90" lang="{{DataService.lang}}" ks-datepicker ng-if="!isLoading('init')"></div></li>
 		    <li class="mgt-2__bgroup mgt-2__bgroup--actions pull-right">
 		    	<ul class="clearfix">
-			    <li ng-click="printScreen()"><a>Print data sheet <i class="fe2--icon-print"></i></a></li>
-			    <li ng-click="exportToExcel()"><a>Export to Excel <i class="fe2--icon-file-excel"></i></a></li>
+			    <li ng-click="printScreen()"><a>Print data sheet&nbsp;&nbsp;<i class="fa fa-print"></i></a></li>
+			    <li ng-click="exportToExcel()"><a>Export to Excel&nbsp;&nbsp;<i class="fa fa-file"></i></a></li>
 		    	</ul>
 		    </li>
 		    <li class="mgt-2__bgroup pull-right">

@@ -272,12 +272,15 @@
 			color: #FFF;
 			cursor: default;
 		}
-		.mgt-2__bgroup--actions a {
-			color: #B10F3A !important;
+		.mgt-2__bgroup--actions {
+			padding-right: 0;
 		}
-		.mgt-2__bgroup--actions a:hover {
-			color: #707273 !important;
-		}
+			.mgt-2__bgroup--actions a {
+				color: #B10F3A !important;
+			}
+				.mgt-2__bgroup--actions a:hover {
+					color: #707273 !important;
+				}
 		/*
 			.mgt-2__bgroup ul li a {
 				font-size: 12px;
