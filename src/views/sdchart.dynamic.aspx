@@ -26,7 +26,11 @@
 				<option ng-repeat="item in results.searchList | filter:{Type: selections.cat}" value="{{item}}">{{item.Name}}</option>
 			</select>
 			</div>
+
+			<!--
 			<a href="#" class="btn mgt-2__tools--add" ng-click="addItem('select')" type="select" add-button><i class="fa fa-plus"></i></a>
+			-->
+
 		</div>
 	</div>
 	<div class="mgt-2__noFundMsg" ng-show="!DataService.status.fundAdded"><p><i class="fa fa-arrow-up"></i>Please select a fund from the Compare list to start the tool.</p></div>
