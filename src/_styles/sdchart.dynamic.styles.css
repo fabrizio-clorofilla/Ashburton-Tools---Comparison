@@ -280,6 +280,11 @@
 		.mgt-2__bgroup--actions {
 			padding-right: 0;
 		}
+		@media print {
+			.mgt-2__bgroup--actions {
+				display: none !important;
+			}
+		}
 			.mgt-2__bgroup--actions a {
 				color: #B10F3A !important;
 			}
