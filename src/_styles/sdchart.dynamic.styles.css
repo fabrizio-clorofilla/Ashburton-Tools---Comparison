@@ -225,6 +225,7 @@
 	border-top: none;
 }
 .mgt-2__chart .mgt-2__chart {
+	margin-top: 0;
 	border: none;
 }
 .mgt-2__chart--tools {
