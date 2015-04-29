@@ -202,7 +202,35 @@ their clients' ones.
 		width: 456px;
 		padding: 0px 20px;
 		display: inline-block;
-		vertical-align: top
+		vertical-align: top;
 	}
 
 
+
+
+/*-------------------------------------------------------
+PRINT (GENERIC)
+For the highest print quality, we should deliver high-DPI Retina images and SVG fonts*/
+@media print {
+	@page {
+		/*please note that @page is not supported in Firefox (but it is in IE8)*/
+		size: 8.27in 11.69in;
+		margin: 0.39in;
+	}
+	img,
+	table,
+	.mgt-2__chart {
+		page-break-inside: avoid;
+	}
+	img {
+		image-resolution: from-image;
+	}
+}
+
+@media print and (color) {
+	.mgt * {
+		/*force print background colours*/
+		-webkit-print-color-adjust: exact;
+		print-color-adjust: exact;
+	}
+}

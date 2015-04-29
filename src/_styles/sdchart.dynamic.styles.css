@@ -32,6 +32,11 @@
 	background-color: #F1F1F2;
 	/*border-bottom: 1px solid #DBDBDC;*/
 }
+@media print {
+	.mgt-2__tools {
+		display: none;
+	}
+}
 .mgt-2__tools--compare,
 .mgt-2__tools--benchmark {padding: 18px;}
 .mgt-2__tools--compare {}
@@ -242,7 +247,7 @@
 			height: 45px\9;
 			text-align: center;
 			padding: 1.1em;
-			border-width: 1px;
+			border-width: 0;
 			border-color: #DBDBDC;
 			border-style: none solid none solid;
 		}
@@ -274,6 +279,11 @@
 		}
 		.mgt-2__bgroup--actions {
 			padding-right: 0;
+		}
+		@media print {
+			.mgt-2__bgroup--actions {
+				display: none !important;
+			}
 		}
 			.mgt-2__bgroup--actions a {
 				color: #B10F3A !important;
@@ -949,7 +959,7 @@ display: block;
  		width: 105px !important;
  	}
  		.ks__datepicker__date--from--input {
- 			background-color: #fafafa;
+ 			background-color: #F9F9F9;
  			padding: 1.1em .75em 0.7em .75em;
  			border-style: none none none solid !important;
  		}
@@ -965,7 +975,7 @@ display: block;
 
  .ks__datepicker__date--divider {
  	border: 22px solid #fff;
- 	border-left-color: #fafafa;
+ 	border-left-color: #F9F9F9;
  	border-right-color: #fff;
  	padding: 0 !important;
  	-webkit-box-sizing: border-box !important;
@@ -999,10 +1009,12 @@ display: block;
 
  	.mgt-2__daterange .ks__datepicker__date--from .fa-calendar {
  		background-color: #fafafa;
+ 		color: #B10F3A;
  	}
 
  	.mgt-2__daterange .ks__datepicker__date--to .fa-calendar {
  		background-color: #fff;
+ 		color: #B10F3A;
  		margin-right: -5px !important;
  		width: 28px !important;
  		margin-left: -16px !important;
