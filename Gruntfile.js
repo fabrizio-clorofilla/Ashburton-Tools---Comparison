@@ -67,6 +67,14 @@ module.exports = function (grunt) {
 					livereload: true
 				}
 			},
+			aspx: {
+				files: ['src/**/*.aspx'],
+				tasks: ['ngtemplates','devcode:server'],
+				options: {
+					livereload: true
+				}
+			},
+
 			// styles: {
 			// 	files: [
 			// 		'src/_styles/{,*/}*.css'
@@ -418,6 +426,7 @@ module.exports = function (grunt) {
 		grunt.task.run([
 			// 'auto_install',
 			'clean:server',
+			'ngtemplates',
 			'copy',
 			// 'less',
 			'devcode:server',
