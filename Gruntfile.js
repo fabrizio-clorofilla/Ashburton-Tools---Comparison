@@ -69,7 +69,7 @@ module.exports = function (grunt) {
 			},
 			aspx: {
 				files: ['src/**/*.aspx'],
-				tasks: ['ngtemplates','devcode:server'],
+				tasks: ['devcode:server','ngtemplates'],
 				options: {
 					livereload: true
 				}
@@ -292,6 +292,7 @@ module.exports = function (grunt) {
 				html: true,        // html files parsing?
 				js: true,          // javascript files parsing?
 				css: true,         // css files parsing?
+				aspx: true,
 				clean: true,       // removes devcode comments even if code was not removed
 				block: {
 					open: 'devcode', // with this string we open a block of code

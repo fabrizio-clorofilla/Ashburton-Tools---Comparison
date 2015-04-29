@@ -351,43 +351,14 @@ function SDCHART_DYNAMIC_CONFIG() {
   };
 
   this.Colors = [
-    '#004F5C', /* this colour is ONLY for the main Fund */
-    '#98333C', /* red 80% */
-    '#CC9933', /* orange 100% */
-    '#5882A5', /* blue 80% */
-    '#7C8857', /* green 60% */
-    '#736B8E', /* orange 60% */
-    '#FDD762', /* yellow 60% */
-    '#42739B', /* blue 100% */
-    '#A64B53', /* red 60% */
-    '#52682F', /* green 100% */
-    '#4B4870', /* purple 100% */
-    '#FFCC33', /* yellow 100% */
-    '#88232B', /* red 100% */
-    '#6C92B1', /* blue 60% */
-    '#60597B', /* orange 80% */
-    '#697843', /* green 80% */
-    '#DBB05C', /* purple 60% */
-    '#FDD14E' /* yellow 80% */
-    // '#004F5C', /* this colour is ONLY for the main Fund */
-    // '#88232B', /* red 100% */
-    // '#CC9933', /* orange 100% */
-    // '#52682F', /* green 100% */
-    // '#4B4870', /* purple 100% */
-    // '#FFCC33', /* yellow 100% */
-    // '#42739B', /* blue 100% */
-    // '#A64B53', /* red 60% */
-    // '#736B8E', /* orange 60% */
-    // '#7C8857', /* green 60% */
-    // '#DBB05C', /* purple 60% */
-    // '#FDD762', /* yellow 60% */
-    // '#6C92B1', /* blue 60% */
-    // '#98333C', /* red 80% */
-    // '#60597B', /* orange 80% */
-    // '#697843', /* green 80% */
-    // '#D6A649', /* purple 80% */
-    // '#FDD14E', /* yellow 80% */
-    // '#5882A5' /* blue 80% */
+    '#F79C31', /* this colour is ONLY for the main Fund */
+    '#F0652F', /* red 80% */
+    '#ED5070', /* orange 100% */
+    '#665AA4', /* blue 80% */
+    '#199FDA', /* green 60% */
+    '#1BABBC', /* orange 60% */
+    '#65B94D', /* yellow 60% */
+    '#707273'
   ];
 
   this.Tabs = [
@@ -631,12 +602,12 @@ function SDCHART_DYNAMIC_CONFIG() {
       borderWidth: 0,
       shadow: false,
       formatter: function () {
-        if(this.series.data.indexOf(this.point)==0) {
-          return '<div style="background-color:' + this.series.color + '" class="mgt-1__chart--tooltip"><b>' + this.series.options.ext_name + '</b><br>' + moment(this.x).add(1,'day').format('DD-MMM-YYYY') + ', ' + numeral(this.y).format('0.00') + '</div>';
-        }
-        else{
+        // if(this.series.data.indexOf(this.point)==0) {
+        //   return '<div style="background-color:' + this.series.color + '" class="mgt-1__chart--tooltip"><b>' + this.series.options.ext_name + '</b><br>' + moment(this.x).add(1,'day').format('DD-MMM-YYYY') + ', ' + numeral(this.y).format('0.00') + '</div>';
+        // }
+        // else{
           return '<div style="background-color:' + this.series.color + '" class="mgt-1__chart--tooltip"><b>' + this.series.options.ext_name + '</b><br>' + moment(this.x).format('DD-MMM-YYYY') + ', ' + numeral(this.y).format('0.00') + '</div>';
-        }
+        // }
       }
     },
     legend: {
