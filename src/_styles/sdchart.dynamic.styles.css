@@ -286,6 +286,11 @@
 .mgt-2__daterange label {
   font-size: 12px;
 }
+@media print {
+  .mgt-2__daterange label {
+    display: none;
+  }
+}
 .mgt-2__daterange input {
   width: 190px;
   *height: 45px;
@@ -321,6 +326,11 @@
   background-color: #707273;
   color: #ffffff;
   cursor: default;
+}
+@media print {
+  .mgt-2__bgroup {
+    display: none !important;
+  }
 }
 .mgt-2__bgroup--actions {
   padding-right: 0;
@@ -427,6 +437,7 @@
   background-color: #E6E6E6;
 }
 .mgt-2__table .tabs-nav > li > a {
+  color: #707273;
   font-family: 'Helvetica Neue Ultra Light', Arial, Helvetica, sans-serif;
   line-height: 28px;
   height: 40px;
@@ -441,6 +452,32 @@
 .mgt-2__table .tabs-nav > li.tab-active a {
   position: relative;
   color: #707273;
+}
+@media print {
+  .mgt-2__table .tabs-nav {
+    display: none;
+  }
+}
+@media print {
+  .mgt-2__table > div {
+    display: block !important;
+    page-break-inside: avoid;
+    margin-bottom: 18px;
+  }
+  .mgt-2__table > div:last-child {
+    margin-bottom: 0;
+  }
+  .mgt-2__table > div:before {
+    content: "TITLE";
+    background-color: #b10f3a;
+    color: #ffffff;
+    font-family: 'Helvetica Neue Ultra Light';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 21px;
+    padding: .5em 1em .5em .75em;
+    display: block;
+  }
 }
 .mgt-2 .mgt-2__asatdate {
   position: absolute;
@@ -579,6 +616,11 @@
   position: relative;
   cursor: help;
 }
+@media print {
+  .mgt-2__table--value abbr i {
+    display: none;
+  }
+}
 .mgt-2__table--value abbr > span {
   position: absolute;
   bottom: 28px;
@@ -614,6 +656,11 @@
 }
 .mgt-2__table--value abbr:hover > span {
   display: inline-block;
+}
+@media print {
+  .mgt-2__table--value abbr:hover > span {
+    display: none;
+  }
 }
 .mgt-2--copyright {
   margin: 1em 0.7em;
@@ -887,6 +934,11 @@
   background: #b10f3a;
   color: #ffffff;
 }
+@media print {
+  .ks__datepicker--daterange {
+    margin-left: -22px;
+  }
+}
 .ks__datepicker__date--from,
 .ks__datepicker__date--to {
   position: relative;
@@ -944,6 +996,11 @@
   height: 44px !important;
   line-height: 40px !important;
   display: inline-block !important;
+}
+@media print {
+  .mgt-2__daterange .fa-calendar {
+    display: none !important;
+  }
 }
 .mgt-2__daterange .ks__datepicker__date--from .fa-calendar {
   background-color: #FAFAFA;

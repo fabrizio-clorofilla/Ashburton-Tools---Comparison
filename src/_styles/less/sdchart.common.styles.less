@@ -1,0 +1,190 @@
+@charset "UTF-8";
+
+@import "Ashburton__brand.less";
+@import "fe2__global.less";
+
+
+
+
+ // -------------------------------- NORMALISE --------------------------------
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	.block;
+}
+button::-moz-focus-inner {
+	padding: 0;
+	border: 0
+}
+
+
+
+
+ // -------------------------------- IE7 ALERT --------------------------------
+.ie7alertbox {
+	background-color: @c-yellow;
+	width: @fullwidth;
+	padding: .25em;
+}
+
+
+
+
+// -------------------------------- COMMON RULES --------------------------------
+.mgt {
+	.boxsizing;
+	* {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 12px;
+		font-weight: normal;
+		line-height: 18px;
+		outline: none;
+		.boxsizing;
+		&:before,
+		&:after {
+			.boxsizing;
+		}
+	}
+	strong,
+	b {
+		font-family: Arial, Helvetica, sans-serif;
+		font-weight: bold;
+	}
+	.hide {
+		.hide;
+	}
+	a,
+	a:hover {
+		color: @c-claret;
+		text-decoration: none;
+		img {
+			border: none;
+		}
+	}
+	.pull-left {
+		float: left;
+	}
+	.pull-right {
+		float: right;
+	}
+	.loading,
+	&.loading {
+		background: rgba(255,255,255,.7);
+		cursor: progress;
+		* {
+			pointer-events: none;
+		}
+	}
+	.inactive {
+		opacity: 0.5 !important;
+		pointer-events: none;
+	}
+	[ng-click] {
+		cursor: pointer;
+	}
+}
+
+
+// -------------------------------- HEADINGS
+.mgt {
+	h1, h2, h3, h4, h5 {
+		font-weight: normal;
+		text-transform: inherit;
+		-webkit-font-feature-settings: 		"liga", "dlig";
+		-moz-font-feature-settings: 		"liga=1, dlig=1";
+		 // new syntax for Firefox 15+
+		-moz-font-feature-settings: 		"liga", "dlig";
+		-ms-font-feature-settings: 		"liga", "dlig";
+		-o-font-feature-settings: 			"liga", "dlig";
+		font-feature-settings: 				"liga", "dlig";
+	}
+	h1, h1 strong, h1 b {
+		color: @c-claret;
+		font: normal 36px/41px Arial, Helvetica, sans-serif;
+		font-weight: normal;
+	}
+	h2, h2 strong, h2 b {
+		color: @c-claret;
+		font: normal 20px/25px Arial, Helvetica, sans-serif;
+		font-weight: normal;
+	}
+	h3, h3 strong, h3 b {
+		color: @c-claret;
+		font: normal 13px/18px Arial, Helvetica, sans-serif;
+		font-weight: normal;
+	}
+	h1 strong, h1 b,
+	h2 strong, h2 b,
+	h3 strong, h3 b {
+		font-weight: bold;
+	}
+}
+
+
+// -------------------------------- MORE TEXT
+.mgt {
+	.intro {
+		font: normal 15px/20px Arial, Helvetica, sans-serif;
+		font-weight: normal;
+	}
+	i[class^="fa "] {
+		font-family: 'FontAwesome' !important;
+		font-size: inherit;
+		 // if this affects performance, specify each .fa- in use instead of the generic class
+	}
+}
+
+
+// -------------------------------- IMAGES
+.mgt {
+	img {
+		.inline;
+	}
+}
+
+
+
+// -------------------------------- STRUCTURE
+.mgt {
+	> ul {
+		list-style-type: none;
+		position: relative;
+		width: @fullwidth;
+		.block;
+		> li {
+			position: relative;
+			width: 456px;
+			vertical-align: top;
+			padding: 0px 20px;
+			.inline-block;
+		}
+	}
+}
+
+
+
+
+// -------------------------------- PRINT (GENERAL) --------------------------------
+// For the highest print quality, we should deliver high-DPI Retina images and SVG fonts*/
+@media print {
+	@page {
+		// please note that @page is not supported in Firefox (but it is in IE8)
+		// A4:
+		size: 8.27in 11.69in;
+		margin: 0.39in;
+	}
+	img,
+	table,
+	.mgt-2__chart {
+		page-break-inside: avoid;
+	}
+	img {
+		image-resolution: from-image;
+	}
+}
+
+@media print and (color) {
+	.mgt * {
+		// force print background colours
+		-webkit-print-color-adjust: exact;
+		print-color-adjust: exact;
+	}
+}

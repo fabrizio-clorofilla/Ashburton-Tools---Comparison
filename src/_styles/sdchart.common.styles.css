@@ -1,236 +1,241 @@
 @charset "UTF-8";
-
-
-
-/* ----------------- TYPOGRAPHY ----------------- */
 @font-face {
-	font-family: 'Helvetica Neue Ultra Light';
-	src: url('../_files/HelveticaNeueLTPro-UltLt.eot');
-	src: local('☺'),
-		url('../_files/HelveticaNeueLTPro-UltLt.eot?#iefix') format('embedded-opentype'),
+  font-family: 'Helvetica Neue Ultra Light';
+  src: url('../_files/HelveticaNeueLTPro-UltLt.eot');
+  src: local('☺'), url('../_files/HelveticaNeueLTPro-UltLt.eot?#iefix') format('embedded-opentype'),
 		url('../_files/HelveticaNeueLTPro-UltLt.woff') format('woff'),
 		url('../_files/HelveticaNeueLTPro-UltLt.ttf')  format('truetype'),
 		url('../_files/HelveticaNeueLTPro-UltLt.svg#svgHelveticaNeueLTPro-UltLt') format('svg');
 }
 @font-face {
-	font-family: 'Nexa Light';
-	src: url('../_files/nexa_light-webfont.eot');
-	src: local('☺'),
-		url('../_files/nexa_light-webfont.eot?#iefix') format('embedded-opentype'),
+  font-family: 'Nexa Light';
+  src: url('../_files/nexa_light-webfont.eot');
+  src: local('☺'), url('../_files/nexa_light-webfont.eot?#iefix') format('embedded-opentype'),
 		url('../_files/nexa_light-webfont.woff2') format('woff2'),
 		url('../_files/nexa_light-webfont.woff') format('woff'),
 		url('../_files/nexa_light-webfont.ttf')  format('truetype'),
 		url('../_files/nexa_light-webfont.svg#svgnexa_light-webfont') format('svg');
 }
 @font-face {
-	font-family: 'Nexa Bold';
-	src: url('../_files/nexa_bold-webfont.eot');
-	src: local('☺'),
-		url('../_files/nexa_bold-webfont.eot?#iefix') format('embedded-opentype'),
+  font-family: 'Nexa Bold';
+  src: url('../_files/nexa_bold-webfont.eot');
+  src: local('☺'), url('../_files/nexa_bold-webfont.eot?#iefix') format('embedded-opentype'),
 		url('../_files/nexa_bold-webfont.woff2') format('woff2'),
 		url('../_files/nexa_bold-webfont.woff') format('woff'),
 		url('../_files/nexa_bold-webfont.ttf')  format('truetype'),
 		url('../_files/nexa_bold-webfont.svg#svgnexa_bold-webfont') format('svg');
 }
-
-
-
-/* ----------------- COLOR REFERENCE ----------------- */
-/* note: all colors can be used at 20,40,60,80% transparency */
-/* --------------------------------------------------- */
-/*
------PRIMARY
-._blue 					{ color: #004f5c }
-._green 				{ color: #9ea900 }
------EXTENDED
-._blueshadedark 		{ color: #004752 }
-._blueshademid 		{ color: #1c626c }
-._blueshadelight 		{ color: #669999 }
-._greenshadelight 		{ color: #cccc00 }
-._darkgrey 			{ color: #363636 }
-._lightgrey 			{ color: #cccccc }
-._almostwhite 			{ color: #f2f2f2 }
------SECONDARY
-._yellow 				{ color: #ffcc33 }
-._red 					{ color: #88232b }
-._cyan 					{ color: #42739b }
-._orange 				{ color: #cc9933 }
-._purple 				{ color: #4b4870 }
-._green2 				{ color: #52682f }
-*/
-
-/* striped backgrounds */
-/*.mgt--creamtile		{background: transparent url(../_images/mandg_cream_tile.gif) top left;}*/
-/*.mgt--bluetile			{background: #004f5c url(../_images/mandg_dark_blue_tile.gif) top left; color: #f2f2f2;}*/
-
-
-
-/* ----------------- RESET, HTML5 AND CLEARFIX ----------------- */
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-	display: block;
+.fe2__container h1 {
+  font-family: 'Helvetica Neue Ultra Light';
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #dbdbdc;
+}
+/* specifying classes one by one is faster than the generic selector */
+.fe2--icon-star-2,
+.fe2--icon-plus-3,
+.fe2--icon-minus-2,
+.fe2--icon-info-3,
+.fe2--icon-file-pdf,
+.fe2--icon-bars,
+.fe2--icon-info,
+.fe2--icon-lock,
+.fe2--icon-menu {
+  font-family: 'fundexplorer' !important;
+}
+.clearfix {
+  *zoom: 1;
 }
 .clearfix:before,
-.clearfix:after {content: " ";display: table}
-.clearfix:after {clear: both}
-/* For IE 6/7 only */
-.clearfix {*zoom: 1}
+.clearfix:after {
+  content: " ";
+  display: table;
+  line-height: 0;
+}
+.clearfix:after {
+  clear: both;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
 button::-moz-focus-inner {
-	padding: 0;
-	border: 0
+  padding: 0;
+  border: 0;
 }
-
-
-
-/* ----------------- IE7 ALERT ----------------- */
 .ie7alertbox {
-	background-color: #f90;
-	width: 100%;
-	padding: .25em;
+  background-color: #f79c31;
+  width: 100%;
+  padding: .25em;
 }
-
-
-/*--------------------------------------------*\
-sorry that the classes will end up being verbose
-but we need to be almost 100% sure they won't be
-overwritten by any other CSS on M&G sites or on
-their clients' ones.
-\*--------------------------------------------*/
-.mgt * {
-	/* Firefox 27.0.1 broke its own property, hence the comment
-	all: initial;
-	*/
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	font-weight: normal;
-	line-height: 18px;
-	outline: none;
-	/*text-rendering:  geometricPrecision;*/
+.mgt {
+  box-sizing: border-box;
 }
-.mgt strong, .mgt b {
-	font-family: Arial, Helvetica, sans-serif;
-	font-weight: bold;
-}
-.mgt .hide {
-	display: none;
-}
-.mgt,
 .mgt *,
 .mgt *:before,
 .mgt *:after {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
+  box-sizing: inherit;
 }
-
-
-
-/* ----------------- COMMON ----------------- */
+.mgt * {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 18px;
+  outline: none;
+  box-sizing: border-box;
+}
+.mgt * *,
+.mgt * *:before,
+.mgt * *:after {
+  box-sizing: inherit;
+}
+.mgt *:before,
+.mgt *:after {
+  box-sizing: border-box;
+}
+.mgt *:before *,
+.mgt *:after *,
+.mgt *:before *:before,
+.mgt *:after *:before,
+.mgt *:before *:after,
+.mgt *:after *:after {
+  box-sizing: inherit;
+}
+.mgt strong,
+.mgt b {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+.mgt .hide {
+  display: none;
+}
 .mgt a,
-	.mgt a:hover {color: #2e515c; text-decoration: none; }
-	.mgt a img {border: none}
-.mgt .pull-left {float: left}
-.mgt .pull-right {float: right}
-.mgt .loading, .mgt.loading
-{
-	/*-moz-opacity: 0.50 !important;
-	opacity:.5 !important;
-	filter: alpha(opacity=50) !important;*/
-	background: rgba(255,255,255,.7);
-	cursor: progress;
+.mgt a:hover {
+  color: #b10f3a;
+  text-decoration: none;
 }
-.mgt .loading * {pointer-events: none;}
-.mgt .inactive {opacity: 0.5 !important; pointer-events: none; }
-.mgt [ng-click] {cursor: pointer;}
-
-
-
-/* ----------------- HEADINGS ----------------- */
-.mgt h1,.mgt h2,.mgt h3,.mgt h4,.mgt h5 {
-	font-weight: normal;
-	text-transform: inherit;
-	-webkit-font-feature-settings: "liga", "dlig";
-	-moz-font-feature-settings: "liga=1, dlig=1";
-	/* new syntax for Firefox 15+ */
-	-moz-font-feature-settings: "liga", "dlig";
-	-ms-font-feature-settings: "liga", "dlig";
-	-o-font-feature-settings: "liga", "dlig";
-	font-feature-settings: "liga", "dlig";
+.mgt a img,
+.mgt a:hover img {
+  border: none;
 }
-	.mgt h1,.mgt h1 strong,.mgt h1 b {
-		font: normal 36px/41px Arial, Helvetica, sans-serif;
-		font-weight: normal;
-		color: #2e515c;
-	}
-	.mgt h2,.mgt h2 strong,.mgt h2 b {
-		font: normal 20px/25px Arial, Helvetica, sans-serif;
-		font-weight: normal;
-		color: #2e515c;
-	}
-	.mgt h3,.mgt h3 strong,.mgt h3 b {
-		font: normal 13px/18px Arial, Helvetica, sans-serif;
-		font-weight: normal;
-		color: #2e515c;
-	}
-		.mgt h1 strong,.mgt h1 b,
-		.mgt h2 strong,.mgt h2 b,
-		.mgt h3 strong,.mgt h3 b {font-family: ; font-weight: bold}
-
+.mgt .pull-left {
+  float: left;
+}
+.mgt .pull-right {
+  float: right;
+}
+.mgt .loading,
+.mgt.loading {
+  background: rgba(255, 255, 255, 0.7);
+  cursor: progress;
+}
+.mgt .loading *,
+.mgt.loading * {
+  pointer-events: none;
+}
+.mgt .inactive {
+  opacity: 0.5 !important;
+  pointer-events: none;
+}
+.mgt [ng-click] {
+  cursor: pointer;
+}
+.mgt h1,
+.mgt h2,
+.mgt h3,
+.mgt h4,
+.mgt h5 {
+  font-weight: normal;
+  text-transform: inherit;
+  -webkit-font-feature-settings: "liga", "dlig";
+  -moz-font-feature-settings: "liga=1, dlig=1";
+  -moz-font-feature-settings: "liga", "dlig";
+  -ms-font-feature-settings: "liga", "dlig";
+  -o-font-feature-settings: "liga", "dlig";
+  font-feature-settings: "liga", "dlig";
+}
+.mgt h1,
+.mgt h1 strong,
+.mgt h1 b {
+  color: #b10f3a;
+  font: normal 36px/41px Arial, Helvetica, sans-serif;
+  font-weight: normal;
+}
+.mgt h2,
+.mgt h2 strong,
+.mgt h2 b {
+  color: #b10f3a;
+  font: normal 20px/25px Arial, Helvetica, sans-serif;
+  font-weight: normal;
+}
+.mgt h3,
+.mgt h3 strong,
+.mgt h3 b {
+  color: #b10f3a;
+  font: normal 13px/18px Arial, Helvetica, sans-serif;
+  font-weight: normal;
+}
+.mgt h1 strong,
+.mgt h1 b,
+.mgt h2 strong,
+.mgt h2 b,
+.mgt h3 strong,
+.mgt h3 b {
+  font-weight: bold;
+}
 .mgt .intro {
-	font: normal 15px/20px Arial, Helvetica, sans-serif;
-	font-weight: normal;
+  font: normal 15px/20px Arial, Helvetica, sans-serif;
+  font-weight: normal;
 }
-
 .mgt i[class^="fa "] {
-	font-family: 'FontAwesome' !important;
-	font-size: inherit;
-	/* if this affects performance, specify each .fa- in use instead of the generic class */
+  font-family: 'FontAwesome' !important;
+  font-size: inherit;
 }
-
 .mgt img {
-	display: inline;
+  display: inline;
 }
-
-/* ----------------- MAIN STRUCTURE ----------------- */
 .mgt > ul {
-	list-style-type: none;
-	position: relative;
-	width: 100%;
-	display: block;
+  list-style-type: none;
+  position: relative;
+  width: 100%;
+  display: block;
 }
-	.mgt > ul > li {
-		position: relative;
-		width: 456px;
-		padding: 0px 20px;
-		display: inline-block;
-		vertical-align: top;
-	}
-
-
-
-
-/*-------------------------------------------------------
-PRINT (GENERIC)
-For the highest print quality, we should deliver high-DPI Retina images and SVG fonts*/
+.mgt > ul > li {
+  position: relative;
+  width: 456px;
+  vertical-align: top;
+  padding: 0px 20px;
+  display: inline-block;
+}
 @media print {
-	@page {
-		/*please note that @page is not supported in Firefox (but it is in IE8)*/
-		size: 8.27in 11.69in;
-		margin: 0.39in;
-	}
-	img,
-	table,
-	.mgt-2__chart {
-		page-break-inside: avoid;
-	}
-	img {
-		image-resolution: from-image;
-	}
+  @page {
+    size: 8.27in 11.69in;
+    margin: 0.39in;
+  }
+  img,
+  table,
+  .mgt-2__chart {
+    page-break-inside: avoid;
+  }
+  img {
+    image-resolution: from-image;
+  }
 }
-
 @media print and (color) {
-	.mgt * {
-		/*force print background colours*/
-		-webkit-print-color-adjust: exact;
-		print-color-adjust: exact;
-	}
+  .mgt * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
 }
