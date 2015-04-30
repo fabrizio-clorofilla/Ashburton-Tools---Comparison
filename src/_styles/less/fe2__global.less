@@ -45,10 +45,13 @@
 
 
 // Display
-.hide 		{display: none;}
-.show-ib 	{display: inline-block;}
-.show-i 	{display: inline;}
-.show-b 	{display: block;}
+.hide() 			{display: none;}
+.inline-block() 	{display: inline-block;}
+.inline() 		{display: inline;}
+.block() 		{display: block;}
+.table() 		{display: table;}
+.table-row() 	{display: table-row;}
+.table-cell() 	{display: table-cell;}
 
 @i: ~"!important";
 
@@ -131,7 +134,7 @@
 
 // Performance improvement on animated items
 // (add this to any element with animations)
-.accelerate {
+.accelerate() {
 	-webkit-transform: 			translateZ(0);
 	-moz-transform: 				translateZ(0);
 	-o-transform: 					translateZ(0);
