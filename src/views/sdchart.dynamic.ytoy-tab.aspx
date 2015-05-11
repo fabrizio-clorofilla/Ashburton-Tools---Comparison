@@ -1,4 +1,4 @@
-<div id="mgt-2__tabs-1" ng-init="table=getTabIndex('ytoy')">
+<div id="mgt-2__tabs-1" ng-init="table=getTabIndex('ytoy')" data-tabletitle="{{tab.label | translate}}">
 <table class="mgt-2__annualised">
 	<colgroup>
 		<col><col><col><col><col><col><col><col>

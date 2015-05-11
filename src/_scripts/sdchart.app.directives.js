@@ -573,6 +573,42 @@ angular.module('sdchart.charttools', [])
         }
     ]);
 
+angular.module('sdchart.dynamic.widget')
+ .directive('typeaheadTools', [
+
+        function() {
+            return {
+                restrict: 'A',
+                link: function(scope, element, attr) {
+
+                    scope.addTypeahead = function(item) {
+
+                        if (scope.DataService.pushPlottableDynamic(item) && scope.DataService.isValid()) {
+                            // Setting the Loading to true for both charts and tabs
+                            scope.DataService.setLoading('chart', 'reload', true);
+                            scope.DataService.setLoading('tabs', 'reload', true);
+                            // Setting the request to Default
+                            scope.ChartDataService.setPeriodRequest(true);
+                            // Updating the hash 'status.valid' to trigger watches
+                            if (scope.DataService.status.fundAdded == false) {
+                                scope.pushBSC();
+                                scope.setDefaultRequestAndValid();
+                                scope.DataService.status.fundAdded = true;
+                            }
+                            scope.DataService.status.valid = moment.utc().valueOf();
+                            scope.selections.item.typeahead = null;
+                        }
+
+                        return false;
+                    }
+
+                    scope.test = function(item){
+                        console.log(item)
+                    }
+                }
+            }
+        }
+    ]);
 
 angular.module('sdchart.buttons', [])
     .directive('addButton', [
@@ -610,6 +646,7 @@ angular.module('sdchart.buttons', [])
                                 scope.DataService.status.valid = moment.utc().valueOf();
                             }
                         }
+
                         return false;
                     }
                 }

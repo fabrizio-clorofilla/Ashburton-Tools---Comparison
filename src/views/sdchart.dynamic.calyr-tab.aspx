@@ -1,4 +1,4 @@
-<div id="mgt-2__tabs-2" ng-init="table=getTabIndex('calyr')">
+<div id="mgt-2__tabs-2" ng-init="table=getTabIndex('calyr')" data-tabletitle="{{tab.label | translate}}">
 	<div class="mgt-2__asatdate" ng-bind="(table.title[0] | translate | capitalize)+' '+(table.title[1] | translate)+' '+table.title[2]"></div>
 <table class="mgt-2__cumulative">
 	<colgroup>

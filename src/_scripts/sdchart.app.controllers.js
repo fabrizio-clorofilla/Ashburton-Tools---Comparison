@@ -200,6 +200,10 @@ angular.module('SDCHART').controller('ChartController', ['$scope', '$http', '$ti
 
             }
         });
+
+        $scope.printScreen = function(){
+            window.print();
+        }
     }
 ]);
 

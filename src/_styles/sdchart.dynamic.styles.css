@@ -468,7 +468,7 @@
     margin-bottom: 0;
   }
   .mgt-2__table > div:before {
-    content: "TITLE";
+    content: attr(data-tabletitle);
     background-color: #b10f3a;
     color: #ffffff;
     font-family: 'Helvetica Neue Ultra Light';

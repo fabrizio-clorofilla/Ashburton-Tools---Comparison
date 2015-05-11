@@ -102,7 +102,7 @@ function SDCHART_STATIC_CONFIG() {
       return request.fullURL;
     },
     tabsData: function (ISINList, BMList, CategoryList, perfType, currency, log) {
-     currency = ''; // specific for Ashburtontools
+     // currency = ''; // specific for Ashburtontools
      var request = {
       fullURL: th.ServiceURL + '/KAPI/Wrapper.aspx?provider=156live&datasource=' + th.DataSource.performanceTabs + '&params=<Parameters><Parameter Name="ISINList" Type="StringLong" Value="' + ISINList + '"/><Parameter Name="IdentifierType" Type="StringLong" Value="ISIN"/><Parameter Name="BMList" Type="StringLong" Value="' + BMList + '"/><Parameter Name="CategoryList" Type="StringLong" Value="' + CategoryList + '"/><Parameter Name="ReturnType" Type="StringShort" Value="' + th.Lookup[perfType] + '"/><Parameter Name="Currency" Type="StringShort" Value="' + currency + '"/><Parameter Name="RiskType" Type="StringShort" Value="' + th.LookupRisk[perfType] + '"/><Parameter Name="TimePeriod" Type="StringShort" Value="M36"/><Parameter Name="LoadDate" Type="StringShort" Value=""/><Parameter Name="intDebug" Type="StringShort" Value="1"/></Parameters>&_='+moment.utc().valueOf(),
        provider: '156live',
@@ -425,7 +425,7 @@ function SDCHART_DYNAMIC_CONFIG() {
    return request.fullURL;
  },
  tabsData: function (ISINList, BMList, CategoryList, perfType, currency, log) {
-  currency = '';
+  // currency = '';
   var request = {
    fullURL: th.ServiceURL + '/KAPI/Wrapper.aspx?provider=156live&datasource=' + th.DataSource.performanceTabs + '&params=<Parameters><Parameter Name="ISINList" Type="StringLong" Value="' + ISINList + '"/><Parameter Name="IdentifierType" Type="StringLong" Value="ISIN"/><Parameter Name="BMList" Type="StringLong" Value="' + BMList + '"/><Parameter Name="CategoryList" Type="StringLong" Value="' + CategoryList + '"/><Parameter Name="ReturnType" Type="StringShort" Value="' + th.Lookup[perfType] + '"/><Parameter Name="Currency" Type="StringShort" Value="' + currency + '"/><Parameter Name="RiskType" Type="StringShort" Value="' + th.LookupRisk[perfType] + '"/><Parameter Name="TimePeriod" Type="StringShort" Value="M36"/><Parameter Name="LoadDate" Type="StringShort" Value=""/><Parameter Name="intDebug" Type="StringShort" Value="1"/></Parameters>&_='+moment.utc().valueOf(),
     provider: '156live',
