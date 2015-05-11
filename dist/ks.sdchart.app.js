@@ -1549,8 +1549,12 @@ function tickPointsCalculation ( poSer ) {
 	Cls.drawLineChart = function(target,chartConfig,title,subtitle,serieses) {
 	
 		var config = jQuery.extend(true, {}, chartConfig);
+		var maxDatapoint = 0;
 		for (var i=0; i<serieses.length; i++) {
-			if(serieses[i].identifier) config.xAxis.tickPositions = tickPointsCalculation(serieses[i]);
+			if(serieses[i].identifier && (serieses[i].data.length > maxDatapoint)) {
+				config.xAxis.tickPositions = tickPointsCalculation(serieses[i]);
+				maxDatapoint = serieses[i].data.length;
+			}
 		}
 		config.chart.renderTo = target;
 		config.title.text = title;
@@ -6259,7 +6263,7 @@ the specific language governing permissions and limitations under the Apache Lic
     fundsDetails: '43a4b941-75ac-4370-afd1-dfbbd47d1e60',
     performanceChart: 'fec3d399-16cd-47cc-8744-d3079cbabd0d',//'558a02e4-43a3-47f2-a2ff-9927070058d3',
     // performanceChart: '558a02e4-43a3-47f2-a2ff-9927070058d3',
-    performanceTabs: 'b2aa1285-1e09-423e-9aef-9fe9eaf6b289', 
+    performanceTabs: 'b2aa1285-1e09-423e-9aef-9fe9eaf6b289',
     fundsList: 'bcdd341b-16f3-45d4-9c6d-56d24160e226',
     translations: '2bde98b3-d9bb-4a24-8de2-9cb1e2aee34c',
     // OPTIONS PAGE DATASOURCES
@@ -6343,6 +6347,7 @@ the specific language governing permissions and limitations under the Apache Lic
       return request.fullURL;
     },
     tabsData: function (ISINList, BMList, CategoryList, perfType, currency, log) {
+     // currency = ''; // specific for Ashburtontools
      var request = {
       fullURL: th.ServiceURL + '/KAPI/Wrapper.aspx?provider=156live&datasource=' + th.DataSource.performanceTabs + '&params=<Parameters><Parameter Name="ISINList" Type="StringLong" Value="' + ISINList + '"/><Parameter Name="IdentifierType" Type="StringLong" Value="ISIN"/><Parameter Name="BMList" Type="StringLong" Value="' + BMList + '"/><Parameter Name="CategoryList" Type="StringLong" Value="' + CategoryList + '"/><Parameter Name="ReturnType" Type="StringShort" Value="' + th.Lookup[perfType] + '"/><Parameter Name="Currency" Type="StringShort" Value="' + currency + '"/><Parameter Name="RiskType" Type="StringShort" Value="' + th.LookupRisk[perfType] + '"/><Parameter Name="TimePeriod" Type="StringShort" Value="M36"/><Parameter Name="LoadDate" Type="StringShort" Value=""/><Parameter Name="intDebug" Type="StringShort" Value="1"/></Parameters>&_='+moment.utc().valueOf(),
        provider: '156live',
@@ -6512,11 +6517,11 @@ the specific language governing permissions and limitations under the Apache Lic
       formatter: function () {
         if(this.series.data.indexOf(this.point)==0) {
           return '<div style="background-color:' + this.series.color + '" class="mgt-1__chart--tooltip"><b>' + this.series.options.ext_name + '</b><br>' + moment(this.x).add(1,'day').format('DD-MMM-YYYY') + ', ' + numeral(this.y).format('0.00') + '</div>';
-        } 
+        }
         else{
           return '<div style="background-color:' + this.series.color + '" class="mgt-1__chart--tooltip"><b>' + this.series.options.ext_name + '</b><br>' + moment(this.x).format('DD-MMM-YYYY') + ', ' + numeral(this.y).format('0.00') + '</div>';
         }
-       
+
       }
     },
     legend: {
@@ -6559,9 +6564,10 @@ function SDCHART_DYNAMIC_CONFIG() {
   this.DataSource = {
     // WIDGET DATASOURCES
     fundsDetails: '43a4b941-75ac-4370-afd1-dfbbd47d1e60',
-    performanceChart: 'fec3d399-16cd-47cc-8744-d3079cbabd0d',//'558a02e4-43a3-47f2-a2ff-9927070058d3',
+    // performanceChart: 'fec3d399-16cd-47cc-8744-d3079cbabd0d',//'558a02e4-43a3-47f2-a2ff-9927070058d3',
+    performanceChart: '558a02e4-43a3-47f2-a2ff-9927070058d3',
     // performanceChart: '558a02e4-43a3-47f2-a2ff-9927070058d3',
-    performanceTabs: 'b2aa1285-1e09-423e-9aef-9fe9eaf6b289', 
+    performanceTabs: 'b2aa1285-1e09-423e-9aef-9fe9eaf6b289',
     fundsList: 'bcdd341b-16f3-45d4-9c6d-56d24160e226',
     translations: '2bde98b3-d9bb-4a24-8de2-9cb1e2aee34c',
     // OPTIONS PAGE DATASOURCES
@@ -6585,43 +6591,14 @@ function SDCHART_DYNAMIC_CONFIG() {
   };
 
   this.Colors = [
-    '#004F5C', /* this colour is ONLY for the main Fund */
-    '#98333C', /* red 80% */
-    '#CC9933', /* orange 100% */
-    '#5882A5', /* blue 80% */
-    '#7C8857', /* green 60% */
-    '#736B8E', /* orange 60% */
-    '#FDD762', /* yellow 60% */
-    '#42739B', /* blue 100% */
-    '#A64B53', /* red 60% */
-    '#52682F', /* green 100% */
-    '#4B4870', /* purple 100% */
-    '#FFCC33', /* yellow 100% */
-    '#88232B', /* red 100% */
-    '#6C92B1', /* blue 60% */
-    '#60597B', /* orange 80% */
-    '#697843', /* green 80% */
-    '#DBB05C', /* purple 60% */
-    '#FDD14E' /* yellow 80% */
-    // '#004F5C', /* this colour is ONLY for the main Fund */
-    // '#88232B', /* red 100% */
-    // '#CC9933', /* orange 100% */
-    // '#52682F', /* green 100% */
-    // '#4B4870', /* purple 100% */
-    // '#FFCC33', /* yellow 100% */
-    // '#42739B', /* blue 100% */
-    // '#A64B53', /* red 60% */
-    // '#736B8E', /* orange 60% */
-    // '#7C8857', /* green 60% */
-    // '#DBB05C', /* purple 60% */
-    // '#FDD762', /* yellow 60% */
-    // '#6C92B1', /* blue 60% */
-    // '#98333C', /* red 80% */
-    // '#60597B', /* orange 80% */
-    // '#697843', /* green 80% */
-    // '#D6A649', /* purple 80% */
-    // '#FDD14E', /* yellow 80% */
-    // '#5882A5' /* blue 80% */
+    '#F79C31', /* this colour is ONLY for the main Fund */
+    '#F0652F', /* red 80% */
+    '#ED5070', /* orange 100% */
+    '#665AA4', /* blue 80% */
+    '#199FDA', /* green 60% */
+    '#1BABBC', /* orange 60% */
+    '#65B94D', /* yellow 60% */
+    '#707273'
   ];
 
   this.Tabs = [
@@ -6687,6 +6664,7 @@ function SDCHART_DYNAMIC_CONFIG() {
    return request.fullURL;
  },
  tabsData: function (ISINList, BMList, CategoryList, perfType, currency, log) {
+  // currency = '';
   var request = {
    fullURL: th.ServiceURL + '/KAPI/Wrapper.aspx?provider=156live&datasource=' + th.DataSource.performanceTabs + '&params=<Parameters><Parameter Name="ISINList" Type="StringLong" Value="' + ISINList + '"/><Parameter Name="IdentifierType" Type="StringLong" Value="ISIN"/><Parameter Name="BMList" Type="StringLong" Value="' + BMList + '"/><Parameter Name="CategoryList" Type="StringLong" Value="' + CategoryList + '"/><Parameter Name="ReturnType" Type="StringShort" Value="' + th.Lookup[perfType] + '"/><Parameter Name="Currency" Type="StringShort" Value="' + currency + '"/><Parameter Name="RiskType" Type="StringShort" Value="' + th.LookupRisk[perfType] + '"/><Parameter Name="TimePeriod" Type="StringShort" Value="M36"/><Parameter Name="LoadDate" Type="StringShort" Value=""/><Parameter Name="intDebug" Type="StringShort" Value="1"/></Parameters>&_='+moment.utc().valueOf(),
     provider: '156live',
@@ -6766,9 +6744,9 @@ function SDCHART_DYNAMIC_CONFIG() {
   };
 
   this.minimumInceptionDate = 365; // In days
-  
+
   this.chartDataFrequency = 'monthly'; // options: monthly/weekly/daily
-  
+
   this.Chart = {
     chart: {
       renderTo: '',
@@ -6865,12 +6843,12 @@ function SDCHART_DYNAMIC_CONFIG() {
       borderWidth: 0,
       shadow: false,
       formatter: function () {
-        if(this.series.data.indexOf(this.point)==0) {
-          return '<div style="background-color:' + this.series.color + '" class="mgt-1__chart--tooltip"><b>' + this.series.options.ext_name + '</b><br>' + moment(this.x).add(1,'day').format('DD-MMM-YYYY') + ', ' + numeral(this.y).format('0.00') + '</div>';
-        } 
-        else{
+        // if(this.series.data.indexOf(this.point)==0) {
+        //   return '<div style="background-color:' + this.series.color + '" class="mgt-1__chart--tooltip"><b>' + this.series.options.ext_name + '</b><br>' + moment(this.x).add(1,'day').format('DD-MMM-YYYY') + ', ' + numeral(this.y).format('0.00') + '</div>';
+        // }
+        // else{
           return '<div style="background-color:' + this.series.color + '" class="mgt-1__chart--tooltip"><b>' + this.series.options.ext_name + '</b><br>' + moment(this.x).format('DD-MMM-YYYY') + ', ' + numeral(this.y).format('0.00') + '</div>';
-        }
+        // }
       }
     },
     legend: {
@@ -7230,7 +7208,25 @@ var test = 'dev';
   'use strict';
 
   $templateCache.put('views/sdchart.dynamic.aspx',
-    "<div class=\"mgt mgt-2\" ng-controller=\"MainController\" height-calc=\"test\"><div class=\"error\" ng-show=\"isError()\"><p ng-repeat=\"error in getError()\">ERROR: {{error}}</p></div><div class=\"loading\" ng-show=\"isLoading() && DataService.status.fundAdded\"><div><img ng-src=\"__DEPLOYMENTURL__/_images/ajax-loader.gif\"><br>{{'loading' | translate | uppercase}}</div></div><div class=\"mgt-2__tools mgt--creamtile\" ng-controller=\"SearchController\" ng-show=\"!isLoading('init') || !DataService.status.fundAdded\"><div class=\"mgt-2__tools--compare\" ng-show=\"!isLoading('init') && DataService.status.fundAdded\"><label ng-bind=\"'compare' | translate | capitalize\"></label><input id=\"search-bar\" autocomplete=\"off\" type=\"text\" ng-model=\"selections.item.typeahead\" typeahead=\"item as item.Typeahead for item in results.searchList | filter:$viewValue | filter:filterInitList()\" class=\"form-control\" placeholder=\"{{searchBarPlaceholder}}\" ng-click=\"selections.item.typeahead=''\" ng-enter> <a href=\"#\" class=\"btn mgt-2__tools--add\" ng-click=\"addItem('typeahead')\" type=\"typeahead\" add-button><i class=\"fa fa-plus\"></i></a></div><div class=\"mgt-2__tools--compare\" ng-show=\"!DataService.status.fundAdded\"><label ng-bind=\"'compare' | translate | capitalize\"></label><input id=\"search-bar\" autocomplete=\"off\" type=\"text\" ng-model=\"selections.item.typeahead\" typeahead=\"item as item.Typeahead for item in results.searchList | filter:$viewValue | filter:{Type : 'F'}\" class=\"form-control\" placeholder=\"{{'search' | translate | capitalize}} {{'for' | translate}} {{'fund' | translate | capitalize}}\" ng-click=\"selections.item.typeahead=''\" ng-enter> <a href=\"#\" class=\"btn mgt-2__tools--add\" ng-click=\"addItem('typeahead')\" type=\"typeahead\" add-button><i class=\"fa fa-plus\"></i></a></div><div class=\"mgt-2__tools--benchmark\" ng-if=\"results.elements.length && DataService.status.fundAdded\"><label ng-bind=\"'select' | translate | capitalize\"></label><div class=\"mgt-2__tools--select\"><select ui-select2=\"{minimumResultsForSearch: -1}\" ng-model=\"selections.cat\" data-placeholder=\"Select an element\" class=\"mgt-2__tools--select--cat\"><option value=\"\"></option><option ng-repeat=\"item in results.elements | orderBy:'label | translate'\" value=\"{{item.value}}\" ng-bind=\"item.label | translate\"></option></select></div><div class=\"mgt-2__tools--select\"><select ui-select2 ng-model=\"selections.item.select\" data-placeholder=\"{{'selectItem' | translate | capitalize}}\" class=\"mgt-2__tools--select--item\"><option value=\"\"></option><option ng-repeat=\"item in results.searchList | filter:{Type: selections.cat}\" value=\"{{item}}\">{{item.Name}}</option></select></div><a href=\"#\" class=\"btn mgt-2__tools--add\" ng-click=\"addItem('select')\" type=\"select\" add-button><i class=\"fa fa-plus\"></i></a></div></div><div class=\"mgt-2__noFundMsg\" ng-show=\"!DataService.status.fundAdded\"><p><i class=\"fa fa-arrow-up\"></i>Please select a fund from the Compare list to start the tool.</p></div><div class=\"mgt-2__chart\" ng-controller=\"ChartController\" ng-show=\"!isLoading('init') && DataService.status.fundAdded\"><div class=\"mgt-2__chart--tools clearfix\" chart-tools><div class=\"pull-right mgt-2__chart--buttons clearfix\"><ul><!--<li class=\"mgt-2__daterange\"><label ng-bind=\"'selectDateRange' | translate | capitalize\"></label>&nbsp;&nbsp;&nbsp;<div class=\"mgt-2__daterange\" ng-class=\"{active: PeriodSelector.Data.plot.period.label == 'DatePicker'}\" ks-datepicker-model=\"DatePicker\" min-date=\"{{PeriodSelector.Data.list.DatePicker.from | momentToString: 'YYYY-MM-DD'}}\" max-date=\"\" start-date=\"{{PeriodSelector.Data.plot.period.from | momentToString: 'DD/MM/YYYY'}}\" end-date=\"{{PeriodSelector.Data.plot.period.to | momentToString: 'DD/MM/YYYY'}}\" min-daterange=\"90\" lang=\"{{DataService.lang}}\" ks-datepicker ng-if=\"!isLoading('init')\"></div></li>--><li class=\"mgt-2__bgroup\"><ul class=\"clearfix\"><li ng-class=\"{unavailable: !PeriodSelector.Data.list['YTD'].available, active: PeriodSelector.Data.plot.period.label == 'YTD'}\" ng-click=\"setPeriodToPlot('YTD')\" ng-init=\"addPeriod('YTD')\" ng-bind=\"'YTD'\"></li><li ng-class=\"{unavailable: !PeriodSelector.Data.list['1Y'].available, active: PeriodSelector.Data.plot.period.label == '1Y'}\" ng-click=\"setPeriodToPlot('1Y')\" ng-init=\"addPeriod('1Y')\" ng-bind=\"'1Y' | translate | uppercase\"></li><li ng-class=\"{unavailable: !PeriodSelector.Data.list['3Y'].available, active: PeriodSelector.Data.plot.period.label == '3Y'}\" ng-click=\"setPeriodToPlot('3Y')\" ng-init=\"addPeriod('3Y')\" ng-bind=\"'3Y' | translate | uppercase\"></li><li ng-class=\"{unavailable: !PeriodSelector.Data.list['5Y'].available, active: PeriodSelector.Data.plot.period.label == '5Y'}\" ng-click=\"setPeriodToPlot('5Y')\" ng-init=\"addPeriod('5Y')\" ng-bind=\"'5Y' | translate | uppercase\"></li><li ng-class=\"{unavailable: !PeriodSelector.Data.list['10Y'].available, active: PeriodSelector.Data.plot.period.label == '10Y'}\" ng-click=\"setPeriodToPlot('10Y')\" ng-init=\"addPeriod('10Y')\" ng-bind=\"'10Y' | translate | uppercase\"></li><li ng-class=\"{unavailable: !PeriodSelector.Data.list['ALL'].available, active: PeriodSelector.Data.plot.period.label == 'ALL'}\" ng-click=\"setPeriodToPlot('ALL')\" ng-init=\"addPeriod('ALL')\" ng-bind=\"'ALL' | translate | uppercase\"></li></ul></li></ul></div></div><div class=\"mgt-2__chart\" linechart></div><div class=\"mgt-2__chart--messages\" ks-flashing-message status=\"{{MessageHandler.status}}\"></div></div><div id=\"mgt-2__tabs\" class=\"mgt-2__tabs mgt-2__table clearfix\" ng-controller=\"TabsController\" ng-show=\"!isLoading('init') && DataService.status.fundAdded\"><ul class=\"clearfix tabs-nav\"><li ng-repeat=\"tab in tabs\" tab-label ng-click=\"toggleTab($index)\" ng-class=\"isActive(tab.visibility)\"><a href=\"#\" ng-class=\"isActive(tab.visibility)\" ng-bind=\"tab.label | translate\"></a></li></ul><div perf-tab ng-repeat=\"tab in tabs\" type=\"{{tab.type}}\" index=\"{{tab.id}}\" ng-show=\"tab.visibility\"></div></div><div class=\"mgt-2--copyright clearfix\" ng-show=\"!isLoading('init') || !DataService.status.fundAdded\"><p class=\"mgt-2--footnote\" ng-show=\"DataService.status.fundAdded\" ng-bind-html=\"'chartFootnote' | translate\"></p><a href=\"http://www.kurtosys.com\" target=\"_blank\" title=\"Kurtosys Systems | Beautiful Software\"><img src=\"__DEPLOYMENTURL__/_images/Kurtosys_logo_tinyalpha.png\" target=\"_blank\" class=\"pull-right\"></div></div>"
+    "<div class=\"mgt mgt-2\" ng-controller=\"MainController\" height-calc=\"test\"><div class=\"error\" ng-show=\"isError()\"><p ng-repeat=\"error in getError()\">ERROR: {{error}}</p></div><div class=\"loading\" ng-show=\"isLoading() && DataService.status.fundAdded\"><div><img ng-src=\"//ashburtontools.kurtosysweb.com/fundtools/_images/ajax-loader.gif\"><br>{{'loading' | translate | uppercase}}</div></div><div class=\"mgt-2__tools\" ng-controller=\"SearchController\" ng-show=\"!isLoading('init') || !DataService.status.fundAdded\"><div class=\"mgt-2__tools--compare\" ng-show=\"!isLoading('init') && DataService.status.fundAdded\"><label ng-bind=\"'compare' | translate | capitalize\"></label><input id=\"search-bar\" autocomplete=\"off\" type=\"text\" ng-model=\"selections.item.typeahead\" typeahead=\"item as item.Typeahead for item in results.searchList | filter:$viewValue | filter:filterInitList()\" class=\"form-control\" placeholder=\"{{searchBarPlaceholder}}\" ng-click=\"selections.item.typeahead=''\" ng-enter> <a href=\"#\" class=\"btn mgt-2__tools--add\" ng-click=\"addItem('typeahead')\" type=\"typeahead\" add-button><i class=\"fa fa-plus\"></i></a></div><div class=\"mgt-2__tools--compare\" ng-show=\"!DataService.status.fundAdded\"><label ng-bind=\"'compare' | translate | capitalize\"></label><input id=\"search-bar\" autocomplete=\"off\" type=\"text\" ng-model=\"selections.item.typeahead\" typeahead=\"item as item.Typeahead for item in results.searchList | filter:$viewValue | filter:{Type : 'F'}\" class=\"form-control\" placeholder=\"{{'search' | translate | capitalize}} {{'for' | translate}} {{'fund' | translate | capitalize}}\" ng-click=\"selections.item.typeahead=''\" ng-enter> <a href=\"#\" class=\"btn mgt-2__tools--add\" ng-click=\"addItem('typeahead')\" type=\"typeahead\" add-button><i class=\"fa fa-plus\"></i></a></div><div class=\"mgt-2__tools--benchmark\" ng-if=\"results.elements.length && DataService.status.fundAdded\"><label ng-bind=\"'select' | translate | capitalize\"></label><div class=\"mgt-2__tools--select\"><select ui-select2=\"{minimumResultsForSearch: -1}\" ng-model=\"selections.cat\" data-placeholder=\"Select an element\" class=\"mgt-2__tools--select--cat\"><option value=\"\"></option><option ng-repeat=\"item in results.elements | orderBy:'label | translate'\" value=\"{{item.value}}\" ng-bind=\"item.label | translate\"></option></select></div><div class=\"mgt-2__tools--select\"><select ui-select2 ng-model=\"selections.item.select\" data-placeholder=\"{{'selectItem' | translate | capitalize}}\" class=\"mgt-2__tools--select--item\"><option value=\"\"></option><option ng-repeat=\"item in results.searchList | filter:{Type: selections.cat}\" value=\"{{item}}\">{{item.Name}}</option></select></div><a href=\"#\" class=\"btn mgt-2__tools--add\" ng-click=\"addItem('select')\" type=\"select\" add-button><i class=\"fa fa-plus\"></i></a></div></div><div class=\"mgt-2__noFundMsg\" ng-show=\"!DataService.status.fundAdded\"><p><i class=\"fa fa-arrow-up\"></i>Please select a fund from the Compare list to start the tool.</p></div><div class=\"mgt-2__chart\" ng-controller=\"ChartController\" ng-show=\"!isLoading('init') && DataService.status.fundAdded\"><div class=\"mgt-2__chart--tools clearfix\" chart-tools><ul class=\"mgt-2__chart--buttons clearfix\"><li class=\"mgt-2__daterange pull-left\"><label ng-bind=\"'selectDateRange' | translate | capitalize\"></label>&nbsp;&nbsp;&nbsp;<div class=\"mgt-2__daterange\" ng-class=\"{active: PeriodSelector.Data.plot.period.label == 'DatePicker'}\" ks-datepicker-model=\"DatePicker\" min-date=\"{{PeriodSelector.Data.list.DatePicker.from | momentToString: 'YYYY-MM-DD'}}\" max-date=\"\" start-date=\"{{PeriodSelector.Data.plot.period.from | momentToString: 'DD/MM/YYYY'}}\" end-date=\"{{PeriodSelector.Data.plot.period.to | momentToString: 'DD/MM/YYYY'}}\" min-daterange=\"90\" lang=\"{{DataService.lang}}\" ks-datepicker ng-if=\"!isLoading('init')\"></div></li><li class=\"mgt-2__bgroup mgt-2__bgroup--actions pull-right\"><ul class=\"clearfix\"><li ng-click=\"printScreen()\"><a>Print data sheet&nbsp;&nbsp;<i class=\"fa fa-print\"></i></a></li><li ng-click=\"exportToExcel()\"><a>Export to Excel&nbsp;&nbsp;<i class=\"fa fa-file\"></i></a></li></ul></li><li class=\"mgt-2__bgroup pull-right\"><ul class=\"clearfix\"><li ng-class=\"{unavailable: !PeriodSelector.Data.list['1Y'].available, active: PeriodSelector.Data.plot.period.label == '1Y'}\" ng-click=\"setPeriodToPlot('1Y')\" ng-init=\"addPeriod('1Y')\" ng-bind=\"'1Y' | translate | uppercase\"></li><li ng-class=\"{unavailable: !PeriodSelector.Data.list['3Y'].available, active: PeriodSelector.Data.plot.period.label == '3Y'}\" ng-click=\"setPeriodToPlot('3Y')\" ng-init=\"addPeriod('3Y')\" ng-bind=\"'3Y' | translate | uppercase\"></li><li ng-class=\"{unavailable: !PeriodSelector.Data.list['5Y'].available, active: PeriodSelector.Data.plot.period.label == '5Y'}\" ng-click=\"setPeriodToPlot('5Y')\" ng-init=\"addPeriod('5Y')\" ng-bind=\"'5Y' | translate | uppercase\"></li><li ng-class=\"{unavailable: !PeriodSelector.Data.list['ALL'].available, active: PeriodSelector.Data.plot.period.label == 'ALL'}\" ng-click=\"setPeriodToPlot('ALL')\" ng-init=\"addPeriod('ALL')\" ng-bind=\"'ALL' | translate | uppercase\"></li></ul></li></ul><!--\n" +
+    "\t\t\t<div class=\"pull-right mgt-2__chart--buttons clearfix\">\n" +
+    "\t\t\t\t<ul>\n" +
+    "\t\t\t\t<li class=\"mgt-2__daterange\"><label ng-bind=\"'selectDateRange' | translate | capitalize\"></label>&nbsp;&nbsp;&nbsp;<div class=\"mgt-2__daterange\" ng-class=\"{active: PeriodSelector.Data.plot.period.label == 'DatePicker'}\" ks-datepicker-model=\"DatePicker\" min-date=\"{{PeriodSelector.Data.list.DatePicker.from | momentToString: 'YYYY-MM-DD'}}\" max-date=\"\" start-date=\"{{PeriodSelector.Data.plot.period.from | momentToString: 'DD/MM/YYYY'}}\" end-date=\"{{PeriodSelector.Data.plot.period.to | momentToString: 'DD/MM/YYYY'}}\" min-daterange=\"90\" lang=\"{{DataService.lang}}\" ks-datepicker ng-if=\"!isLoading('init')\"></div></li>\n" +
+    "\t\t\t\t<li class=\"mgt-2__bgroup\">\n" +
+    "\t\t\t\t\t<ul class=\"clearfix\">\n" +
+    "\t\t\t\t\t\t<li ng-class=\"{unavailable: !PeriodSelector.Data.list['YTD'].available, active: PeriodSelector.Data.plot.period.label == 'YTD'}\" ng-click=\"setPeriodToPlot('YTD')\" ng-init=\"addPeriod('YTD')\" ng-bind=\"'YTD'\"></li>\n" +
+    "\t\t\t\t\t\t<li ng-class=\"{unavailable: !PeriodSelector.Data.list['1Y'].available, active: PeriodSelector.Data.plot.period.label == '1Y'}\" ng-click=\"setPeriodToPlot('1Y')\" ng-init=\"addPeriod('1Y')\" ng-bind=\"'1Y' | translate | uppercase\"></li>\n" +
+    "\t\t\t\t\t\t<li ng-class=\"{unavailable: !PeriodSelector.Data.list['3Y'].available, active: PeriodSelector.Data.plot.period.label == '3Y'}\" ng-click=\"setPeriodToPlot('3Y')\" ng-init=\"addPeriod('3Y')\" ng-bind=\"'3Y' | translate | uppercase\"></li>\n" +
+    "\t\t\t\t\t\t<li ng-class=\"{unavailable: !PeriodSelector.Data.list['5Y'].available, active: PeriodSelector.Data.plot.period.label == '5Y'}\" ng-click=\"setPeriodToPlot('5Y')\" ng-init=\"addPeriod('5Y')\" ng-bind=\"'5Y' | translate | uppercase\"></li>\n" +
+    "\t\t\t\t\t\t<li ng-class=\"{unavailable: !PeriodSelector.Data.list['10Y'].available, active: PeriodSelector.Data.plot.period.label == '10Y'}\" ng-click=\"setPeriodToPlot('10Y')\" ng-init=\"addPeriod('10Y')\" ng-bind=\"'10Y' | translate | uppercase\"></li>\n" +
+    "\t\t\t\t\t\t<li ng-class=\"{unavailable: !PeriodSelector.Data.list['ALL'].available, active: PeriodSelector.Data.plot.period.label == 'ALL'}\" ng-click=\"setPeriodToPlot('ALL')\" ng-init=\"addPeriod('ALL')\" ng-bind=\"'ALL' | translate | uppercase\"></li>\n" +
+    "\t\t\t\t\t</ul>\n" +
+    "\t\t\t\t</li>\n" +
+    "\t\t\t\t</ul>\n" +
+    "\t\t\t</div>\n" +
+    "\t\t--></div><div class=\"mgt-2__chart\" linechart></div><div class=\"mgt-2__chart--messages\" ks-flashing-message status=\"{{MessageHandler.status}}\"></div></div><div id=\"mgt-2__tabs\" class=\"mgt-2__tabs mgt-2__table clearfix\" ng-controller=\"TabsController\" ng-show=\"!isLoading('init') && DataService.status.fundAdded\"><ul class=\"clearfix tabs-nav\"><li ng-repeat=\"tab in tabs\" tab-label ng-click=\"toggleTab($index)\" ng-class=\"isActive(tab.visibility)\"><a href=\"#\" ng-class=\"isActive(tab.visibility)\" ng-bind=\"tab.label | translate\"></a></li></ul><div perf-tab ng-repeat=\"tab in tabs\" type=\"{{tab.type}}\" index=\"{{tab.id}}\" ng-show=\"tab.visibility\"></div></div><!--\n" +
+    "\t<div class=\"mgt-2--copyright clearfix\" ng-show=\"!isLoading('init') || !DataService.status.fundAdded\"><p class=\"mgt-2--footnote\" ng-show=\"DataService.status.fundAdded\" ng-bind-html=\"'chartFootnote' | translate\"></p><a href=\"http://www.kurtosys.com\" target=\"_blank\" title=\"Kurtosys Systems | Beautiful Software\"/><img src=\"__DEPLOYMENTURL__/_images/Kurtosys_logo_tinyalpha.png\" target=\"_blank\" class=\"pull-right\" /></a></div>\n" +
+    "\t--></div>"
   );
 
 
@@ -7275,7 +7271,17 @@ var test = 'dev';
 
 
   $templateCache.put('views/sdchart.options.aspx',
-    "<script src=\"http://ashburtontools.kurtosysweb.com/fundtools/_scripts/sdchart.widget.js\"></script><div class=\"mgt--intro\"><h1><strong>Ashburton Tools Creator</strong></h1></div><div class=\"ks-widget-sd ks-widget-sd-options\" app=\"{}\"><div class=\"mgt--options__container\" ng-controller=\"ConfigGeneratorController\"><div class=\"loading\" ng-show=\"isOptionsLoading()\"><div></div></div><div class=\"mgt--options__config\"><h2>Select Parameters</h2><div class=\"mgt--options__selectParameters\"><select ui-select2=\"\" id=\"mgt--options--select--clienttype\" ng-model=\"selections.clienttype\" data-placeholder=\"Select Client Type\"><option value=\"\"></option><option ng-repeat=\"elm in options.clientType  track by $index\" value=\"{{elm.Code}}\">{{elm.Title | uppercase}}</option><option></option></select><select ui-select2=\"\" id=\"mgt--options--select--country\" ng-model=\"selections.country\" data-placeholder=\"Select Country\"><option value=\"\"></option><option ng-repeat=\"elm in options.country track by $index\" value=\"{{elm.Code}}\">{{elm.Title | uppercase}}</option><option></option></select><select ui-select2=\"\" id=\"mgt--options--select--language\" ng-model=\"selections.language\" data-placeholder=\"Select Language\"><option value=\"\"></option><option ng-repeat=\"elm in options.language track by $index\" value=\"{{elm.Code}}\">{{elm.Title | uppercase}}</option><option></option></select></div><h2>Select Fund</h2><div class=\"mgt--options__selectFund\"><select ui-select2=\"\" id=\"mgt--options--select--fund\" ng-model=\"selections.fund\" data-placeholder=\"Select a fund\"><option value=\"\"></option><option ng-repeat=\"elm in funds.dropdown track by $index | orderBy:elm.l\" value=\"{{elm.v}}\">{{elm.l}}</option><option></option></select></div><h2>Options</h2><div><h3 class=\"clearfix\">Performance Chart + Table (Static)<a class=\"btn-generate pull-right\" ng-click=\"stage('static')\">Generate</a></h3><div class=\"clearfix\"><h4>Performance Type</h4><ul><li><input type=\"radio\" name=\"perfType1\" value=\"net\" checked ng-model=\"selections.static.perftype\">Net</li><li><input type=\"radio\" name=\"perfType1\" value=\"gross\" ng-model=\"selections.static.perftype\">Gross</li></ul></div></div><div><h3 class=\"clearfix\">Performance Chart (Interactive)<a class=\"btn-generate pull-right\" ng-click=\"stage('dynamic')\">Generate</a></h3><div class=\"divider clearfix\"><h4>Performance Type</h4><ul><li><input type=\"radio\" name=\"perfType2\" value=\"net\" checked ng-model=\"selections.dynamic.perftype\">Net</li><li><input type=\"radio\" name=\"perfType2\" value=\"gross\" ng-model=\"selections.dynamic.perftype\">Gross</li></ul></div><div class=\"divider clearfix\"><h4>Performance Tabs</h4><ul><li><input type=\"checkbox\" ng-model=\"selections.dynamic.hidetab[0]\" ng-true-value=\"\" ng-false-value=\"ytoy\" checked>Year To Year</li><li><input type=\"checkbox\" ng-model=\"selections.dynamic.hidetab[1]\" ng-true-value=\"\" ng-false-value=\"calyr\" checked>Calendar Year</li><li><input type=\"checkbox\" ng-model=\"selections.dynamic.hidetab[2]\" ng-true-value=\"\" ng-false-value=\"cum\" checked>Cumulative</li><li><input type=\"checkbox\" ng-model=\"selections.dynamic.hidetab[3]\" ng-true-value=\"\" ng-false-value=\"risk\" checked>Risk Measure</li></ul></div><div class=\"clearfix\"><h4>Comparison Items</h4><ul><li><input type=\"checkbox\" ng-model=\"selections.dynamic.hideelement[0]\" ng-true-value=\"\" ng-false-value=\"benchmark\">Indexes</li><li><input type=\"checkbox\" ng-model=\"selections.dynamic.hideelement[1]\" ng-true-value=\"\" ng-false-value=\"sector\">Sectors</li></ul></div></div><h3 class=\"clearfix\">Fund Comparison Tool (Interactive)<a class=\"btn-generate pull-right\" ng-click=\"stage('dynamicNoFund')\">Generate</a></h3><div class=\"germany-only\"></div><h3 class=\"clearfix germany-only\">Entry Charge Chart (Static)<a class=\"btn-generate pull-right\" ng-click=\"stage('entryCharge')\">Generate</a></h3></div><div class=\"mgt--options__code\"><pre data-item=\"static chart widget code\" ng-bind=\"div.static\"></pre><pre data-item=\"dynamic chart widget code\" ng-bind=\"div.dynamic\"></pre><pre data-item=\"no fund dynamic chart widget code\" ng-bind=\"div.dynamicNoFund\"></pre><pre data-item=\"entry charge chart widget code\" class=\"germany-only\" ng-bind=\"div.entryCharge\"></pre></div></div><div class=\"mgt-2--copyright clearfix\" style=\"padding-right: 20px\"><a href=\"http://www.kurtosys.com\" target=\"_blank\" title=\"Kurtosys Systems | Beautiful Software\"><img src=\"https://mandgtools.kurtosysweb.com/_images/Kurtosys_logo_tinyalpha.png\" target=\"_blank\" class=\"pull-right\"></a></div></div>"
+    "<script src=\"http://ashburtontools.kurtosysweb.com/fundtools/_scripts/sdchart.widget.js\"></script><div class=\"mgt--intro\"><h1><strong>Ashburton Tools Creator</strong></h1></div><div class=\"ks-widget-sd ks-widget-sd-options\" app=\"{}\"><div class=\"mgt--options__container\" ng-controller=\"ConfigGeneratorController\"><div class=\"loading\" ng-show=\"isOptionsLoading()\"><div></div></div><div class=\"mgt--options__config\"><h2>Select Parameters</h2><div class=\"mgt--options__selectParameters\"><select ui-select2=\"\" id=\"mgt--options--select--clienttype\" ng-model=\"selections.clienttype\" data-placeholder=\"Select Client Type\"><option value=\"\"></option><option ng-repeat=\"elm in options.clientType  track by $index\" value=\"{{elm.Code}}\">{{elm.Title | uppercase}}</option><option></option></select><select ui-select2=\"\" id=\"mgt--options--select--country\" ng-model=\"selections.country\" data-placeholder=\"Select Country\"><option value=\"\"></option><option ng-repeat=\"elm in options.country track by $index\" value=\"{{elm.Code}}\">{{elm.Title | uppercase}}</option><option></option></select><select ui-select2=\"\" id=\"mgt--options--select--language\" ng-model=\"selections.language\" data-placeholder=\"Select Language\"><option value=\"\"></option><option ng-repeat=\"elm in options.language track by $index\" value=\"{{elm.Code}}\">{{elm.Title | uppercase}}</option><option></option></select></div><h2>Select Fund</h2><div class=\"mgt--options__selectFund\"><select ui-select2=\"\" id=\"mgt--options--select--fund\" ng-model=\"selections.fund\" data-placeholder=\"Select a fund\"><option value=\"\"></option><option ng-repeat=\"elm in funds.dropdown track by $index | orderBy:elm.l\" value=\"{{elm.v}}\">{{elm.l}}</option><option></option></select></div><h2>Options</h2><!-- <div>\n" +
+    "\t\t\t\t\t\t<h3 class=\"clearfix\">Performance Chart + Table (Static)<a class=\"btn-generate pull-right\" ng-click=\"stage('static')\">Generate</a></h3>\n" +
+    "\t\t\t\t\t\t\t<div class=\"clearfix\">\n" +
+    "\t\t\t\t\t\t\t<h4>Performance Type</h4>\n" +
+    "\t\t\t\t\t\t\t<ul>\n" +
+    "\t\t\t\t\t\t\t<li><input type=\"radio\" name=\"perfType1\" value=\"net\" checked=\"\" ng-model=\"selections.static.perftype\">Net</li>\n" +
+    "\t\t\t\t\t\t\t<li><input type=\"radio\" name=\"perfType1\" value=\"gross\" ng-model=\"selections.static.perftype\">Gross</li>\t\n" +
+    "\t\t\t\t\t\t\t</ul>\n" +
+    "\t\t\t\t\t\t\t</div>\n" +
+    "\t\t\t\t\t\t</div> --><div><h3 class=\"clearfix\">Performance Chart (Interactive)<a class=\"btn-generate pull-right\" ng-click=\"stage('dynamic')\">Generate</a></h3><div class=\"divider clearfix\"><h4>Performance Type</h4><ul><li><input type=\"radio\" name=\"perfType2\" value=\"net\" checked ng-model=\"selections.dynamic.perftype\">Net</li><li><input type=\"radio\" name=\"perfType2\" value=\"gross\" ng-model=\"selections.dynamic.perftype\">Gross</li></ul></div><div class=\"divider clearfix\"><h4>Performance Tabs</h4><ul><li><input type=\"checkbox\" ng-model=\"selections.dynamic.hidetab[0]\" ng-true-value=\"\" ng-false-value=\"ytoy\" checked>Year To Year</li><li><input type=\"checkbox\" ng-model=\"selections.dynamic.hidetab[1]\" ng-true-value=\"\" ng-false-value=\"calyr\" checked>Calendar Year</li><li><input type=\"checkbox\" ng-model=\"selections.dynamic.hidetab[2]\" ng-true-value=\"\" ng-false-value=\"cum\" checked>Cumulative</li><li><input type=\"checkbox\" ng-model=\"selections.dynamic.hidetab[3]\" ng-true-value=\"\" ng-false-value=\"risk\" checked>Risk Measure</li></ul></div><div class=\"clearfix\"><h4>Comparison Items</h4><ul><li><input type=\"checkbox\" ng-model=\"selections.dynamic.hideelement[0]\" ng-true-value=\"\" ng-false-value=\"benchmark\">Indexes</li><li><input type=\"checkbox\" ng-model=\"selections.dynamic.hideelement[1]\" ng-true-value=\"\" ng-false-value=\"sector\">Sectors</li></ul></div></div><h3 class=\"clearfix\">Fund Comparison Tool (Interactive)<a class=\"btn-generate pull-right\" ng-click=\"stage('dynamicNoFund')\">Generate</a></h3><!-- <div class=\"germany-only\"></div>\n" +
+    "\t\t\t\t\t\t<h3 class=\"clearfix germany-only\">Entry Charge Chart (Static)<a class=\"btn-generate pull-right\" ng-click=\"stage('entryCharge')\">Generate</a></h3> --></div><div class=\"mgt--options__code\"><!-- <pre data-item=\"static chart widget code\" ng-bind=\"div.static\"></pre> --><pre data-item=\"dynamic chart widget code\" ng-bind=\"div.dynamic\"></pre><pre data-item=\"no fund dynamic chart widget code\" ng-bind=\"div.dynamicNoFund\"></pre><!-- <pre data-item=\"entry charge chart widget code\" class=\"germany-only\" ng-bind=\"div.entryCharge\"></pre> --></div></div><div class=\"mgt-2--copyright clearfix\" style=\"padding-right: 20px\"><a href=\"http://www.kurtosys.com\" target=\"_blank\" title=\"Kurtosys Systems | Beautiful Software\"><img src=\"https://mandgtools.kurtosysweb.com/_images/Kurtosys_logo_tinyalpha.png\" target=\"_blank\" class=\"pull-right\"></a></div></div>"
   );
 
 
@@ -7571,18 +7577,21 @@ angular.module('sdchart.highcharts', [])
                                 subtitle = '';
                             }
                             if (scope.DataService.isDynamic()) {
-                                scope.chart.serieses[0].type = 'area';
-                                scope.chart.serieses[0].zIndex = 0;
-                                scope.chart.serieses[0].fillColor = {
-                                    pattern: '__DEPLOYMENTURL__/_images/mandg_dark_blue_tile.gif',
-                                    // pattern: '__DEPLOYMENTURL__/_images/vanilla_dark_blue_tile.png',
-                                    width: 5,
-                                    height: 5
-                                };
-                                $rootScope.config.Chart.chart.width = element.parent().parent().width();
+                                // scope.chart.serieses[0].type = 'area';
+                                // scope.chart.serieses[0].zIndex = 0;
+                                // scope.chart.serieses[0].fillColor = {
+                                //     pattern: '__DEPLOYMENTURL__/_images/mandg_dark_blue_tile.gif',
+                                //     // pattern: '__DEPLOYMENTURL__/_images/vanilla_dark_blue_tile.png',
+                                //     width: 5,
+                                //     height: 5
+                                // };
+                                $rootScope.config.Chart.chart.width = element.parent().parent().width()-36;
                             }
                             $rootScope.config.Chart.yAxis.min = scope.chart.min;
                             $rootScope.config.Chart.yAxis.max = scope.chart.max;
+                            for(var i=0; i<scope.chart.serieses.length; i++){
+
+                            }
                             scope.chart.highchart = KSCHART.drawLineChart('perfchart-' + r, $rootScope.config.Chart, title, subtitle, scope.chart.serieses, true);
                             for (var i = 0; i < scope.chart.seriesesToHide.length; i++) {
                                 scope.chart.highchart.series[scope.chart.seriesesToHide[i]].hide();
@@ -9460,7 +9469,8 @@ angular.module('SDCHART').service('DataService', ['$http', '$rootScope', '$q', '
 				case "B": sType = 'benchmark'; break;
 			}
 			tObj.type = sType;
-			if(sType=='fund') tObj.inceptionDate = moment(oElement.MinPerfDate,'MM/DD/YYYY').format('YYYY-MM-DD');
+			// if(sType=='fund') tObj.inceptionDate = moment(oElement.MinPerfDate,'MM/DD/YYYY').format('YYYY-MM-DD');
+			if(sType=='fund') tObj.inceptionDate = moment(oElement.InceptionDate,'MM/DD/YYYY').format('YYYY-MM-DD');
 
 			th.plottables.push(tObj);
 		}
@@ -9523,7 +9533,8 @@ angular.module('SDCHART').service('DataService', ['$http', '$rootScope', '$q', '
 			oFunds[aFunds[i].ISIN] = {};
 			oFunds[aFunds[i].ISIN].ISIN = aFunds[i].ISIN;
 			oFunds[aFunds[i].ISIN].SecId = aFunds[i].FundVendorId;
-			oFunds[aFunds[i].ISIN].inceptionDate = aFunds[i].MinPerfDate;
+			// oFunds[aFunds[i].ISIN].inceptionDate = aFunds[i].MinPerfDate;
+			oFunds[aFunds[i].ISIN].inceptionDate = aFunds[i].InceptionDate;
 			oFunds[aFunds[i].ISIN].name = aFunds[i].FundName;
 			oFunds[aFunds[i].ISIN].currency = aFunds[i].CurrencyCode;
 		};
@@ -9919,13 +9930,18 @@ angular.module('SDCHART').service('ChartDataService', ['$http', '$rootScope', '$
 		for(var i=0; i<plottables.length; i++){
 			if(plottables[i].active == true){
 				if(oSer.hasOwnProperty(plottables[i].SecId)){
-					oSer[plottables[i].SecId].color = plottables[i].color;
-					oSer[plottables[i].SecId].id = plottables[i].index;
-					oSer[plottables[i].SecId].ext_name = oSer[plottables[i].SecId].name;
-					oSer[plottables[i].SecId].name = $filter('translate')(plottables[i].type,$rootScope.config.Params.Language);
-					oSer[plottables[i].SecId].zIndex = 999-i;
-					serieses.push(oSer[plottables[i].SecId]);
-					if(plottables[i].visible==false) seriesesToHide.push(i);
+					if(oSer[plottables[i].SecId].data.length){
+						oSer[plottables[i].SecId].color = plottables[i].color;
+						oSer[plottables[i].SecId].id = plottables[i].index;
+						oSer[plottables[i].SecId].ext_name = oSer[plottables[i].SecId].name;
+						oSer[plottables[i].SecId].name = $filter('translate')(plottables[i].type,$rootScope.config.Params.Language);
+						oSer[plottables[i].SecId].zIndex = 999-i;
+						serieses.push(oSer[plottables[i].SecId]);
+						if(plottables[i].visible==false) seriesesToHide.push(i);
+					}
+					else {
+						serieses.push(new emptySeries());
+					}
 				}
 				else{
 					serieses.push(new emptySeries());
@@ -9935,7 +9951,8 @@ angular.module('SDCHART').service('ChartDataService', ['$http', '$rootScope', '$
 				serieses.push(new emptySeries());
 			}
 		}
-		return {serieses: serieses, seriesesToHide: seriesesToHide, min: oSer.minValue, max: oSer.maxValue, dropped: oSer.dropped};
+		// return {serieses: serieses, seriesesToHide: seriesesToHide, min: oSer.minValue, max: oSer.maxValue, dropped: oSer.dropped};
+		return {serieses: serieses, seriesesToHide: seriesesToHide, min: oSer.minValue, max: oSer.maxValue, dropped: []};
 	}
 
 	this.createPeriodSelectorController = function(){
