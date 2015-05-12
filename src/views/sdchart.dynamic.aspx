@@ -40,6 +40,7 @@
 		    	<ul class="clearfix">
 			    <li ng-click="printScreen()"><a>Print data sheet&nbsp;&nbsp;<i class="fa fa-print"></i></a></li>
 			    <li ng-click="exportToExcel()"><a>Export to Excel&nbsp;&nbsp;<i class="fa fa-file"></i></a></li>
+			    <li ng-click="resetTool()"><a>Reset tool&nbsp;&nbsp;<i class="fa fa-trash-o"></i></a></li>
 		    	</ul>
 		    </li>
 		    <li class="mgt-2__bgroup pull-right">
@@ -79,9 +80,10 @@
 		<ul class="clearfix tabs-nav">
 			<li ng-repeat="tab in tabs" tab-label ng-click="toggleTab($index)" ng-class="isActive(tab.visibility)"><a href="#" ng-class="isActive(tab.visibility)" ng-bind="tab.label | translate"></a></li>
 		</ul>
-			<div perf-tab ng-repeat="tab in tabs" type="{{tab.type}}" index="{{tab.id}}" ng-show="tab.visibility"></div>
+		<div perf-tab ng-repeat="tab in tabs" type="{{tab.type}}" index="{{tab.id}}" ng-show="tab.visibility" data-tabletitle="{{tab.label | translate}}"></div>
 	</div>
 
+	
 	<!--
 	<div class="mgt-2--copyright clearfix" ng-show="!isLoading('init') || !DataService.status.fundAdded"><p class="mgt-2--footnote" ng-show="DataService.status.fundAdded" ng-bind-html="'chartFootnote' | translate"></p><a href="http://www.kurtosys.com" target="_blank" title="Kurtosys Systems | Beautiful Software"/><img src="__DEPLOYMENTURL__/_images/Kurtosys_logo_tinyalpha.png" target="_blank" class="pull-right" /></a></div>
 	-->

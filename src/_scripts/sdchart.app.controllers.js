@@ -21,6 +21,10 @@ angular.module('SDCHART').controller('MainController', ['$scope', '$rootScope', 
             } else {}
         }
 
+        $scope.resetTool = function() {
+            debug = true;
+        }
+
         $scope.DataService = DataService;
         $scope.ChartDataService = ChartDataService;
         $scope.ErrorHandler = ErrorHandler;
@@ -204,6 +208,72 @@ angular.module('SDCHART').controller('ChartController', ['$scope', '$http', '$ti
         $scope.printScreen = function(){
             window.print();
         }
+
+        $scope.exportToExcel = function(){
+
+            var dataToExport;
+            var nameToExport = "Performances";
+
+            dataToExport1 = '.mgt-2__yeartoyear';
+            dataToExport2 = '.mgt-2__calendaryear';
+            dataToExport3 = '.mgt-2__cumulative';
+
+            $timeout(function() {
+                var tableToExport1 = $(dataToExport1).clone();
+                var tableToExport2 = $(dataToExport2).clone();
+                var tableToExport3 = $(dataToExport3).clone();
+                $('body').find('formDownload').remove();
+
+                // Get form elements
+                var form = null;
+                var formName = null;
+                var formData = null;
+
+                form = document.createElement('form');
+                form.id = 'formDownload';
+                form.style.display = 'none';
+                form.action = '//ashburtontools.kurtosysweb.com/KAPI/simpleExcel.aspx';
+                form.method = 'POST';
+
+                formName = document.createElement('input');
+                formData = document.createElement('input');
+
+                formName.id = 'formName';
+                formData.id = 'formData';
+
+                formName.name = 'Name';
+                formData.name = 'Data';
+
+                $(tableToExport1).find('col:first-child').remove();
+                $(tableToExport1).find('th:first-child').remove();
+                $(tableToExport1).find('td:first-child').remove();
+                $(tableToExport2).find('col:first-child').remove();
+                $(tableToExport2).find('th:first-child').remove();
+                $(tableToExport2).find('td:first-child').remove();
+                $(tableToExport3).find('col:first-child').remove();
+                $(tableToExport3).find('th:first-child').remove();
+                $(tableToExport3).find('td:first-child').remove();
+
+                var plainHTML = $(tableToExport1)[0].outerHTML+$(tableToExport2)[0].outerHTML+$(tableToExport3)[0].outerHTML;
+
+                $(formData).attr('value', plainHTML);
+                $(formName).attr('value', nameToExport);
+
+                form.appendChild(formName);
+                form.appendChild(formData);
+
+                document.body.appendChild(form);
+
+                form.submit();
+                $(form).remove();
+
+                $timeout(function(){
+                    $scope.loading = false;
+                },1500);
+
+            }, 350);
+        }
+
     }
 ]);
 

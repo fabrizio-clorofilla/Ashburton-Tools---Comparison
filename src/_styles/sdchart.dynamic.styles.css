@@ -1158,3 +1158,14 @@
   font-size: 36px !important;
   vertical-align: bottom;
 }
+
+.mgt-2__tools--footer {
+  text-align: right;
+  margin-right: 25px;
+  margin-top: 18px;
+}
+
+.mgt-2__tools--footer .btn {
+  width: 85px;
+  font-family: 'Helvetica Neue Ultra Light', Arial, Helvetica, sans-serif;
+}
