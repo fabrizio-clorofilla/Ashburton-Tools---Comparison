@@ -272,9 +272,19 @@
   margin-top: 0;
   border: none;
 }
+@media print {
+  .mgt-2__chart {
+    border: 18px solid #ffffff;
+  }
+}
 .mgt-2__chart--tools {
   background-color: #f1f1f2;
   overflow: hidden;
+}
+@media print {
+  .mgt-2__chart--tools {
+    background-color: #ffffff;
+  }
 }
 .mgt-2__daterange,
 .mgt-2__bgroup {
@@ -564,6 +574,12 @@
 }
 .mgt-2__table .mgt-2__table--value {
   text-align: right;
+}
+@media print {
+  .mgt-2__table {
+    background-color: #ffffff;
+    border: 18px solid #ffffff;
+  }
 }
 .mgt-2__table--benchmark:hover,
 .mgt-2__table--sector:hover,
@@ -936,17 +952,43 @@
 }
 @media print {
   .ks__datepicker--daterange {
-    margin-left: -22px;
+    margin-left: -45px;
   }
 }
 .ks__datepicker__date--from,
 .ks__datepicker__date--to {
   position: relative;
 }
+@media print {
+  .ks__datepicker__date--from:before {
+    content: "From ";
+    position: absolute;
+    top: -2px;
+    left: 24px;
+    font-size: 9px;
+    text-transform: uppercase;
+  }
+}
+@media print {
+  .ks__datepicker__date--to:before {
+    content: "To ";
+    position: absolute;
+    top: -2px;
+    left: 24px;
+    font-size: 9px;
+    text-transform: uppercase;
+  }
+}
 .ks__datepicker__date--from--input {
   background-color: #F9F9F9;
   padding: 1.1em .75em 0.7em .75em;
   border-style: none none none solid !important;
+}
+@media print {
+  .ks__datepicker__date--from--input {
+    background-color: #ffffff;
+    padding: 1.1em .75em 0.7em 0;
+  }
 }
 .ks__datepicker__date--to--input {
   padding-left: 0px !important;
@@ -972,6 +1014,11 @@
   box-sizing: border-box !important;
   margin: 0 -22px 0 -5px !important;
   vertical-align: top;
+}
+@media print {
+  .ks__datepicker__date--divider {
+    display: none !important;
+  }
 }
 .ks__datepicker__icon {
   position: relative;
@@ -1158,13 +1205,11 @@
   font-size: 36px !important;
   vertical-align: bottom;
 }
-
 .mgt-2__tools--footer {
   text-align: right;
   margin-right: 25px;
   margin-top: 18px;
 }
-
 .mgt-2__tools--footer .btn {
   width: 85px;
   font-family: 'Helvetica Neue Ultra Light', Arial, Helvetica, sans-serif;

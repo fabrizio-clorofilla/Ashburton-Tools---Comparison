@@ -235,6 +235,9 @@
 		margin-top: 0;
 		border: none;
 	}
+	@media print {
+		border: @baseline solid @c-bg;
+	}
 }
 
 
@@ -242,6 +245,9 @@
 .mgt-2__chart--tools {
 	background-color: @c-grey3;
 	overflow: hidden;
+	@media print {
+		background-color: @c-bg;
+	}
 }
 .mgt-2__daterange,
 .mgt-2__bgroup {
@@ -597,6 +603,10 @@
 	}
 	.mgt-2__table--value {
 		text-align: right;
+	}
+	@media print {
+		background-color: @c-bg;
+		border: @baseline solid @c-bg;
 	}
 }
 .mgt-2__table--benchmark,
@@ -1010,17 +1020,45 @@
 		color: @c-bg;
 	}
 	@media print {
-		margin-left: -22px;
+		margin-left: -(@baseline * 2.5);
 	}
 }
 .ks__datepicker__date--from,
 .ks__datepicker__date--to {
 	position: relative;
 }
+.ks__datepicker__date--from {
+	&:before {
+		@media print {
+			content: "From ";
+			position: absolute;
+			top: -2px;
+			left: round(@baseline * 1.35);
+			font-size: round(@basefont * .65);
+			text-transform: uppercase;
+		}
+	}
+}
+.ks__datepicker__date--to {
+	&:before {
+		@media print {
+			content: "To ";
+			position: absolute;
+			top: -2px;
+			left: round(@baseline * 1.35);
+			font-size: round(@basefont * .65);
+			text-transform: uppercase;
+		}
+	}
+}
 .ks__datepicker__date--from--input {
 	background-color: #F9F9F9;
 	padding: 1.1em .75em 0.7em .75em;
 	border-style: none none none solid @i;
+	@media print {
+		background-color: @c-bg;
+		padding: 1.1em .75em 0.7em 0;
+	}
 }
 .ks__datepicker__date--to--input {
 	padding-left: 0px @i;
@@ -1048,6 +1086,9 @@
 	box-sizing: border-box @i;
 	margin: 0 -22px 0 -5px @i;
 	vertical-align: top;
+	@media print {
+		display: none @i;
+	}
 }
 .ks__datepicker__icon {
 	position: relative;
