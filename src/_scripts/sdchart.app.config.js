@@ -329,7 +329,7 @@ function SDCHART_DYNAMIC_CONFIG() {
     performanceChart: '558a02e4-43a3-47f2-a2ff-9927070058d3',
     // performanceChart: '558a02e4-43a3-47f2-a2ff-9927070058d3',
     performanceTabs: 'b2aa1285-1e09-423e-9aef-9fe9eaf6b289',
-    fundsList: 'bcdd341b-16f3-45d4-9c6d-56d24160e226',
+    fundsList: 'b799f55b-6e9b-43a3-b862-2df62046f1f6',
     translations: '2bde98b3-d9bb-4a24-8de2-9cb1e2aee34c',
     // OPTIONS PAGE DATASOURCES
     optionsClientType: 'f52fe0f9-8c53-458e-8e0e-17eb363aae3e',

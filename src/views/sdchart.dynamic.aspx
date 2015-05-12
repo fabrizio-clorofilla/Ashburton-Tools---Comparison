@@ -40,7 +40,7 @@
 		    	<ul class="clearfix">
 			    <li ng-click="printScreen()"><a>Print data sheet&nbsp;&nbsp;<i class="fa fa-print"></i></a></li>
 			    <li ng-click="exportToExcel()"><a>Export to Excel&nbsp;&nbsp;<i class="fa fa-file"></i></a></li>
-			    <li ng-click="resetTool()"><a>Reset tool&nbsp;&nbsp;<i class="fa fa-trash-o"></i></a></li>
+			    <li ng-click="resetTool()"><a>Reset tool&nbsp;&nbsp;<i class="fa fa-rotate-left"></i></a></li>
 		    	</ul>
 		    </li>
 		    <li class="mgt-2__bgroup pull-right">
