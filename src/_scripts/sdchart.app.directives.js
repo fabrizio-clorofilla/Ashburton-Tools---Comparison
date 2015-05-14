@@ -591,7 +591,7 @@ angular.module('sdchart.dynamic.widget')
                             scope.ChartDataService.setPeriodRequest(true);
                             // Updating the hash 'status.valid' to trigger watches
                             if (scope.DataService.status.fundAdded == false) {
-                                scope.pushBSC();
+                                // scope.pushBSC();
                                 scope.setDefaultRequestAndValid();
                                 scope.DataService.status.fundAdded = true;
                             }
@@ -628,7 +628,7 @@ angular.module('sdchart.buttons', [])
                                 scope.ChartDataService.setPeriodRequest(true);
                                 // Updating the hash 'status.valid' to trigger watches
                                 if (scope.DataService.status.fundAdded == false) {
-                                    scope.pushBSC();
+                                    // scope.pushBSC();
                                     scope.setDefaultRequestAndValid();
                                     scope.DataService.status.fundAdded = true;
                                 }

@@ -224,7 +224,7 @@ angular.module('SDCHART').service('DataService', ['$http', '$rootScope', '$q', '
 
 		return !isDuplicate && !isLimit;
 	}
-
+	
 	// DONE
 	this.buildFundListRequest = function(){
 		var sFundsList = '';

@@ -31,7 +31,7 @@
 			<a href="#" class="btn mgt-2__tools--add" ng-click="addItem('select')" type="select" add-button><i class="fa fa-plus"></i></a>
 		</div>
 	</div>
-	<div class="mgt-2__noFundMsg" ng-show="!DataService.status.fundAdded"><p><i class="fa fa-arrow-up"></i>Please select a fund from the Compare list to start the tool.</p></div>
+	<!-- <div class="mgt-2__noFundMsg" ng-show="!DataService.status.fundAdded"><p><i class="fa fa-arrow-up"></i>Please select a fund from the Compare list to start the tool.</p></div> -->
 	<div class="mgt-2__chart" ng-controller="ChartController" ng-show="!isLoading('init') && DataService.status.fundAdded">
 		<div class="mgt-2__chart--tools clearfix" chart-tools>
 		<ul class="mgt-2__chart--buttons clearfix">

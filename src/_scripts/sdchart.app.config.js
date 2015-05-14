@@ -325,8 +325,7 @@ function SDCHART_DYNAMIC_CONFIG() {
   this.DataSource = {
     // WIDGET DATASOURCES
     fundsDetails: '43a4b941-75ac-4370-afd1-dfbbd47d1e60',
-    // performanceChart: 'fec3d399-16cd-47cc-8744-d3079cbabd0d',//'558a02e4-43a3-47f2-a2ff-9927070058d3',
-    performanceChart: '558a02e4-43a3-47f2-a2ff-9927070058d3',
+    performanceChart: '6fab4a80-2fa9-4e36-8c82-50a3802e3552',
     // performanceChart: '558a02e4-43a3-47f2-a2ff-9927070058d3',
     performanceTabs: 'b2aa1285-1e09-423e-9aef-9fe9eaf6b289',
     fundsList: 'b799f55b-6e9b-43a3-b862-2df62046f1f6',
@@ -449,7 +448,7 @@ function SDCHART_DYNAMIC_CONFIG() {
  chartData: function (SecIDs, fromDate, toDate, perfType, currency, log) {
    var now = moment().format('YYYYMMDD');
    var request = {
-    fullURL: th.ServiceURL + '/KAPI/Wrapper.aspx?provider=156live&datasource=' + th.DataSource.performanceChart + '&params=<Parameters><Parameter Name="IdList" Type="StringLong" Value="' + SecIDs + '"/><Parameter Name="Universe" Type="StringShort" Value=""/><Parameter Name="FromDate" Type="StringShort" Value="' + fromDate + '"/><Parameter Name="ToDate" Type="StringShort" Value="' + toDate + '"/><Parameter Name="rebasedvalue" Type="StringShort" Value="' + th.Params.RebasedValue + '"/><Parameter Name="Currency" Type="StringShort" Value="' + currency + '"/><Parameter Name="UseBSOwnCurrency" Type="StringShort" Value="1"/><Parameter Name="dropincompleteBS" Type="StringShort" Value="1"/><Parameter Name="TrimToFinalDailyDate" Type="StringShort" Value="1"/><Parameter Name="ToDateDaily" Type="StringShort" Value="' + toDate + '"/><Parameter Name="ReturnType" Type="StringShort" Value="' + th.Lookup[perfType] + '"/></Parameters>&_='+moment.utc().valueOf(),
+    fullURL: th.ServiceURL + '/KAPI/Wrapper.aspx?provider='+th.ClientName+'&datasource=' + th.DataSource.performanceChart + '&params=<Parameters><Parameter Name="IdList" Type="StringLong" Value="' + SecIDs + '"/><Parameter Name="Universe" Type="StringShort" Value=""/><Parameter Name="FromDate" Type="StringShort" Value="' + fromDate + '"/><Parameter Name="ToDate" Type="StringShort" Value="' + toDate + '"/><Parameter Name="rebasedvalue" Type="StringShort" Value="' + th.Params.RebasedValue + '"/><Parameter Name="Currency" Type="StringShort" Value="' + currency + '"/><Parameter Name="UseBSOwnCurrency" Type="StringShort" Value="1"/><Parameter Name="dropincompleteBS" Type="StringShort" Value="1"/><Parameter Name="TrimToFinalDailyDate" Type="StringShort" Value="1"/><Parameter Name="ToDateDaily" Type="StringShort" Value="' + toDate + '"/><Parameter Name="ReturnType" Type="StringShort" Value="' + th.Lookup[perfType] + '"/></Parameters>&_='+moment.utc().valueOf(),
     provider: '156live',
     datasource: th.DataSource.performanceChart,
     params: {

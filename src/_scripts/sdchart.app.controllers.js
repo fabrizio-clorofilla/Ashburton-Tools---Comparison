@@ -22,7 +22,10 @@ angular.module('SDCHART').controller('MainController', ['$scope', '$rootScope', 
         }
 
         $scope.resetTool = function() {
-            debug = true;
+            DataService.resetWidget();
+            // DataService.colorConfig();
+            // DataService.tabsConfig();
+            DataService.status.fundAdded = false;
         }
 
         $scope.DataService = DataService;
