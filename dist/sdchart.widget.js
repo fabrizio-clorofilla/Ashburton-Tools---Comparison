@@ -12,7 +12,14 @@ var JQ_VERSION = '1.7.2';
 
 var WL_APPNAME = 'SDCHART';
 
+// devcode: production
 var WL_HOST = '//ashburtontools.kurtosysweb.com/funtools';
+// endcode
+// devcode: development
+var WL_HOST = '//localhost:9002';
+// endcode
+
+// devcode: production
 var WL_CSSFILES = [
 //	'//cloud.webtype.com/css/a48c2f3e-f82c-4747-9c4a-630b03dcbcb8.css',
 	WL_HOST+"/_styles/ks.sdchart.styles.css"
@@ -20,6 +27,40 @@ var WL_CSSFILES = [
 var WL_JSFILES = [
 	WL_HOST+'/_scripts/ks.sdchart.app.js'
 ];
+// endcode
+
+// devcode: development
+var WL_CSSFILES = [
+//	'//cloud.webtype.com/css/a48c2f3e-f82c-4747-9c4a-630b03dcbcb8.css',
+	WL_HOST+'/_styles/lib/font-awesome.min.css',
+	WL_HOST+'/_styles/lib/select2.css',
+	WL_HOST+'/_styles/sdchart.common.styles.css',
+	WL_HOST+'/_styles/sdchart.static.styles.css',
+	WL_HOST+'/_styles/sdchart.dynamic.styles.css'
+];
+var WL_JSFILES = [
+	WL_HOST+'/_scripts/lib/es5-shim.min.js',
+	WL_HOST+'/_scripts/lib/jquery-ui-1.10.4.custom.min.js',
+	WL_HOST+'/_scripts/lib/ks_utils.js',
+	WL_HOST+'/_scripts/lib/jshighcharts.js',
+	WL_HOST+'/_scripts/lib/kurtosys.chart.js',
+	WL_HOST+'/_scripts/lib/moment.js',
+	WL_HOST+'/_scripts/lib/numeral_1.5.3.min.js',
+	WL_HOST+'/_scripts/lib/kurtosys.chart.new.js',
+	WL_HOST+'/_scripts/lib/kurtosys.chart.periodselector.js',
+	WL_HOST+'/_scripts/lib/angular-route.js',
+	WL_HOST+'/_scripts/lib/select2.js',
+	WL_HOST+'/_scripts/sdchart.app.config.js',
+	WL_HOST+'/_scripts/sdchart.app.angular-translation.js',
+	WL_HOST+'/_scripts/sdchart.app.js',
+	WL_HOST+'/_scripts/templates.js',
+	WL_HOST+'/_scripts/sdchart.app.filters.js',
+	WL_HOST+'/_scripts/sdchart.app.directives.js',
+	WL_HOST+'/_scripts/sdchart.app.services.js',
+	WL_HOST+'/_scripts/sdchart.app.controllers.js'
+];
+// endcode
+
 // Static and Dynamic Charting Widget Loader
 // M&G Implementation
 // Rev 1.0
@@ -94,7 +135,13 @@ window.LoadAngular = function() {
 
 		angularTag.src = WL_HOST+'/_scripts/angular-xdomain-fixed.js'; // for devel-01, uat, prod
 
+		// devcode: production
 		angularTag.src = WL_HOST+'/_scripts/angular-xdomain-fixed.js';
+		// endcode
+		// devcode: development
+		angularTag.src = WL_HOST+'/_scripts/lib/angular-xdomain-fixed.js';
+		// endcode
+
 		document.body.appendChild(angularTag);
 		if(angularTag.addEventListener) {
 			angularTag.addEventListener("load",function() {

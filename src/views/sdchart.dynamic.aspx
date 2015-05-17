@@ -6,12 +6,12 @@
 	<div class="mgt-2__tools" ng-controller="SearchController" ng-show="!isLoading('init') || !DataService.status.fundAdded">
 		<div class="mgt-2__tools--compare" ng-show="!isLoading('init') && DataService.status.fundAdded">
 		<label ng-bind="'compare' | translate | capitalize"></label>
-		<input id="search-bar" autocomplete="off" type="text" ng-model="selections.item.typeahead" typeahead="item as item.Typeahead for item in results.searchList | filter:$viewValue | filter:filterInitList()" class="form-control" placeholder="{{searchBarPlaceholder}}" ng-click="selections.item.typeahead=''" typeahead-on-select="addTypeahead($item)" typeahead-tools>
+		<input id="search-bar" autocomplete="off" type="text" ng-model="selections.item.typeahead" typeahead="item as item.Typeahead for item in results.searchList | filter:$viewValue | filter:{Type : 'F'}" class="form-control" placeholder="Search for Fund, ISIN" ng-click="selections.item.typeahead=''" typeahead-on-select="addTypeahead($item)" typeahead-tools>
 		<a href="#" class="btn mgt-2__tools--add" ng-click="addItem('typeahead')" type="typeahead" add-button><i class="fa fa-plus"></i></a>
 		</div>
 			<div class="mgt-2__tools--compare" ng-show="!DataService.status.fundAdded">
 			<label ng-bind="'compare' | translate | capitalize"></label>
-	    <input id="search-bar" autocomplete="off" type="text" ng-model="selections.item.typeahead" typeahead="item as item.Typeahead for item in results.searchList | filter:$viewValue | filter:{Type : 'F'}" class="form-control" placeholder="{{'search' | translate | capitalize}} {{'for' | translate}} {{'fund' | translate | capitalize}}" ng-click="selections.item.typeahead=''" typeahead-on-select="addTypeahead($item)" ng-enter typeahead-tools>
+	    <input id="search-bar" autocomplete="off" type="text" ng-model="selections.item.typeahead" typeahead="item as item.Typeahead for item in results.searchList | filter:$viewValue | filter:{Type : 'F'}" class="form-control" placeholder="Search for Fund, ISIN" ng-click="selections.item.typeahead=''" typeahead-on-select="addTypeahead($item)" ng-enter typeahead-tools>
 			<a href="#" class="btn mgt-2__tools--add" ng-click="addItem('typeahead')" type="typeahead" add-button><i class="fa fa-plus"></i></a>
 			</div>
 		<div class="mgt-2__tools--benchmark" ng-if="results.elements.length && DataService.status.fundAdded">
