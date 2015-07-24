@@ -22,7 +22,8 @@ var WL_HOST = '//localhost:9002';
 // devcode: production
 var WL_CSSFILES = [
 //	'//cloud.webtype.com/css/a48c2f3e-f82c-4747-9c4a-630b03dcbcb8.css',
-	WL_HOST+"/_styles/ks.sdchart.styles.css"
+	WL_HOST+"/_styles/ks.sdchart.styles.css",
+	'//fonts.googleapis.com/css?family=Roboto:400,100,300'
 ];
 var WL_JSFILES = [
 	WL_HOST+'/_scripts/ks.sdchart.app.js'
@@ -36,7 +37,8 @@ var WL_CSSFILES = [
 	WL_HOST+'/_styles/lib/select2.css',
 	WL_HOST+'/_styles/sdchart.common.styles.css',
 	WL_HOST+'/_styles/sdchart.static.styles.css',
-	WL_HOST+'/_styles/sdchart.dynamic.styles.css'
+	WL_HOST+'/_styles/sdchart.dynamic.styles.css',
+	'//fonts.googleapis.com/css?family=Roboto:400,100,300'
 ];
 var WL_JSFILES = [
 	WL_HOST+'/_scripts/lib/es5-shim.min.js',
@@ -101,7 +103,7 @@ window.LoadTranslations = function() {
 		window.oTranslations = {};
 
 		var langId = $('.ks-widget-sd').eq(0).attr('language');
-		var baseURL = 'http://ashburtontools.kurtosysweb.com';
+		var baseURL = '//ashburtontools.kurtosysweb.com';
 		var clientName = 'ASHBURTONTOOLS';
 		var dataSource = '2bde98b3-d9bb-4a24-8de2-9cb1e2aee34c';
 

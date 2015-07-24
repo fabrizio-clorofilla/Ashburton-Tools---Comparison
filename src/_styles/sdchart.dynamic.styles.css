@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'Helvetica Neue Ultra Light';
+  font-family: 'Roboto';
   src: url('../_files/HelveticaNeueLTPro-UltLt.eot');
   src: local('☺'), url('../_files/HelveticaNeueLTPro-UltLt.eot?#iefix') format('embedded-opentype'),
 		url('../_files/HelveticaNeueLTPro-UltLt.woff') format('woff'),
@@ -25,7 +25,7 @@
 		url('../_files/nexa_bold-webfont.svg#svgnexa_bold-webfont') format('svg');
 }
 .fe2__container h1 {
-  font-family: 'Helvetica Neue Ultra Light';
+  font-family: 'Roboto';
   font-weight: 400;
   font-style: normal;
   text-align: center;
@@ -91,10 +91,10 @@
 }
 .mgt-2__tools label {
   width: 120px;
-  font-family: 'Nexa Light', Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
   font-size: 20px;
   line-height: 25px;
-  font-weight: normal;
+  font-weight: 300;
   color: #707273;
   display: inline-block;
   text-align: left;
@@ -111,7 +111,7 @@
 }
 .mgt-2__tools--compare input[type="text"] {
   width: 683px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
   font-size: 16px;
   line-height: 22px;
   font-weight: normal;
@@ -448,7 +448,7 @@
 }
 .mgt-2__table .tabs-nav > li > a {
   color: #707273;
-  font-family: 'Helvetica Neue Ultra Light', Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
   line-height: 28px;
   height: 40px;
   padding: 0.5em 1em;
@@ -481,7 +481,7 @@
     content: attr(data-tabletitle);
     background-color: #b10f3a;
     color: #ffffff;
-    font-family: 'Helvetica Neue Ultra Light';
+    font-family: 'Roboto';
     font-weight: 400;
     font-style: normal;
     font-size: 21px;
@@ -545,7 +545,7 @@
   font-weight: 700;
 }
 .mgt-2__table table tr td + td + td {
-  font-family: 'Helvetica Neue Ultra Light', Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
 }
 .mgt-2__table col:first-child + col {
   width: 380px;
@@ -756,7 +756,7 @@
   display: block;
 }
 .mgt-2 .dropdown-menu li a {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: normal;
   padding: .35em .5em;
@@ -1212,5 +1212,5 @@
 }
 .mgt-2__tools--footer .btn {
   width: 85px;
-  font-family: 'Helvetica Neue Ultra Light', Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
 }

@@ -750,7 +750,7 @@ button::-moz-focus-inner {
 }
 .mgt .loading,
 .mgt.loading {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.7);
   cursor: progress;
 }
 .mgt .loading *,
@@ -1703,7 +1703,7 @@ button::-moz-focus-inner {
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: #ffffff;
+  background-color: rgba(255,255,255,0.75);
   z-index: 9999;
 }
 .mgt--options__container .loading {
