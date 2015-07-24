@@ -9,7 +9,7 @@ function SDCHART_STATIC_CONFIG() {
   this.ServiceURL = '//ashburtontools.kurtosysweb.com';
   // endcode
 
-  this.OptionsURL = 'http://ashburtontools.kurtosysweb.com';
+  this.OptionsURL = '//ashburtontools.kurtosysweb.com';
   this.ClientName = 'ASHBURTONTOOLS';
   this.Company = 'ASHBURTONTOOLS';
 
@@ -318,7 +318,7 @@ function SDCHART_DYNAMIC_CONFIG() {
   this.SITE_URL = '//ashburtontools.kurtosysweb.com';
   this.ServiceURL = '//ashburtontools.kurtosysweb.com';
   // endcode
-  this.OptionsURL = 'http://ashburtontools.kurtosysweb.com';
+  this.OptionsURL = '//ashburtontools.kurtosysweb.com';
   this.ClientName = 'ASHBURTONTOOLS';
   this.Company = 'ASHBURTONTOOLS';
 
@@ -655,7 +655,7 @@ function SDCHART_ENTRYCHARGE_CONFIG() {
   this.SITE_URL = '//ashburtontools.kurtosysweb.com';
   this.ServiceURL = '//ashburtontools.kurtosysweb.com';
   // endcode
-  this.OptionsURL = 'http://ashburtontools.kurtosysweb.com';
+  this.OptionsURL = '//ashburtontools.kurtosysweb.com';
   this.ClientName = 'ASHBURTONTOOLS';
   this.Company = 'ASHBURTONTOOLS';
 

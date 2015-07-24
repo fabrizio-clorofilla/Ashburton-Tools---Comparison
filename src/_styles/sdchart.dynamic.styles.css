@@ -94,7 +94,7 @@
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
   font-size: 20px;
   line-height: 25px;
-  font-weight: 100;
+  font-weight: 300;
   color: #707273;
   display: inline-block;
   text-align: left;
@@ -111,7 +111,7 @@
 }
 .mgt-2__tools--compare input[type="text"] {
   width: 683px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
   font-size: 16px;
   line-height: 22px;
   font-weight: normal;
@@ -756,7 +756,7 @@
   display: block;
 }
 .mgt-2 .dropdown-menu li a {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: normal;
   padding: .35em .5em;
