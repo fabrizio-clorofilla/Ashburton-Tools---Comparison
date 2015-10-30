@@ -2,7 +2,7 @@
 <div class="error" ng-show="isError()"><p ng-repeat="error in getError()">ERROR: {{error}}</p></div>
 <div class="loading" ng-show="isLoading() && DataService.status.fundAdded"><div>
 <img ng-src="//ashburtontools.kurtosysweb.com/fundtools/_images/ajax-loader.gif">
-<br />{{'loading' | translate | uppercase}}</div></div>
+<br />{{'loading' | translate | capitalize}}</div></div>
 	<div class="mgt-2__tools" ng-controller="SearchController" ng-show="!isLoading('init') || !DataService.status.fundAdded">
 		<div class="mgt-2__tools--compare" ng-show="!isLoading('init') && DataService.status.fundAdded">
 		<label ng-bind="'compare' | translate | capitalize"></label>
@@ -78,12 +78,12 @@
 	</div>
 	<div id="mgt-2__tabs" class="mgt-2__tabs mgt-2__table clearfix" ng-controller="TabsController" ng-show="!isLoading('init') && DataService.status.fundAdded">
 		<ul class="clearfix tabs-nav">
-			<li ng-repeat="tab in tabs" tab-label ng-click="toggleTab($index)" ng-class="isActive(tab.visibility)"><a href="#" ng-class="isActive(tab.visibility)" ng-bind="tab.label | translate"></a></li>
+			<li ng-repeat="tab in tabs" tab-label ng-click="toggleTab($index)" ng-class="isActive(tab.visibility)"><a href="#" ng-class="isActive(tab.visibility)" ng-bind="tab.label | translate | capitalize"></a></li>
 		</ul>
 		<div perf-tab ng-repeat="tab in tabs" type="{{tab.type}}" index="{{tab.id}}" ng-show="tab.visibility" data-tabletitle="{{tab.label | translate}}"></div>
 	</div>
 
-	
+
 	<!--
 	<div class="mgt-2--copyright clearfix" ng-show="!isLoading('init') || !DataService.status.fundAdded"><p class="mgt-2--footnote" ng-show="DataService.status.fundAdded" ng-bind-html="'chartFootnote' | translate"></p><a href="http://www.kurtosys.com" target="_blank" title="Kurtosys Systems | Beautiful Software"/><img src="__DEPLOYMENTURL__/_images/Kurtosys_logo_tinyalpha.png" target="_blank" class="pull-right" /></a></div>
 	-->

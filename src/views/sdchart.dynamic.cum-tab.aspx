@@ -15,7 +15,7 @@
 		<tr>
 			<th>&nbsp;</th>
 			<th>&nbsp;<br>&nbsp;</th>
-			<th ng-repeat="header in table.headers track by $index" class="mgt-2__table--value">{{header.period | translate | uppercase}}</th>
+			<th ng-repeat="header in table.headers track by $index" class="mgt-2__table--value">{{header.period | translate | capitalize}}</th>
 		</tr>
 	</thead>
 	<tbody>

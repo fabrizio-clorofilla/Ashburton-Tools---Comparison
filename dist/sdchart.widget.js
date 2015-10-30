@@ -103,7 +103,7 @@ window.LoadTranslations = function() {
 		window.oTranslations = {};
 
 		var langId = $('.ks-widget-sd').eq(0).attr('language');
-		var baseURL = 'http://ashburtontools.kurtosysweb.com';
+		var baseURL = '//ashburtontools.kurtosysweb.com';
 		var clientName = 'ASHBURTONTOOLS';
 		var dataSource = '2bde98b3-d9bb-4a24-8de2-9cb1e2aee34c';
 
